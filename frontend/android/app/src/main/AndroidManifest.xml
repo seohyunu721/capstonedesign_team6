@@ -1,8 +1,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 인터넷 권한 추가 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    
     <application
         android:label="frontend"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/ic_launcher"
+        android:usesCleartextTraffic="true">  <!-- HTTP 통신 허용 -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -43,3 +48,90 @@
         </intent>
     </queries>
 </manifest>
+import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  final String apiUrl = "http://localhost:8000"; // 웹에서 실행할 때
+
+  // GET 요청
+  Future<String> fetchMessage() async {
+    try {
+      final response = await http.get(Uri.parse("$apiUrl/"));
+      if (response.statusCode == 200) {
+        return jsonDecode(response.body)['message'];
+      } else {
+        throw Exception("GET 요청 실패: ${response.statusCode}");
+      }
+    } catch (e) {
+      throw Exception("네트워크 오류: $e");
+    }
+  }
+
+  // POST 요청
+  Future<Map<String, dynamic>> sendItem() async {
+    try {
+      final response = await http.post(
+        Uri.parse("$apiUrl/items/"),
+        headers: {"Content-Type": "application/json"},
+        body: jsonEncode({"name": "Apple", "price": 3.5}),
+      );
+
+      if (response.statusCode == 200) {
+        return jsonDecode(response.body);
+      } else {
+        throw Exception("POST 요청 실패: ${response.statusCode}");
+      }
+    } catch (e) {
+      throw Exception("네트워크 오류: $e");
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text("Flutter ↔ FastAPI Test")),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text("API URL: $apiUrl", style: TextStyle(fontSize: 12)),
+              SizedBox(height: 20),
+              FutureBuilder<String>(
+                future: fetchMessage(),
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return CircularProgressIndicator();
+                  } else if (snapshot.hasError) {
+                    return Text("GET Error: ${snapshot.error}", 
+                               style: TextStyle(color: Colors.red));
+                  } else {
+                    return Text("GET 응답: ${snapshot.data}");
+                  }
+                },
+              ),
+              SizedBox(height: 20),
+              FutureBuilder<Map<String, dynamic>>(
+                future: sendItem(),
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return CircularProgressIndicator();
+                  } else if (snapshot.hasError) {
+                    return Text("POST Error: ${snapshot.error}", 
+                               style: TextStyle(color: Colors.red));
+                  } else {
+                    return Text("POST 응답: ${snapshot.data}");
+                  }
+                },
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
