@@ -1,0 +1,12 @@
+# 파이썬 쓰는 import 추가
+
+fastapi
+uvicorn
+librosa
+numpy
+scipy
+scikit-learn
+pydub
+os
+yt_dlp
+soundfile
