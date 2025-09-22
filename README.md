@@ -1,12 +1,9 @@
 # 백엔드 실행
 
-`cd backend`
-`cd app`
-
-`uvicorn app:app --reload`
+`python3 main.py`
 
 # 프론트 실행
 
 `cd frontend`
 
-`flutter run`
+`flutter run -d chrome`

@@ -1,0 +1,18 @@
+# Python 시스템 파일
+__pycache__/
+*.pyc
+
+# macOS 시스템 파일
+.DS_Store
+
+# 대용량 데이터 파일 (학습용 음원)
+# data 폴더 전체를 무시하거나, 특정 파일 확장자를 지정
+*.wav
+*.mp3
+*.mp4
+
+# Flutter 빌드 파일 (자동으로 생성되는 파일들)
+frontend/build/
+frontend/.dart_tool/
+frontend/.flutter-plugins
+frontend/.flutter-plugins-dependencies
