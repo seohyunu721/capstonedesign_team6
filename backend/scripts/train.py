@@ -1,53 +1,63 @@
-import librosa
-import numpy as np
-from speechbrain.pretrained import EncoderClassifier
+# create_xvectors.py 최종 수정본
 import os
 import glob
+import numpy as np
 import torch
 import torchaudio
+from torchaudio.transforms import Resample
 import joblib
+from speechbrain.pretrained import EncoderClassifier
 
-# --- 현재 파일 위치 기준으로 backend 폴더 경로 설정 ---
-# 이 스크립트 파일(train_models.py)이 있는 위치를 기준으로 경로를 잡습니다.
-SCRIPTS_DIR = os.path.dirname(os.path.abspath(__file__))
-BACKEND_DIR = os.path.dirname(SCRIPTS_DIR)
-# ---------------------------------------------------
+print("미리 학습된 x-vector 모델을 불러옵니다...")
+try:
+    classifier = EncoderClassifier.from_hparams(source="speechbrain/spkrec-ecapa-voxceleb")
+    print("모델 로딩 완료!")
+except Exception as e:
+    print(f"모델 로딩 실패: {e}")
+    exit()
 
-# --- 특징 추출 함수 (수정 없음) ---
 def get_xvector(file_path, model):
-    # ... (이전과 동일)
+    TARGET_SR = 16000
     try:
         signal, fs = torchaudio.load(file_path)
+
+        # --- 아래 두 줄 추가: 스테레오를 모노로 변환 ---
+        if signal.shape[0] > 1: # 채널 수가 1개보다 많으면 (스테레오이면)
+            signal = torch.mean(signal, dim=0, keepdim=True)
+        # ----------------------------------------------
+
+        if fs != TARGET_SR:
+            resampler = Resample(orig_freq=fs, new_freq=TARGET_SR)
+            signal = resampler(signal)
+        
         with torch.no_grad():
             embedding = model.encode_batch(signal)
+        
         return embedding.squeeze().cpu().numpy()
     except Exception as e:
         print(f"'{os.path.basename(file_path)}' 처리 중 오류: {e}")
         return None
 
-# --- 모델 불러오기 (수정 없음) ---
-print("미리 학습된 x-vector 모델을 불러옵니다...")
-classifier = EncoderClassifier.from_hparams(source="speechbrain/spkrec-ecapa-voxceleb")
-print("모델 로딩 완료!")
+# --- 경로 설정 및 메인 로직 (이하 동일) ---
+SCRIPTS_DIR = os.path.dirname(os.path.abspath(__file__))
+BACKEND_DIR = os.path.dirname(SCRIPTS_DIR)
+DATA_DIR = os.path.join(BACKEND_DIR, 'data')
+MODELS_DIR = os.path.join(BACKEND_DIR, 'models')
+os.makedirs(MODELS_DIR, exist_ok=True)
 
-# --- 각 가수별 평균 x-vector 생성 및 저장 ---
-DATA_DIR = os.path.join(BACKEND_DIR, 'data') # data 폴더 경로
-MODELS_DIR = os.path.join(BACKEND_DIR, 'models') # models 폴더 경로
-os.makedirs(MODELS_DIR, exist_ok=True) # models 폴더가 없으면 생성
+SINGER_DIRS = glob.glob(os.path.join(DATA_DIR, '*_songs'))
+print("\n각 가수별 통합 모델(.xvector) 생성을 시작합니다...")
 
-SINGER_DIRS = ["iu_songs"]
-print("\n각 가수별 통합 모델 학습 및 저장을 시작합니다...")
-
-for singer_dir_name in SINGER_DIRS:
-    singer_name = singer_dir_name.replace("_songs", "")
+for singer_dir in SINGER_DIRS:
+    # ... (이하 로직은 이전과 동일하게 유지)
+    singer_name = os.path.basename(singer_dir).replace("_songs", "")
     print(f"--> '{singer_name}' 학습 중...")
     
-    singer_dir_path = os.path.join(DATA_DIR, singer_dir_name) # 정확한 폴더 경로
-    singer_files = glob.glob(os.path.join(singer_dir_path, '*.wav'))
+    singer_files = glob.glob(os.path.join(singer_dir, '*.wav'))
     all_xvectors = []
 
     if not singer_files:
-        print(f"'{singer_dir_path}' 폴더에 파일이 없습니다. 건너뜁니다.")
+        print(f"'{singer_dir}' 폴더에 파일이 없습니다. 건너뜁니다.")
         continue
 
     for file_path in singer_files:
@@ -57,10 +67,8 @@ for singer_dir_name in SINGER_DIRS:
     
     if all_xvectors:
         singer_avg_xvector = np.mean(all_xvectors, axis=0)
-        
-        # 모델을 models 폴더에 저장
         save_path = os.path.join(MODELS_DIR, f'{singer_name}.xvector')
         joblib.dump(singer_avg_xvector, save_path)
-        print(f"'{singer_name}.xvector' 모델을 {MODELS_DIR} 폴더에 저장 완료!")
+        print(f"'{singer_name}.xvector' 모델 저장 완료! 형태(shape): {singer_avg_xvector.shape}")
 
-print("\n모든 가수 모델의 학습 및 저장이 완료되었습니다.")
+print("\n모든 개별 가수 모델 생성이 완료되었습니다.")
