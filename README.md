@@ -1,6 +1,6 @@
 # 백엔드 실행
 
-`python3 main.py`
+`OMP_NUM_THREADS=1 python3 main.py `
 
 # 프론트 실행
 
