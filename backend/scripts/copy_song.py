@@ -2,7 +2,7 @@ import yt_dlp
 import os
 
 # 1. 다운로드할 유튜브 영상 주소
-url = 'https://www.youtube.com/watch?v=dK2Pa6yVT2o'
+url = 'https://www.youtube.com/watch?v=QhsVimBs5ZY'
 
 # 2. yt-dlp 옵션 설정
 ydl_opts = {

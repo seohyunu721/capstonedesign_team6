@@ -51,6 +51,66 @@
             "highest_note": "F♯6"
         }
     ],
+    "kwill": [
+        {
+            "title": "[MV] 케이윌(K.will) - 이러지마 제발 (Please don't...)",
+            "lowest_note": "F♯3",
+            "highest_note": "G♯6"
+        }
+    ],
+    "limchangjung": [
+        {
+            "title": "내가 저지른 사랑 - 임창정 가사_vocals",
+            "lowest_note": "G3",
+            "highest_note": "F♯6"
+        },
+        {
+            "title": "임창정(Lim ChangJung) - 또 다시 사랑(Love Again) 뮤직비디오(MV) Full ver._vocals",
+            "lowest_note": "F3",
+            "highest_note": "A6"
+        },
+        {
+            "title": "Lim Chang Jeong (임창정) - 문을 여시오 (Open The Door) (Feat. Kim Chang Ryul 김창렬) (New Ver.)_vocals",
+            "lowest_note": "F♯3",
+            "highest_note": "G♯7"
+        },
+        {
+            "title": "임창정  Love Affair(러브 어패어) (가사 첨부)_vocals",
+            "lowest_note": "E3",
+            "highest_note": "E7"
+        },
+        {
+            "title": "임창정-그 사람을 아나요 (가사)_vocals",
+            "lowest_note": "F3",
+            "highest_note": "E6"
+
+        },
+        {
+            "title": "임창정 - 날 닮은 너 ⧸ 광고없음 ⧸ 가사 ⧸ 반복재생_vocals",
+            "lowest_note": "G3",
+            "highest_note": "A6"
+        },
+        {
+            "title": "오랜만이야 (Long time no see) by Lim Chang Jung_vocals",
+            "lowest_note": "F♯3",
+            "highest_note": "D7"
+        },
+        {
+            "title": "02 임창정 - 소주 한 잔_vocals",
+            "lowest_note": "D♯3",
+            "highest_note": "C♯7"
+        },
+        {
+            "title": "[MV] LIM CHANG JUNG(임창정) _ Ordinary Song(흔한 노래)_vocals",
+            "lowest_note": "F3",
+            "highest_note": "G♯6"
+        },
+        {
+            "title": "임창정 - '하루도 그대를 사랑하지 않은 적이 없었다' Official M⧸V_vocals",
+            "lowest_note": "F3",
+            "highest_note": "F♯6"
+        }
+    ],
     "younha": [
         {
             "title": "윤하 - 미워하다 MR제거 [MR Removed]",
@@ -149,5 +209,6 @@
             "lowest_note": "C4",
             "highest_note": "A6"
         }
-    ]
+    ],
+    "HuhGak": []
 }

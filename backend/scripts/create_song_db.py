@@ -39,20 +39,20 @@ def analyze_vocal_range(file_path):
 
 # --- 메인 로직 ---
 songs_database = {}
-singer_dirs = glob.glob(os.path.join(DATA_DIR, '*_songs'))
+singer_dirs = glob.glob(os.path.join(DATA_DIR, '*_song'))
 
 print("노래 음역대 데이터베이스 생성을 시작합니다...")
 
 for singer_dir in singer_dirs:
-    singer_name = os.path.basename(singer_dir).replace("_songs", "")
+    singer_name = os.path.basename(singer_dir).replace("_song", "")
     print(f"--> '{singer_name}'의 노래들을 분석 중...")
     
     songs_database[singer_name] = []
     
-    for file_path in glob.glob(os.path.join(singer_dir, '*.wav')):
+    for file_path in glob.glob(os.path.join(singer_dir, '**', '*.wav'), recursive=True):
         song_title = os.path.splitext(os.path.basename(file_path))[0]
         lowest, highest = analyze_vocal_range(file_path)
-        
+
         if lowest and highest:
             songs_database[singer_name].append({
                 "title": song_title,
@@ -60,7 +60,6 @@ for singer_dir in singer_dirs:
                 "highest_note": highest
             })
             print(f"    - '{song_title}' 분석 완료: {lowest} ~ {highest}")
-
 # --- 파일 저장 ---
 save_path = os.path.join(DATA_DIR, "songs_db.json")
 with open(save_path, 'w', encoding='utf-8') as f:
