@@ -310,5 +310,213 @@
             "lowest_note": "G♯3",
             "highest_note": "G6"
         }
+    ],
+    "10cm": [
+        {
+            "title": "10CM - pet [가사⧸Lyrics]_mr_removed",
+            "lowest_note": "G♯3",
+            "highest_note": "B6"
+        },
+        {
+            "title": "10CM - 그라데이션 [가사⧸Lyrics]_mr_removed",
+            "lowest_note": "E3",
+            "highest_note": "C♯7"
+        },
+        {
+            "title": "10CM - 너에게 닿기를 [가사⧸Lyrics]_mr_removed",
+            "lowest_note": "G♯3",
+            "highest_note": "B6"
+        },
+        {
+            "title": "10cm - 봄이 좋냐？？ [가사⧸Lyrics]_mr_removed",
+            "lowest_note": "G♯3",
+            "highest_note": "F♯6"
+        },
+        {
+            "title": "10CM - 부동의 첫사랑 [가사⧸Lyrics]_mr_removed",
+            "lowest_note": "G3",
+            "highest_note": "A♯6"
+        },
+        {
+            "title": "10CM - 사랑은 은하수 다방에서 [가사⧸Lyrics]_mr_removed",
+            "lowest_note": "A♯3",
+            "highest_note": "G♯7"
+        },
+        {
+            "title": "10CM - 서랍 [그 해 우리는 OST] [가사⧸Lyrics]_mr_removed",
+            "lowest_note": "F3",
+            "highest_note": "G♯6"
+        },
+        {
+            "title": "10CM - 스토커 [가사⧸Lyrics]_mr_removed",
+            "lowest_note": "F3",
+            "highest_note": "A6"
+        },
+        {
+            "title": "10CM - 폰서트 [가사⧸Lyrics]_mr_removed",
+            "lowest_note": "A3",
+            "highest_note": "B6"
+        },
+        {
+            "title": "[ Lyrics ] 10cm - Perfect · ＂어제는 아름답고 오늘은 지옥 같아＂_mr_removed",
+            "lowest_note": "F3",
+            "highest_note": "A6"
+        }
+    ],
+    "haze": [
+        {
+            "title": "헤이즈 (Heize) -  비가 오는 날엔 (2021) ⧸ 가사_mr_removed",
+            "lowest_note": "A3",
+            "highest_note": "C6"
+        },
+        {
+            "title": "헤이즈 (Heize) - 그러니까 (Feat. Colde) ｜ 가사_mr_removed",
+            "lowest_note": "E3",
+            "highest_note": "F6"
+        },
+        {
+            "title": "헤이즈 (HEIZE) - 내 맘을 볼 수 있나요 ｜ 가사 ｜ 호텔델루나 OST (Hotel DelLuna OST)_mr_removed",
+            "lowest_note": "A3",
+            "highest_note": "A6"
+        },
+        {
+            "title": "헤이즈 (Heize) - 널 너무 모르고 [가사⧸Lyrics]_mr_removed",
+            "lowest_note": "A♯3",
+            "highest_note": "A6"
+        },
+        {
+            "title": "헤이즈 (Heize) - 운명이 내게 말해요 (동백꽃 필 무렵 OST PART.09) ⧸ 가사_mr_removed",
+            "lowest_note": "A♯3",
+            "highest_note": "D♯6"
+        },
+        {
+            "title": "헤이즈 (HEIZE) - 일이 너무 잘 돼 (Things are going well) ｜ 가사_mr_removed",
+            "lowest_note": "B3",
+            "highest_note": "D♯6"
+        },
+        {
+            "title": "헤이즈 (Heize) - 헤픈 우연 (HAPPEN) ⧸ 가사_mr_removed",
+            "lowest_note": "F3",
+            "highest_note": "D6"
+        },
+        {
+            "title": "헤이즈 - 마지막 너의 인사 (우리들의 블루스 OST PART.02) ⧸ 가사_mr_removed",
+            "lowest_note": "C4",
+            "highest_note": "A♯6"
+        },
+        {
+            "title": "헤이즈(Heize) - 떨어지는 낙엽까지도 ⧸ 가사_mr_removed",
+            "lowest_note": "A3",
+            "highest_note": "G♯6"
+        },
+        {
+            "title": "헤이즈(Heize) - 멈춰줘 (눈물의 여왕 OST Part 3) ｜ 가사_mr_removed",
+            "lowest_note": "A3",
+            "highest_note": "A♯6"
+        }
+    ],
+    "isu": [
+        {
+            "title": "이수 (M.C the MAX) - My Way_mr_removed",
+            "lowest_note": "F♯3",
+            "highest_note": "A6"
+        },
+        {
+            "title": "이수 (M.C the MAX) - One Love_mr_removed",
+            "lowest_note": "F♯3",
+            "highest_note": "C♯7"
+        },
+        {
+            "title": "이수 (M.C the MAX) - Your Lights_mr_removed",
+            "lowest_note": "A3",
+            "highest_note": "F♯6"
+        },
+        {
+            "title": "이수 (M.C the MAX) - 그대가 분다 [가사⧸Lyrics]_mr_removed",
+            "lowest_note": "G3",
+            "highest_note": "F♯6"
+        },
+        {
+            "title": "이수 (M.C the MAX) - 넘쳐흘러_mr_removed",
+            "lowest_note": "G♯3",
+            "highest_note": "G♯6"
+        },
+        {
+            "title": "이수 (M.C the MAX) - 사계 (하루살이)_mr_removed",
+            "lowest_note": "F3",
+            "highest_note": "B6"
+        },
+        {
+            "title": "이수 (M.C the MAX) - 어디에도_mr_removed",
+            "lowest_note": "F♯3",
+            "highest_note": "G6"
+        },
+        {
+            "title": "이수 (M.C the MAX) - 잠시만 안녕 (Original)_mr_removed",
+            "lowest_note": "A3",
+            "highest_note": "B6"
+        },
+        {
+            "title": "이수 (M.C the MAX) - 처음처럼_mr_removed",
+            "lowest_note": "F♯3",
+            "highest_note": "A6"
+        },
+        {
+            "title": "이수 (M.C the MAX) - 행복하지 말아요_mr_removed",
+            "lowest_note": "A3",
+            "highest_note": "G6"
+        }
+    ],
+    "lee-mujun": [
+        {
+            "title": "이무진 - 가면 세계_mr_removed",
+            "lowest_note": "G3",
+            "highest_note": "F♯6"
+        },
+        {
+            "title": "이무진 - 뱁새_mr_removed",
+            "lowest_note": "F♯3",
+            "highest_note": "A6"
+        },
+        {
+            "title": "이무진 - 비와 당신 [vocals]",
+            "lowest_note": "F♯3",
+            "highest_note": "D6"
+        },
+        {
+            "title": "이무진 - 신호등_mr_removed ",
+            "lowest_note": "G3",
+            "highest_note": "A6"
+        },
+        {
+            "title": "이무진 - 애상_mr_removed",
+            "lowest_note": "F3",
+            "highest_note": "A6"
+        },
+        {
+            "title": "이무진 - 에피소드_mr_removed",
+            "lowest_note": "F♯3",
+            "highest_note": "A♯6"
+        },
+        {
+            "title": "이무진 - 잠깐 시간 될까_mr_removed",
+            "lowest_note": "G3",
+            "highest_note": "B5"
+        },
+        {
+            "title": "이무진 - 참고사항_mr_removed",
+            "lowest_note": "F3",
+            "highest_note": "F♯6"
+        },
+        {
+            "title": "이무진 - 청춘만화_mr_removed",
+            "lowest_note": "G♯3",
+            "highest_note": "E6"
+        },
+        {
+            "title": "이무진 - 청혼하지 않을 이유를 못 찾았어_mr_removed",
+            "lowest_note": "G3",
+            "highest_note": "B5"
+        }
     ]
 }

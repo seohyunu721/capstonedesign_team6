@@ -34,8 +34,8 @@ def get_xvector(file_path, model):
 # --- 경로 설정 ---
 SCRIPTS_DIR = os.path.dirname(os.path.abspath(__file__))
 BACKEND_DIR = os.path.dirname(SCRIPTS_DIR)
-DATA_DIR = os.path.join(BACKEND_DIR, 'data')
-MODELS_DIR = os.path.join(BACKEND_DIR, 'models')
+DATA_DIR = os.path.join(BACKEND_DIR, '../data')
+MODELS_DIR = os.path.join(BACKEND_DIR, '../models')
 os.makedirs(MODELS_DIR, exist_ok=True)
 
 SINGER_DIRS = glob.glob(os.path.join(DATA_DIR, '*_songs'))

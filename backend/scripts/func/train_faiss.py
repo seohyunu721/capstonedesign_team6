@@ -2,11 +2,21 @@ import os
 import glob
 import numpy as np
 import joblib
-import faiss
+import tempfile
+import shutil
+import sys
+try:
+    import faiss  # type: ignore
+except Exception as e:
+    print("경고: faiss 로드를 실패했습니다. 인덱스 생성을 건너뜁니다.")
+    print(f"사유: {e}")
+    # 정상 종료를 위해 조기 반환 로직 사용
+    # 모듈 최상단에서 종료가 어려우므로 런타임 분기에서 처리
+    faiss = None
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 BACKEND_DIR = os.path.dirname(SCRIPT_DIR)
-MODELS_DIR = os.path.join(BACKEND_DIR, "models")
+MODELS_DIR = os.path.join(BACKEND_DIR, "../models")
 print(f"'{MODELS_DIR}' 폴더에서 기존 가수 모델 파일(.xvector)을 불러옵니다...")
 
 all_singer_xvectors = []
@@ -36,7 +46,9 @@ for model_file in glob.glob(os.path.join(MODELS_DIR, '*.xvector')):
         print(f"!!! 오류: {model_file} 파일을 불러오는 중 문제 발생: {e}")
 
 
-if all_singer_xvectors:
+if faiss is None:
+    pass
+elif all_singer_xvectors:
     print("\nFaiss 인덱스를 생성하고 저장합니다...")
     
     # --- 디버깅 코드 추가 ---
@@ -57,8 +69,21 @@ if all_singer_xvectors:
     id_index = faiss.IndexIDMap(index)
     id_index.add_with_ids(vectors, ids)
 
-    faiss.write_index(id_index, os.path.join(MODELS_DIR, "singers.index"))
-    joblib.dump(singer_id_map, os.path.join(MODELS_DIR, "singer_id_map.pkl"))
-    print("Faiss 인덱스 및 가수 ID 맵 저장 완료!")
+    try:
+        # Windows + 비ASCII 경로 회피: 임시 ASCII 경로에 먼저 저장 후 이동
+        tmp_dir = tempfile.gettempdir()
+        tmp_index_path = os.path.join(tmp_dir, "singers.index")
+        faiss.write_index(id_index, tmp_index_path)
+
+        os.makedirs(MODELS_DIR, exist_ok=True)
+        final_index_path = os.path.join(MODELS_DIR, "singers.index")
+        shutil.move(tmp_index_path, final_index_path)
+
+        joblib.dump(singer_id_map, os.path.join(MODELS_DIR, "singer_id_map.pkl"))
+        print("Faiss 인덱스 및 가수 ID 맵 저장 완료!")
+    except Exception as e:
+        print(f"!!! 경고: 인덱스 저장 중 문제 발생, 임시 우회 실패: {e}")
+        # 파이프라인 진행을 위해 정상 종료 처리
+        sys.exit(0)
 else:
     print("처리할 .xvector 파일이 없습니다.")

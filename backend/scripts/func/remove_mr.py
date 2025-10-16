@@ -2,13 +2,14 @@ import os
 import subprocess
 import glob
 import shutil  # 파일/폴더 관리를 위한 라이브러리
+import sys
 
 # --- 설정 ---
-# 원본 음원 파일이 있는 폴더 (MR 제거 대상)
-INPUT_DIR = "/Users/yubin/Documents/캡스톤/com/Capstonedesign-6/backend/data/original/"
+# 원본 음원 파일이 있는 폴더 (MR 제거 대상) // 자기에 맞게 변경경
+INPUT_DIR = "C:\\Users\\jun12\\OneDrive\\바탕 화면\\capstone\\capstonedesign_team6\\backend\\data\\original\\"
 
-# 최종 보컬 파일을 저장할 기본 폴더
-OUTPUT_BASE_DIR = "/Users/yubin/Documents/캡스톤/com/Capstonedesign-6/backend/data/"
+# 최종 보컬 파일을 저장할 기본 폴더 // 자기에 맞게 변경
+OUTPUT_BASE_DIR = "C:\\Users\\jun12\\OneDrive\\바탕 화면\\capstone\\capstonedesign_team6\\backend\\data\\no_mr\\"
 # ------------
 
 # 결과 폴더가 없으면 생성
@@ -21,6 +22,8 @@ audio_files = glob.glob(os.path.join(INPUT_DIR, '*.wav')) + \
 
 if not audio_files:
     print(f"'{INPUT_DIR}' 폴더에 처리할 음원 파일이 없습니다.")
+    # 처리할 파일이 없는 경우에도 정상 종료하여 파이프라인이 다음 단계로 진행되도록 함
+    sys.exit(0)
 else:
     print(f"총 {len(audio_files)}개의 파일에 대해 MR 제거를 시작합니다...")
     for file_path in audio_files:
@@ -38,7 +41,7 @@ else:
         temp_output_dir = os.path.join(singer_output_dir, "temp_separated")
 
         command = [
-            "python3", "-m", "demucs",
+            sys.executable, "-m", "demucs",
             "-n", "htdemucs_ft",
             "--two-stems=vocals",
             "-o", temp_output_dir,  # 임시 폴더에 결과 저장
