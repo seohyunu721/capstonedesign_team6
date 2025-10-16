@@ -17,4 +17,8 @@ frontend/.dart_tool/
 frontend/.flutter-plugins
 frontend/.flutter-plugins-dependencies
 
+<<<<<<< HEAD
 backend/venv/
+=======
+venv/
+>>>>>>> fde3eeff28208578db557be89869fbed074af39c
