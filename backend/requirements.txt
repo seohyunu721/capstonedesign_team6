@@ -9,3 +9,9 @@ scikit-learn
 pydub
 yt_dlp
 soundfile
+faiss-cpu
+speechbrain
+pyyaml
+huggingface-hub
+torch==2.2.2
+torchaudio==2.2.2
