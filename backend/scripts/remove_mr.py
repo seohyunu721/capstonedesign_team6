@@ -8,7 +8,7 @@ import shutil  # 파일/폴더 관리를 위한 라이브러리
 INPUT_DIR = "/Users/yubin/Documents/캡스톤/com/Capstonedesign-6/backend/data/original/"
 
 # 최종 보컬 파일을 저장할 기본 폴더
-OUTPUT_BASE_DIR = "/Users/yubin/Documents/캡스톤/com/Capstonedesign-6/backend/data/vocals/"
+OUTPUT_BASE_DIR = "/Users/yubin/Documents/캡스톤/com/Capstonedesign-6/backend/data/"
 # ------------
 
 # 결과 폴더가 없으면 생성
@@ -28,7 +28,7 @@ else:
         
         # 가수 이름 추출 (파일 이름에서 가수 이름을 추출한다고 가정)
         base_name = os.path.splitext(os.path.basename(file_path))[0]
-        singer_name = base_name.split('_')[0]  # 파일 이름이 "가수_노래제목" 형식이라고 가정
+        singer_name = base_name.split('-')[0] + "_songs"  # 파일 이름이 "가수_노래제목" 형식이라고 가정
         singer_output_dir = os.path.join(OUTPUT_BASE_DIR, singer_name)
 
         # 가수별 폴더 생성

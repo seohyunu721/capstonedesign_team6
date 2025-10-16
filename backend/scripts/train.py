@@ -63,10 +63,16 @@ for singer_dir in SINGER_DIRS:
             all_xvectors.append(xvector)
     
     if all_xvectors:
+        # X-vector 저장
         singer_avg_xvector = np.mean(all_xvectors, axis=0)
         save_path = os.path.join(MODELS_DIR, f'{singer_name}.xvector')
         joblib.dump(singer_avg_xvector, save_path)
         print(f"✅ '{singer_name}.xvector' 모델 저장 완료! (총 {len(all_xvectors)}개 파일 사용)\n")
+        
+        # 폴더 이름 변경
+        new_singer_dir = singer_dir.replace("_songs", "_song")
+        os.rename(singer_dir, new_singer_dir)
+        print(f"📂 폴더 이름 변경: '{singer_dir}' → '{new_singer_dir}'\n")
     else:
         print(f"-> '{singer_name}'의 파일을 처리하지 못했습니다.\n")
 

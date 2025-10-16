@@ -56,6 +56,56 @@
             "title": "[MV] 케이윌(K.will) - 이러지마 제발 (Please don't...)",
             "lowest_note": "F♯3",
             "highest_note": "G♯6"
+        },
+        {
+            "title": "[MV] K.Will(케이윌) _ Like a star(별처럼) (My Love From the Star(별에서 온 그대) OST Part 2)",
+            "lowest_note": "F3",
+            "highest_note": "E6"
+        },
+        {
+            "title": "케이윌(K.will) - 눈물이 뚝뚝 [가사⧸Lyrics]",
+            "lowest_note": "G3",
+            "highest_note": "G♯6"
+        },
+        {
+            "title": "[MV] K.will(케이윌) _ Thank U (Mendorong Totot(맨도롱 또똣) OST Part. 1)",
+            "lowest_note": "A3",
+            "highest_note": "F♯6"
+        },
+        {
+            "title": "[MV] K.will(케이윌) _ Day 1(오늘부터 1일)",
+            "lowest_note": "F♯3",
+            "highest_note": "F♯6"
+        },
+        {
+            "title": "케이윌(K.will) - 니가 필요해 (I Need You) [가사⧸Lyrics]",
+            "lowest_note": "G♯3",
+            "highest_note": "A6"
+        },
+        {
+            "title": "[MV] 케이윌(K.will) - Love Blossom",
+            "lowest_note": "G♯3",
+            "highest_note": "D♯6"
+        },
+        {
+            "title": "케이윌(K.will) - 그립고 그립고 그립다 [가사⧸Lyrics]",
+            "lowest_note": "E3",
+            "highest_note": "G♯6"
+        },
+        {
+            "title": "케이윌 - 내 생에 아름다운 (MR제거)",
+            "lowest_note": "G♯3",
+            "highest_note": "F6"
+        },
+        {
+            "title": "[MV] K.will(케이윌) _ Growing(꽃이 핀다)",
+            "lowest_note": "F3",
+            "highest_note": "F6"
+        },
+        {
+            "title": "[MV] 케이윌(K.will) - 촌스럽게 왜 이래 (You don't know love)",
+            "lowest_note": "G3",
+            "highest_note": "B5"
         }
     ],
     "limchangjung": [
@@ -83,7 +133,6 @@
             "title": "임창정-그 사람을 아나요 (가사)_vocals",
             "lowest_note": "F3",
             "highest_note": "E6"
-
         },
         {
             "title": "임창정 - 날 닮은 너 ⧸ 광고없음 ⧸ 가사 ⧸ 반복재생_vocals",
@@ -210,5 +259,56 @@
             "highest_note": "A6"
         }
     ],
-    "HuhGak": []
+    "HuhGak": [
+        {
+            "title": "허각 —나를 잊지 말아요",
+            "lowest_note": "F3",
+            "highest_note": "D♯6"
+        },
+        {
+            "title": "Huh Gak 허각 - Hello",
+            "lowest_note": "F♯3",
+            "highest_note": "A6"
+        },
+        {
+            "title": "사월의 눈(허각)",
+            "lowest_note": "F♯3",
+            "highest_note": "A6"
+        },
+        {
+            "title": "miss you(허각)",
+            "lowest_note": "F♯3",
+            "highest_note": "A6"
+        },
+        {
+            "title": "Huh Gak(허각) - 향기만 남아",
+            "lowest_note": "A♯3",
+            "highest_note": "A6"
+        },
+        {
+            "title": "허각 - 한사람 - [Audio]",
+            "lowest_note": "F3",
+            "highest_note": "A♯6"
+        },
+        {
+            "title": "empty words(허각)",
+            "lowest_note": "F3",
+            "highest_note": "G♯6"
+        },
+        {
+            "title": "only you(허각)",
+            "lowest_note": "F♯3",
+            "highest_note": "G6"
+        },
+        {
+            "title": "1440(허각)",
+            "lowest_note": "A3",
+            "highest_note": "A♯5"
+        },
+        {
+            "title": "허각   나를 사랑했던 사람아 (가사 첨부)",
+            "lowest_note": "G♯3",
+            "highest_note": "G6"
+        }
+    ]
 }
