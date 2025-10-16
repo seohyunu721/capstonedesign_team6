@@ -15,3 +15,5 @@ pyyaml
 huggingface-hub
 torch==2.2.2
 torchaudio==2.2.2
+uvicorn
+python-multipart
