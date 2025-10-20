@@ -6,10 +6,10 @@ import sys
 
 # --- 설정 ---
 # 원본 음원 파일이 있는 폴더 (MR 제거 대상) // 자기에 맞게 변경경
-INPUT_DIR = "C:\\Users\\jun12\\OneDrive\\바탕 화면\\capstone\\capstonedesign_team6\\backend\\data\\original\\"
+INPUT_DIR = "/Users/yubin/Documents/캡스톤/com/Capstonedesign-6/backend/data/original/"
 
-# 최종 보컬 파일을 저장할 기본 폴더 // 자기에 맞게 변경
-OUTPUT_BASE_DIR = "C:\\Users\\jun12\\OneDrive\\바탕 화면\\capstone\\capstonedesign_team6\\backend\\data\\no_mr\\"
+# 최종 보컬 파일을 저장할 기본 폴더
+OUTPUT_BASE_DIR = "/Users/yubin/Documents/캡스톤/com/Capstonedesign-6/backend/data/"
 # ------------
 
 # 결과 폴더가 없으면 생성

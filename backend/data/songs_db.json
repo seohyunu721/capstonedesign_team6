@@ -1,522 +1,658 @@
 {
     "sungsikyung": [
         {
-            "title": "[MR 제거] 성시경 - 다정하게 안녕히",
+            "title": "성시경 - 희재",
             "lowest_note": "E3",
-            "highest_note": "A6"
+            "highest_note": "G♯6",
+            "genres": [
+                "jazz"
+            ]
         },
         {
-            "title": "성시경 ＂너의 모든 순간＂ 무반주 (MR제거) 역대급 고퀄리티",
-            "lowest_note": "E3",
-            "highest_note": "G♯6"
+            "title": "성시경 - 영원히",
+            "lowest_note": "F3",
+            "highest_note": "G6",
+            "genres": [
+                "classical"
+            ]
         },
         {
-            "title": "[MR 제거] 성시경 - 아픈 나를",
+            "title": "성시경 - 아픈 나를",
             "lowest_note": "G3",
-            "highest_note": "F♯6"
+            "highest_note": "F♯6",
+            "genres": [
+                "jazz"
+            ]
         },
         {
-            "title": "[MR 제거] 성시경 - 난 좋아",
+            "title": "성시경 - 너의 모든 순간",
+            "lowest_note": "E3",
+            "highest_note": "G♯6",
+            "genres": [
+                "blues"
+            ]
+        },
+        {
+            "title": "성시경 - 널 잊는 기적은 없었다",
             "lowest_note": "F3",
-            "highest_note": "G6"
+            "highest_note": "G♯6",
+            "genres": [
+                "blues"
+            ]
         },
         {
-            "title": "[MR제거] 성시경 - 니 곁이라면(Acapella ver.)",
-            "lowest_note": "F3",
-            "highest_note": "A6"
+            "title": "성시경 - 넌 감동이었어",
+            "lowest_note": "G3",
+            "highest_note": "F♯6",
+            "genres": [
+                "country"
+            ]
         },
         {
-            "title": "[MR 제거] 성시경 - 한번 더 이별",
+            "title": "성시경 - 한번 더 이별",
             "lowest_note": "F♯3",
-            "highest_note": "A6"
+            "highest_note": "A6",
+            "genres": [
+                "blues"
+            ]
         },
         {
-            "title": "[MR 제거] 성시경 - 영원히",
-            "lowest_note": "F3",
-            "highest_note": "G6"
-        },
-        {
-            "title": "성시경 ＂희재＂ 무반주 (MR제거) 역대급 고퀄리티",
+            "title": "성시경 - 다정하게 안녕히",
             "lowest_note": "E3",
-            "highest_note": "G♯6"
+            "highest_note": "A6",
+            "genres": [
+                "country"
+            ]
         },
         {
-            "title": "[MR 제거] 성시경 - 널 잊는 기적은 없었다",
+            "title": "성시경 - 니 곁이라면",
             "lowest_note": "F3",
-            "highest_note": "G♯6"
+            "highest_note": "A6",
+            "genres": [
+                "blues"
+            ]
         },
         {
-            "title": "[MR 제거] 성시경 - 넌 감동이었어",
-            "lowest_note": "G3",
-            "highest_note": "F♯6"
+            "title": "성시경 - 난 좋아",
+            "lowest_note": "F3",
+            "highest_note": "G6",
+            "genres": [
+                "blues"
+            ]
         }
     ],
     "kwill": [
         {
-            "title": "[MV] 케이윌(K.will) - 이러지마 제발 (Please don't...)",
+            "title": "Kwill - 케이윌 - 이러지마 제발",
             "lowest_note": "F♯3",
-            "highest_note": "G♯6"
+            "highest_note": "G♯6",
+            "genres": [
+                "classical"
+            ]
         },
         {
-            "title": "[MV] K.Will(케이윌) _ Like a star(별처럼) (My Love From the Star(별에서 온 그대) OST Part 2)",
+            "title": "Kwill - k.will like a star ost part 2)",
             "lowest_note": "F3",
-            "highest_note": "E6"
+            "highest_note": "E6",
+            "genres": [
+                "blues"
+            ]
         },
         {
-            "title": "케이윌(K.will) - 눈물이 뚝뚝 [가사⧸Lyrics]",
+            "title": "Kwill - 케이윌 - 눈물이 뚝뚝",
             "lowest_note": "G3",
-            "highest_note": "G♯6"
+            "highest_note": "G♯6",
+            "genres": [
+                "classical"
+            ]
         },
         {
-            "title": "[MV] K.will(케이윌) _ Thank U (Mendorong Totot(맨도롱 또똣) OST Part. 1)",
+            "title": "Kwill - k.will thank u ost part. 1)",
             "lowest_note": "A3",
-            "highest_note": "F♯6"
+            "highest_note": "F♯6",
+            "genres": [
+                "blues"
+            ]
         },
         {
-            "title": "[MV] K.will(케이윌) _ Day 1(오늘부터 1일)",
+            "title": "Kwill - k.will day 1",
             "lowest_note": "F♯3",
-            "highest_note": "F♯6"
+            "highest_note": "F♯6",
+            "genres": [
+                "blues"
+            ]
         },
         {
-            "title": "케이윌(K.will) - 니가 필요해 (I Need You) [가사⧸Lyrics]",
+            "title": "Kwill - 케이윌 - 니가 필요해",
             "lowest_note": "G♯3",
-            "highest_note": "A6"
+            "highest_note": "A6",
+            "genres": [
+                "classical"
+            ]
         },
         {
-            "title": "[MV] 케이윌(K.will) - Love Blossom",
+            "title": "Kwill - 케이윌 - love blossom",
             "lowest_note": "G♯3",
-            "highest_note": "D♯6"
+            "highest_note": "D♯6",
+            "genres": [
+                "classical"
+            ]
         },
         {
-            "title": "케이윌(K.will) - 그립고 그립고 그립다 [가사⧸Lyrics]",
+            "title": "Kwill - 케이윌 - 그립고 그립고 그립다",
             "lowest_note": "E3",
-            "highest_note": "G♯6"
+            "highest_note": "G♯6",
+            "genres": [
+                "classical"
+            ]
         },
         {
-            "title": "케이윌 - 내 생에 아름다운 (MR제거)",
+            "title": "Kwill - 케이윌 - 내 생에 아름다운",
             "lowest_note": "G♯3",
-            "highest_note": "F6"
+            "highest_note": "F6",
+            "genres": [
+                "blues"
+            ]
         },
         {
-            "title": "[MV] K.will(케이윌) _ Growing(꽃이 핀다)",
+            "title": "Kwill - k.will growing",
             "lowest_note": "F3",
-            "highest_note": "F6"
+            "highest_note": "F6",
+            "genres": [
+                "blues"
+            ]
         },
         {
-            "title": "[MV] 케이윌(K.will) - 촌스럽게 왜 이래 (You don't know love)",
+            "title": "Kwill - 케이윌 - 촌스럽게 왜 이래",
             "lowest_note": "G3",
-            "highest_note": "B5"
+            "highest_note": "B5",
+            "genres": [
+                "classical"
+            ]
         }
     ],
     "limchangjung": [
         {
-            "title": "내가 저지른 사랑 - 임창정 가사_vocals",
-            "lowest_note": "G3",
-            "highest_note": "F♯6"
-        },
-        {
-            "title": "임창정(Lim ChangJung) - 또 다시 사랑(Love Again) 뮤직비디오(MV) Full ver._vocals",
+            "title": "임창정 - 하루도 그대를 사랑하지 않은 적이 없었다 m - v",
             "lowest_note": "F3",
-            "highest_note": "A6"
+            "highest_note": "F♯6",
+            "genres": [
+                "blues"
+            ]
         },
         {
-            "title": "Lim Chang Jeong (임창정) - 문을 여시오 (Open The Door) (Feat. Kim Chang Ryul 김창렬) (New Ver.)_vocals",
-            "lowest_note": "F♯3",
-            "highest_note": "G♯7"
-        },
-        {
-            "title": "임창정  Love Affair(러브 어패어) (가사 첨부)_vocals",
-            "lowest_note": "E3",
-            "highest_note": "E7"
-        },
-        {
-            "title": "임창정-그 사람을 아나요 (가사)_vocals",
-            "lowest_note": "F3",
-            "highest_note": "E6"
-        },
-        {
-            "title": "임창정 - 날 닮은 너 ⧸ 광고없음 ⧸ 가사 ⧸ 반복재생_vocals",
+            "title": "Limchangjung - 내가 저지른 사랑 - 임창정",
             "lowest_note": "G3",
-            "highest_note": "A6"
+            "highest_note": "F♯6",
+            "genres": [
+                "classical"
+            ]
         },
         {
-            "title": "오랜만이야 (Long time no see) by Lim Chang Jung_vocals",
-            "lowest_note": "F♯3",
-            "highest_note": "D7"
+            "title": "Limchangjung - 임창정 - 그 사람을 아나요",
+            "lowest_note": "F3",
+            "highest_note": "E6",
+            "genres": [
+                "jazz"
+            ]
         },
         {
-            "title": "02 임창정 - 소주 한 잔_vocals",
+            "title": "Limchangjung - 02 임창정 - 소주 한 잔",
             "lowest_note": "D♯3",
-            "highest_note": "C♯7"
+            "highest_note": "C♯7",
+            "genres": [
+                "jazz"
+            ]
         },
         {
-            "title": "[MV] LIM CHANG JUNG(임창정) _ Ordinary Song(흔한 노래)_vocals",
+            "title": "Limchangjung - 임창정 - 또 다시 사랑 뮤직비디오 full ver.",
             "lowest_note": "F3",
-            "highest_note": "G♯6"
+            "highest_note": "A6",
+            "genres": [
+                "classical"
+            ]
         },
         {
-            "title": "임창정 - '하루도 그대를 사랑하지 않은 적이 없었다' Official M⧸V_vocals",
+            "title": "날 닮은 너 - 광고없음 -  - 반복재생",
+            "lowest_note": "G3",
+            "highest_note": "A6",
+            "genres": [
+                "blues"
+            ]
+        },
+        {
+            "title": "Limchangjung - 오랜만이야 by lim chang jung",
+            "lowest_note": "F♯3",
+            "highest_note": "D7",
+            "genres": [
+                "jazz"
+            ]
+        },
+        {
+            "title": "Limchangjung - 임창정 love affair",
+            "lowest_note": "E3",
+            "highest_note": "E7",
+            "genres": [
+                "blues"
+            ]
+        },
+        {
+            "title": "Limchangjung - lim chang jung ordinary song",
             "lowest_note": "F3",
-            "highest_note": "F♯6"
+            "highest_note": "G♯6",
+            "genres": [
+                "jazz"
+            ]
+        },
+        {
+            "title": "Limchangjung - lim chang jeong - 문을 여시오",
+            "lowest_note": "F♯3",
+            "highest_note": "G♯7",
+            "genres": [
+                "country"
+            ]
+        }
+    ],
+    "LEE HI ": [
+        {
+            "title": "Darling",
+            "lowest_note": "D4",
+            "highest_note": "D6",
+            "genres": [
+                "jazz"
+            ]
+        },
+        {
+            "title": "Only",
+            "lowest_note": "A3",
+            "highest_note": "C6",
+            "genres": [
+                "jazz"
+            ]
+        },
+        {
+            "title": "손잡아 줘요 m - v",
+            "lowest_note": "A♯3",
+            "highest_note": "D7",
+            "genres": [
+                "classical"
+            ]
+        },
+        {
+            "title": "Safety zone",
+            "lowest_note": "A3",
+            "highest_note": "A5",
+            "genres": [
+                "classical"
+            ]
+        },
+        {
+            "title": "홀로",
+            "lowest_note": "F♯3",
+            "highest_note": "G♯6",
+            "genres": [
+                "jazz"
+            ]
+        },
+        {
+            "title": "1.2.3.4 m - v",
+            "lowest_note": "G♯3",
+            "highest_note": "A♯6",
+            "genres": [
+                "classical"
+            ]
+        },
+        {
+            "title": "Its over m - v",
+            "lowest_note": "G♯3",
+            "highest_note": "G♯6",
+            "genres": [
+                "classical"
+            ]
+        },
+        {
+            "title": "Rose m - v",
+            "lowest_note": "G3",
+            "highest_note": "A6",
+            "genres": [
+                "classical"
+            ]
+        },
+        {
+            "title": "한숨 m - v",
+            "lowest_note": "G♯3",
+            "highest_note": "B6",
+            "genres": [
+                "classical"
+            ]
+        },
+        {
+            "title": "내 사랑",
+            "lowest_note": "A♯3",
+            "highest_note": "B6",
+            "genres": [
+                "classical"
+            ]
+        }
+    ],
+    "폴킴 (Paul Kim) ": [
+        {
+            "title": "- 너의 잠을 채워줄게",
+            "lowest_note": "F♯3",
+            "highest_note": "A6",
+            "genres": [
+                "classical"
+            ]
+        },
+        {
+            "title": "- paul kim - empty",
+            "lowest_note": "E3",
+            "highest_note": "F♯6",
+            "genres": [
+                "blues"
+            ]
+        },
+        {
+            "title": "- paul kim - but ill miss you",
+            "lowest_note": "F♯3",
+            "highest_note": "B5",
+            "genres": [
+                "blues"
+            ]
+        },
+        {
+            "title": "- 폴킴 - 마음",
+            "lowest_note": "F♯3",
+            "highest_note": "D♯6",
+            "genres": [
+                "blues"
+            ]
+        },
+        {
+            "title": "- one more time",
+            "lowest_note": "F♯3",
+            "highest_note": "A♯5",
+            "genres": [
+                "jazz"
+            ]
+        },
+        {
+            "title": "- paul kim - hangover",
+            "lowest_note": "F3",
+            "highest_note": "F♯6",
+            "genres": [
+                "blues"
+            ]
+        },
+        {
+            "title": "- paul kim - cant get over you",
+            "lowest_note": "E3",
+            "highest_note": "G♯6",
+            "genres": [
+                "blues"
+            ]
+        },
+        {
+            "title": "- 헤어질 걸 알아",
+            "lowest_note": "G♯3",
+            "highest_note": "G♯5",
+            "genres": [
+                "blues"
+            ]
+        },
+        {
+            "title": "- 너에 대하여",
+            "lowest_note": "D♯3",
+            "highest_note": "A6",
+            "genres": [
+                "classical"
+            ]
+        },
+        {
+            "title": "- 집돌이",
+            "lowest_note": "E3",
+            "highest_note": "D♯6",
+            "genres": [
+                "blues"
+            ]
         }
     ],
     "younha": [
         {
-            "title": "윤하 - 미워하다 MR제거 [MR Removed]",
-            "lowest_note": "C4",
-            "highest_note": "A♯6"
-        },
-        {
-            "title": "윤하 - 사건의 지평선 MR제거",
+            "title": "윤하 - 사건의 지평선 mr제거",
             "lowest_note": "F♯3",
-            "highest_note": "A♯6"
+            "highest_note": "A♯6",
+            "genres": [
+                "classical"
+            ]
         },
         {
-            "title": "윤하 - 기다리다 MR제거 [MR Removed]",
-            "lowest_note": "B3",
-            "highest_note": "D6"
-        },
-        {
-            "title": "윤하 - 혜성 MR제거 [MR Removed]",
-            "lowest_note": "D4",
-            "highest_note": "B6"
-        },
-        {
-            "title": "윤하 물의 여행 MR제거 Younha Wish Vocal Only",
-            "lowest_note": "C4",
-            "highest_note": "A♯6"
-        },
-        {
-            "title": "윤하(Younha) - 내 마음이 뭐가 돼 MR제거 [MR Removed]",
+            "title": "윤하 - 내 마음이 뭐가 돼",
             "lowest_note": "E4",
-            "highest_note": "B6"
+            "highest_note": "B6",
+            "genres": [
+                "classical"
+            ]
         },
         {
-            "title": "윤하 오르트구름 MR 제거",
-            "lowest_note": "A3",
-            "highest_note": "B6"
+            "title": "윤하 - 미워하다",
+            "lowest_note": "C4",
+            "highest_note": "A♯6",
+            "genres": [
+                "classical"
+            ]
         },
         {
-            "title": "윤하(Younha) - 우산(Umbrella) MR제거 [MR Removed]",
+            "title": "윤하 - 기다리다 mr제거",
             "lowest_note": "B3",
-            "highest_note": "A♯6"
+            "highest_note": "D6",
+            "genres": [
+                "country"
+            ]
+        },
+        {
+            "title": "윤하 - 혜성 mr제거",
+            "lowest_note": "D4",
+            "highest_note": "B6",
+            "genres": [
+                "classical"
+            ]
+        },
+        {
+            "title": "윤하 - 우산",
+            "lowest_note": "B3",
+            "highest_note": "A♯6",
+            "genres": [
+                "classical"
+            ]
+        },
+        {
+            "title": "윤하 오르트구름 mr 제거",
+            "lowest_note": "A3",
+            "highest_note": "B6",
+            "genres": [
+                "classical"
+            ]
+        },
+        {
+            "title": "윤하 물의 여행 younha wish",
+            "lowest_note": "C4",
+            "highest_note": "A♯6",
+            "genres": [
+                "classical"
+            ]
         }
     ],
     "iu": [
         {
-            "title": "아이유 (IU) - Love wins all (러브 윈스 올) MR제거 (Vocal Only)",
-            "lowest_note": "C4",
-            "highest_note": "A♯6"
-        },
-        {
             "title": "아이유 시간의바깥 반주제거",
             "lowest_note": "D4",
-            "highest_note": "A6"
+            "highest_note": "A6",
+            "genres": [
+                "blues"
+            ]
         },
         {
-            "title": "IU (아이유) - Never Ending Story Acapella ⧸ MR제거",
+            "title": "- 잊어야 한다는 마음으로 mr제거",
             "lowest_note": "A♯3",
-            "highest_note": "A6"
+            "highest_note": "C7",
+            "genres": [
+                "classical"
+            ]
         },
         {
-            "title": "[MR 제거] 아이유 (IU) - '겨울잠'",
+            "title": "아이유 - love wins all",
+            "lowest_note": "C4",
+            "highest_note": "A♯6",
+            "genres": [
+                "classical"
+            ]
+        },
+        {
+            "title": "Never ending story -",
+            "lowest_note": "A♯3",
+            "highest_note": "A6",
+            "genres": [
+                "jazz"
+            ]
+        },
+        {
+            "title": "아이유 - 겨울잠",
             "lowest_note": "A3",
-            "highest_note": "B6"
+            "highest_note": "B6",
+            "genres": [
+                "classical"
+            ]
         },
         {
-            "title": "(아이유)-잊어야 한다는 마음으로_mr제거_",
+            "title": "아이유 - 밤편지",
             "lowest_note": "A♯3",
-            "highest_note": "C7"
+            "highest_note": "B6",
+            "genres": [
+                "classical"
+            ]
         },
         {
-            "title": "[ MR제거 ]아이유(IU)-팔레트",
+            "title": "아이유 아이와 나의바다 풀버전",
+            "lowest_note": "A♯3",
+            "highest_note": "B6",
+            "genres": [
+                "jazz"
+            ]
+        },
+        {
+            "title": "아이유 - 팔레트",
             "lowest_note": "G3",
-            "highest_note": "C7"
+            "highest_note": "C7",
+            "genres": [
+                "classical"
+            ]
         },
         {
-            "title": "[ MR제거 ]아이유 (IU)- 밤편지",
-            "lowest_note": "A♯3",
-            "highest_note": "B6"
-        },
-        {
-            "title": "IU (아이유) - 바이, 썸머 (Bye, Summer) Acapella ｜ MR제거",
-            "lowest_note": "B3",
-            "highest_note": "B6"
-        },
-        {
-            "title": "[MR 제거] 아이유 - '이름에게'",
+            "title": "아이유 - 이름에게",
             "lowest_note": "C♯4",
-            "highest_note": "B6"
+            "highest_note": "B6",
+            "genres": [
+                "classical"
+            ]
         },
         {
-            "title": "아이유(IU)_아이와 나의바다 mr제거_풀버전",
-            "lowest_note": "A♯3",
-            "highest_note": "B6"
+            "title": "바이, 썸머 -",
+            "lowest_note": "B3",
+            "highest_note": "B6",
+            "genres": [
+                "jazz"
+            ]
         },
         {
             "title": "아이유 에잇 반주제거",
             "lowest_note": "C4",
-            "highest_note": "A6"
+            "highest_note": "A6",
+            "genres": [
+                "blues"
+            ]
         }
     ],
     "HuhGak": [
         {
-            "title": "허각 —나를 잊지 말아요",
+            "title": "Huhgak - 허각 —나를 잊지 말아요",
             "lowest_note": "F3",
-            "highest_note": "D♯6"
+            "highest_note": "D♯6",
+            "genres": [
+                "blues"
+            ]
         },
         {
-            "title": "Huh Gak 허각 - Hello",
+            "title": "Huhgak - huh gak 허각 - hello",
             "lowest_note": "F♯3",
-            "highest_note": "A6"
+            "highest_note": "A6",
+            "genres": [
+                "classical"
+            ]
         },
         {
-            "title": "사월의 눈(허각)",
+            "title": "Huhgak - 사월의 눈",
             "lowest_note": "F♯3",
-            "highest_note": "A6"
+            "highest_note": "A6",
+            "genres": [
+                "classical"
+            ]
         },
         {
-            "title": "miss you(허각)",
+            "title": "Huhgak - miss you",
             "lowest_note": "F♯3",
-            "highest_note": "A6"
+            "highest_note": "A6",
+            "genres": [
+                "blues"
+            ]
         },
         {
-            "title": "Huh Gak(허각) - 향기만 남아",
+            "title": "Huhgak - huh gak - 향기만 남아",
             "lowest_note": "A♯3",
-            "highest_note": "A6"
+            "highest_note": "A6",
+            "genres": [
+                "classical"
+            ]
         },
         {
-            "title": "허각 - 한사람 - [Audio]",
+            "title": "Huhgak - 허각 - 한사람 -",
             "lowest_note": "F3",
-            "highest_note": "A♯6"
+            "highest_note": "A♯6",
+            "genres": [
+                "blues"
+            ]
         },
         {
-            "title": "empty words(허각)",
+            "title": "Huhgak - empty words",
             "lowest_note": "F3",
-            "highest_note": "G♯6"
+            "highest_note": "G♯6",
+            "genres": [
+                "jazz"
+            ]
         },
         {
-            "title": "only you(허각)",
+            "title": "Huhgak - only you",
             "lowest_note": "F♯3",
-            "highest_note": "G6"
+            "highest_note": "G6",
+            "genres": [
+                "jazz"
+            ]
         },
         {
-            "title": "1440(허각)",
+            "title": "Huhgak - 1440",
             "lowest_note": "A3",
-            "highest_note": "A♯5"
+            "highest_note": "A♯5",
+            "genres": [
+                "classical"
+            ]
         },
         {
-            "title": "허각   나를 사랑했던 사람아 (가사 첨부)",
+            "title": "Huhgak - 허각 나를 사랑했던 사람아",
             "lowest_note": "G♯3",
-            "highest_note": "G6"
-        }
-    ],
-    "10cm": [
-        {
-            "title": "10CM - pet [가사⧸Lyrics]_mr_removed",
-            "lowest_note": "G♯3",
-            "highest_note": "B6"
-        },
-        {
-            "title": "10CM - 그라데이션 [가사⧸Lyrics]_mr_removed",
-            "lowest_note": "E3",
-            "highest_note": "C♯7"
-        },
-        {
-            "title": "10CM - 너에게 닿기를 [가사⧸Lyrics]_mr_removed",
-            "lowest_note": "G♯3",
-            "highest_note": "B6"
-        },
-        {
-            "title": "10cm - 봄이 좋냐？？ [가사⧸Lyrics]_mr_removed",
-            "lowest_note": "G♯3",
-            "highest_note": "F♯6"
-        },
-        {
-            "title": "10CM - 부동의 첫사랑 [가사⧸Lyrics]_mr_removed",
-            "lowest_note": "G3",
-            "highest_note": "A♯6"
-        },
-        {
-            "title": "10CM - 사랑은 은하수 다방에서 [가사⧸Lyrics]_mr_removed",
-            "lowest_note": "A♯3",
-            "highest_note": "G♯7"
-        },
-        {
-            "title": "10CM - 서랍 [그 해 우리는 OST] [가사⧸Lyrics]_mr_removed",
-            "lowest_note": "F3",
-            "highest_note": "G♯6"
-        },
-        {
-            "title": "10CM - 스토커 [가사⧸Lyrics]_mr_removed",
-            "lowest_note": "F3",
-            "highest_note": "A6"
-        },
-        {
-            "title": "10CM - 폰서트 [가사⧸Lyrics]_mr_removed",
-            "lowest_note": "A3",
-            "highest_note": "B6"
-        },
-        {
-            "title": "[ Lyrics ] 10cm - Perfect · ＂어제는 아름답고 오늘은 지옥 같아＂_mr_removed",
-            "lowest_note": "F3",
-            "highest_note": "A6"
-        }
-    ],
-    "haze": [
-        {
-            "title": "헤이즈 (Heize) -  비가 오는 날엔 (2021) ⧸ 가사_mr_removed",
-            "lowest_note": "A3",
-            "highest_note": "C6"
-        },
-        {
-            "title": "헤이즈 (Heize) - 그러니까 (Feat. Colde) ｜ 가사_mr_removed",
-            "lowest_note": "E3",
-            "highest_note": "F6"
-        },
-        {
-            "title": "헤이즈 (HEIZE) - 내 맘을 볼 수 있나요 ｜ 가사 ｜ 호텔델루나 OST (Hotel DelLuna OST)_mr_removed",
-            "lowest_note": "A3",
-            "highest_note": "A6"
-        },
-        {
-            "title": "헤이즈 (Heize) - 널 너무 모르고 [가사⧸Lyrics]_mr_removed",
-            "lowest_note": "A♯3",
-            "highest_note": "A6"
-        },
-        {
-            "title": "헤이즈 (Heize) - 운명이 내게 말해요 (동백꽃 필 무렵 OST PART.09) ⧸ 가사_mr_removed",
-            "lowest_note": "A♯3",
-            "highest_note": "D♯6"
-        },
-        {
-            "title": "헤이즈 (HEIZE) - 일이 너무 잘 돼 (Things are going well) ｜ 가사_mr_removed",
-            "lowest_note": "B3",
-            "highest_note": "D♯6"
-        },
-        {
-            "title": "헤이즈 (Heize) - 헤픈 우연 (HAPPEN) ⧸ 가사_mr_removed",
-            "lowest_note": "F3",
-            "highest_note": "D6"
-        },
-        {
-            "title": "헤이즈 - 마지막 너의 인사 (우리들의 블루스 OST PART.02) ⧸ 가사_mr_removed",
-            "lowest_note": "C4",
-            "highest_note": "A♯6"
-        },
-        {
-            "title": "헤이즈(Heize) - 떨어지는 낙엽까지도 ⧸ 가사_mr_removed",
-            "lowest_note": "A3",
-            "highest_note": "G♯6"
-        },
-        {
-            "title": "헤이즈(Heize) - 멈춰줘 (눈물의 여왕 OST Part 3) ｜ 가사_mr_removed",
-            "lowest_note": "A3",
-            "highest_note": "A♯6"
-        }
-    ],
-    "isu": [
-        {
-            "title": "이수 (M.C the MAX) - My Way_mr_removed",
-            "lowest_note": "F♯3",
-            "highest_note": "A6"
-        },
-        {
-            "title": "이수 (M.C the MAX) - One Love_mr_removed",
-            "lowest_note": "F♯3",
-            "highest_note": "C♯7"
-        },
-        {
-            "title": "이수 (M.C the MAX) - Your Lights_mr_removed",
-            "lowest_note": "A3",
-            "highest_note": "F♯6"
-        },
-        {
-            "title": "이수 (M.C the MAX) - 그대가 분다 [가사⧸Lyrics]_mr_removed",
-            "lowest_note": "G3",
-            "highest_note": "F♯6"
-        },
-        {
-            "title": "이수 (M.C the MAX) - 넘쳐흘러_mr_removed",
-            "lowest_note": "G♯3",
-            "highest_note": "G♯6"
-        },
-        {
-            "title": "이수 (M.C the MAX) - 사계 (하루살이)_mr_removed",
-            "lowest_note": "F3",
-            "highest_note": "B6"
-        },
-        {
-            "title": "이수 (M.C the MAX) - 어디에도_mr_removed",
-            "lowest_note": "F♯3",
-            "highest_note": "G6"
-        },
-        {
-            "title": "이수 (M.C the MAX) - 잠시만 안녕 (Original)_mr_removed",
-            "lowest_note": "A3",
-            "highest_note": "B6"
-        },
-        {
-            "title": "이수 (M.C the MAX) - 처음처럼_mr_removed",
-            "lowest_note": "F♯3",
-            "highest_note": "A6"
-        },
-        {
-            "title": "이수 (M.C the MAX) - 행복하지 말아요_mr_removed",
-            "lowest_note": "A3",
-            "highest_note": "G6"
-        }
-    ],
-    "lee-mujun": [
-        {
-            "title": "이무진 - 가면 세계_mr_removed",
-            "lowest_note": "G3",
-            "highest_note": "F♯6"
-        },
-        {
-            "title": "이무진 - 뱁새_mr_removed",
-            "lowest_note": "F♯3",
-            "highest_note": "A6"
-        },
-        {
-            "title": "이무진 - 비와 당신 [vocals]",
-            "lowest_note": "F♯3",
-            "highest_note": "D6"
-        },
-        {
-            "title": "이무진 - 신호등_mr_removed ",
-            "lowest_note": "G3",
-            "highest_note": "A6"
-        },
-        {
-            "title": "이무진 - 애상_mr_removed",
-            "lowest_note": "F3",
-            "highest_note": "A6"
-        },
-        {
-            "title": "이무진 - 에피소드_mr_removed",
-            "lowest_note": "F♯3",
-            "highest_note": "A♯6"
-        },
-        {
-            "title": "이무진 - 잠깐 시간 될까_mr_removed",
-            "lowest_note": "G3",
-            "highest_note": "B5"
-        },
-        {
-            "title": "이무진 - 참고사항_mr_removed",
-            "lowest_note": "F3",
-            "highest_note": "F♯6"
-        },
-        {
-            "title": "이무진 - 청춘만화_mr_removed",
-            "lowest_note": "G♯3",
-            "highest_note": "E6"
-        },
-        {
-            "title": "이무진 - 청혼하지 않을 이유를 못 찾았어_mr_removed",
-            "lowest_note": "G3",
-            "highest_note": "B5"
+            "highest_note": "G6",
+            "genres": [
+                "jazz"
+            ]
         }
     ]
 }
