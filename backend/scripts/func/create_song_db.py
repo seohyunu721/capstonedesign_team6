@@ -57,44 +57,32 @@ def extract_librosa_features(file_path):
         print(f"    - ⚠️ Librosa 특징 추출 오류: {e}")
         return None
 
-def get_genre_hybrid(artist_name, song_title, audio_file_path):
-    """AcousticBrainz를 먼저 시도하고, 실패 또는 '정보 없음'일 경우 Librosa로 예측"""
-    # 1순위: AcousticBrainz API
+def get_genre_with_librosa(audio_file_path):
+    """Librosa 자체 모델로 장르를 예측하는 함수"""
+    if not GENRE_MODEL:
+        return ["정보 없음"]
     try:
-        search_result = musicbrainzngs.search_recordings(artist=artist_name, recording=song_title, limit=1)
-        if search_result['recording-list']:
-            recording_id = search_result['recording-list'][0]['id']
-            ab_url = f"https://acousticbrainz.org/api/v1/{recording_id}/high-level"
-            response = requests.get(ab_url, timeout=200) # 5초 타임아웃
-            if response.status_code == 200:
-                data = response.json()
-                genre = data.get('genre_rosamerica', {}).get('value')
-                if genre and genre != '정보 없음':
-                    print(f"    - ✅ AcousticBrainz 성공: {genre}")
-                    return [genre]
-        print(f"    - ⚠️ AcousticBrainz 정보 없음. Librosa로 전환합니다.")
+        features = extract_librosa_features(audio_file_path).reshape(1, -1)
+        prediction_index = GENRE_MODEL.predict(features)[0]
+        genre = GENRE_LABELS[prediction_index]
+        print(f"    - ✅ Librosa 장르 예측: {genre}")
+        return [genre]
     except Exception as e:
-        print(f"    - ⚠️ AcousticBrainz API 오류. Librosa로 전환합니다: {e}")
-
-    # 2순위: Librosa 자체 모델
-    if GENRE_MODEL:
-        try:
-            features = extract_librosa_features(audio_file_path)
-            if features is not None:
-                features = features.reshape(1, -1)
-                prediction_index = GENRE_MODEL.predict(features)[0]
-                genre = GENRE_LABELS[prediction_index]
-                print(f"    - ✅ Librosa 성공: {genre}")
-                return [genre]
-        except Exception as e:
-            print(f"    - ⚠️ Librosa 분석 오류: {e}")
+        print(f"    - ⚠️ Librosa 분석 오류: {e}")
+        return ["분석 실패"]
     
-    return ["정보 없음"]
-
 # --- 3. 메인 로직 ---
 songs_database = {}
 save_path = os.path.join(DATA_DIR, "songs_db.json")
-# ... (기존 DB 로드 로직은 동일)
+
+if os.path.exists(save_path):
+    try:
+        with open(save_path, 'r', encoding='utf-8') as f:
+            songs_database = json.load(f)
+        print("✅ 기존 songs_db.json 파일을 불러왔습니다. 데이터를 업데이트합니다.")
+    except Exception as e:
+        print(f"⚠️ 기존 DB 로드 실패, 새로 생성합니다: {e}")
+# ----------------------------------------------------
 
 singer_dirs = glob.glob(os.path.join(DATA_DIR, '*_song'))
 print("\n🎶 노래 음역대 및 장르 데이터베이스 생성을 시작합니다...")
@@ -111,7 +99,7 @@ for singer_dir in singer_dirs:
         song_title = os.path.splitext(os.path.basename(file_path))[0].replace('_vocals', '')
         
         lowest, highest = analyze_vocal_range(file_path)
-        genres = get_genre_hybrid(singer_name, song_title, file_path)
+        genres = get_genre_with_librosa(file_path) 
         
         if lowest and highest:
             # ... (기존 DB 업데이트 및 추가 로직은 동일)
