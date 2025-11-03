@@ -163,6 +163,3 @@ async def analyze(voice_file: UploadFile = File(...)):
     finally:
         if os.path.exists(temp_file_path):
             os.remove(temp_file_path)
-
-
-
