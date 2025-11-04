@@ -1,658 +1,808 @@
 {
     "sungsikyung": [
         {
-            "title": "성시경 - 희재",
+            "title": "희재",
             "lowest_note": "E3",
             "highest_note": "G♯6",
             "genres": [
-                "jazz"
-            ]
+                "k-ballad"
+            ],
+            "year": 2003
         },
         {
-            "title": "성시경 - 영원히",
+            "title": "영원히",
             "lowest_note": "F3",
             "highest_note": "G6",
             "genres": [
-                "classical"
-            ]
+                "k-ballad"
+            ],
+            "year": 2018
         },
         {
-            "title": "성시경 - 아픈 나를",
+            "title": "아픈 나를",
             "lowest_note": "G3",
             "highest_note": "F♯6",
             "genres": [
-                "jazz"
-            ]
+                "k-ballad"
+            ],
+            "year": 2022
         },
         {
-            "title": "성시경 - 너의 모든 순간",
+            "title": "너의 모든 순간",
             "lowest_note": "E3",
             "highest_note": "G♯6",
             "genres": [
-                "blues"
-            ]
+                "k-ballad"
+            ],
+            "year": 2014
         },
         {
-            "title": "성시경 - 널 잊는 기적은 없었다",
+            "title": "널 잊는 기적은 없었다",
             "lowest_note": "F3",
             "highest_note": "G♯6",
             "genres": [
-                "blues"
-            ]
+                "k-ballad"
+            ],
+            "year": 2021
         },
         {
-            "title": "성시경 - 넌 감동이었어",
+            "title": "넌 감동이었어",
             "lowest_note": "G3",
             "highest_note": "F♯6",
             "genres": [
-                "country"
-            ]
+                "k-ballad"
+            ],
+            "year": 2002
         },
         {
-            "title": "성시경 - 한번 더 이별",
+            "title": "한번 더 이별",
             "lowest_note": "F♯3",
             "highest_note": "A6",
             "genres": [
-                "blues"
-            ]
+                "k-ballad"
+            ],
+            "year": 2007
         },
         {
-            "title": "성시경 - 다정하게 안녕히",
+            "title": "다정하게 안녕히",
             "lowest_note": "E3",
             "highest_note": "A6",
             "genres": [
-                "country"
-            ]
+                "k-ballad"
+            ],
+            "year": 2016
         },
         {
-            "title": "성시경 - 니 곁이라면",
+            "title": "니 곁이라면",
             "lowest_note": "F3",
             "highest_note": "A6",
             "genres": [
-                "blues"
-            ]
+                "k-ballad"
+            ],
+            "year": 2019
         },
         {
-            "title": "성시경 - 난 좋아",
+            "title": "난 좋아",
             "lowest_note": "F3",
             "highest_note": "G6",
             "genres": [
-                "blues"
-            ]
+                "k-ballad"
+            ],
+            "year": 2011
         }
     ],
+    "성시경": [],
     "kwill": [
         {
-            "title": "Kwill - 케이윌 - 이러지마 제발",
+            "title": "이러지마 제발",
             "lowest_note": "F♯3",
             "highest_note": "G♯6",
             "genres": [
-                "classical"
-            ]
+                "k-ballad",
+                "soundtrack"
+            ],
+            "year": 2012
         },
         {
-            "title": "Kwill - k.will like a star ost part 2)",
+            "title": "k.will like a star 2)",
             "lowest_note": "F3",
             "highest_note": "E6",
             "genres": [
-                "blues"
-            ]
+                "정보 없음"
+            ],
+            "year": null
         },
         {
-            "title": "Kwill - 케이윌 - 눈물이 뚝뚝",
+            "title": "눈물이 뚝뚝",
             "lowest_note": "G3",
             "highest_note": "G♯6",
             "genres": [
-                "classical"
-            ]
+                "k-ballad",
+                "soundtrack"
+            ],
+            "year": 2009
         },
         {
-            "title": "Kwill - k.will thank u ost part. 1)",
+            "title": "k.will thank u . 1)",
             "lowest_note": "A3",
             "highest_note": "F♯6",
             "genres": [
-                "blues"
-            ]
+                "정보 없음"
+            ],
+            "year": null
         },
         {
-            "title": "Kwill - k.will day 1",
+            "title": "k.will day 1",
             "lowest_note": "F♯3",
             "highest_note": "F♯6",
             "genres": [
-                "blues"
-            ]
+                "정보 없음"
+            ],
+            "year": null
         },
         {
-            "title": "Kwill - 케이윌 - 니가 필요해",
+            "title": "니가 필요해",
             "lowest_note": "G♯3",
             "highest_note": "A6",
             "genres": [
-                "classical"
-            ]
+                "k-ballad",
+                "soundtrack"
+            ],
+            "year": 2012
         },
         {
-            "title": "Kwill - 케이윌 - love blossom",
+            "title": "love blossom",
             "lowest_note": "G♯3",
             "highest_note": "D♯6",
             "genres": [
-                "classical"
-            ]
+                "k-ballad",
+                "soundtrack"
+            ],
+            "year": 2013
         },
         {
-            "title": "Kwill - 케이윌 - 그립고 그립고 그립다",
+            "title": "그립고 그립고 그립다",
             "lowest_note": "E3",
             "highest_note": "G♯6",
             "genres": [
-                "classical"
-            ]
+                "k-ballad",
+                "soundtrack"
+            ],
+            "year": 2009
         },
         {
-            "title": "Kwill - 케이윌 - 내 생에 아름다운",
+            "title": "내 생에 아름다운",
             "lowest_note": "G♯3",
             "highest_note": "F6",
             "genres": [
-                "blues"
-            ]
+                "k-ballad",
+                "soundtrack"
+            ],
+            "year": 2018
         },
         {
-            "title": "Kwill - k.will growing",
+            "title": "k.will growing",
             "lowest_note": "F3",
             "highest_note": "F6",
             "genres": [
-                "blues"
-            ]
+                "정보 없음"
+            ],
+            "year": null
         },
         {
-            "title": "Kwill - 케이윌 - 촌스럽게 왜 이래",
+            "title": "촌스럽게 왜 이래",
             "lowest_note": "G3",
             "highest_note": "B5",
             "genres": [
-                "classical"
-            ]
+                "k-ballad",
+                "soundtrack"
+            ],
+            "year": 2013
+        },
+        {
+            "title": "like a star",
+            "lowest_note": "F3",
+            "highest_note": "E6",
+            "genres": [
+                "k-ballad",
+                "soundtrack"
+            ],
+            "year": 2014
+        },
+        {
+            "title": "thank u",
+            "lowest_note": "A3",
+            "highest_note": "F♯6",
+            "genres": [
+                "k-ballad",
+                "soundtrack"
+            ],
+            "year": 2015
+        },
+        {
+            "title": "day 1",
+            "lowest_note": "F♯3",
+            "highest_note": "F♯6",
+            "genres": [
+                "k-ballad",
+                "soundtrack"
+            ],
+            "year": 2014
+        },
+        {
+            "title": "growing",
+            "lowest_note": "F3",
+            "highest_note": "F6",
+            "genres": [
+                "k-ballad",
+                "soundtrack"
+            ],
+            "year": 2015
         }
     ],
+    "케이윌": [],
     "limchangjung": [
         {
             "title": "임창정 - 하루도 그대를 사랑하지 않은 적이 없었다 m - v",
             "lowest_note": "F3",
             "highest_note": "F♯6",
             "genres": [
-                "blues"
-            ]
+                "정보 없음"
+            ],
+            "year": null
         },
         {
-            "title": "Limchangjung - 내가 저지른 사랑 - 임창정",
+            "title": "임창정",
             "lowest_note": "G3",
             "highest_note": "F♯6",
             "genres": [
-                "classical"
-            ]
+                "k-ballad",
+                "k-rap"
+            ],
+            "year": 2012
         },
         {
-            "title": "Limchangjung - 임창정 - 그 사람을 아나요",
+            "title": "그 사람을 아나요",
             "lowest_note": "F3",
             "highest_note": "E6",
             "genres": [
-                "jazz"
-            ]
+                "k-ballad"
+            ],
+            "year": 2017
         },
         {
-            "title": "Limchangjung - 02 임창정 - 소주 한 잔",
+            "title": "소주 한 잔",
             "lowest_note": "D♯3",
             "highest_note": "C♯7",
             "genres": [
-                "jazz"
-            ]
+                "k-ballad"
+            ],
+            "year": 2002
         },
         {
-            "title": "Limchangjung - 임창정 - 또 다시 사랑 뮤직비디오 full ver.",
+            "title": "또 다시 사랑 뮤직비디오 .",
             "lowest_note": "F3",
             "highest_note": "A6",
             "genres": [
-                "classical"
-            ]
+                "정보 없음"
+            ],
+            "year": null
         },
         {
-            "title": "날 닮은 너 - 광고없음 -  - 반복재생",
+            "title": "반복재생",
             "lowest_note": "G3",
             "highest_note": "A6",
             "genres": [
-                "blues"
-            ]
+                "정보 없음"
+            ],
+            "year": null
         },
         {
-            "title": "Limchangjung - 오랜만이야 by lim chang jung",
+            "title": "오랜만이야 by lim chang jung",
             "lowest_note": "F♯3",
             "highest_note": "D7",
             "genres": [
-                "jazz"
-            ]
+                "정보 없음"
+            ],
+            "year": null
         },
         {
-            "title": "Limchangjung - 임창정 love affair",
+            "title": "임창정 love affair",
             "lowest_note": "E3",
             "highest_note": "E7",
             "genres": [
-                "blues"
-            ]
+                "정보 없음"
+            ],
+            "year": null
         },
         {
-            "title": "Limchangjung - lim chang jung ordinary song",
+            "title": "lim chang jung ordinary song",
             "lowest_note": "F3",
             "highest_note": "G♯6",
             "genres": [
-                "jazz"
-            ]
+                "정보 없음"
+            ],
+            "year": null
         },
         {
-            "title": "Limchangjung - lim chang jeong - 문을 여시오",
+            "title": "문을 여시오",
             "lowest_note": "F♯3",
             "highest_note": "G♯7",
             "genres": [
-                "country"
-            ]
+                "k-ballad"
+            ],
+            "year": 2013
         }
     ],
+    "임창정": [],
     "LEE HI ": [
         {
             "title": "Darling",
             "lowest_note": "D4",
             "highest_note": "D6",
             "genres": [
-                "jazz"
-            ]
+                "k-ballad",
+                "k-pop"
+            ],
+            "year": 2021
         },
         {
             "title": "Only",
             "lowest_note": "A3",
             "highest_note": "C6",
             "genres": [
-                "jazz"
-            ]
+                "k-ballad",
+                "k-pop"
+            ],
+            "year": 2021
         },
         {
             "title": "손잡아 줘요 m - v",
             "lowest_note": "A♯3",
             "highest_note": "D7",
             "genres": [
-                "classical"
-            ]
+                "정보 없음"
+            ],
+            "year": null
         },
         {
             "title": "Safety zone",
             "lowest_note": "A3",
             "highest_note": "A5",
             "genres": [
-                "classical"
-            ]
+                "k-ballad",
+                "k-pop"
+            ],
+            "year": 2021
         },
         {
             "title": "홀로",
             "lowest_note": "F♯3",
             "highest_note": "G♯6",
             "genres": [
-                "jazz"
-            ]
+                "k-ballad",
+                "k-pop"
+            ],
+            "year": 2020
         },
         {
             "title": "1.2.3.4 m - v",
             "lowest_note": "G♯3",
             "highest_note": "A♯6",
             "genres": [
-                "classical"
-            ]
+                "정보 없음"
+            ],
+            "year": null
         },
         {
             "title": "Its over m - v",
             "lowest_note": "G♯3",
             "highest_note": "G♯6",
             "genres": [
-                "classical"
-            ]
+                "정보 없음"
+            ],
+            "year": null
         },
         {
             "title": "Rose m - v",
             "lowest_note": "G3",
             "highest_note": "A6",
             "genres": [
-                "classical"
-            ]
+                "lovers rock"
+            ],
+            "year": 2014
         },
         {
             "title": "한숨 m - v",
             "lowest_note": "G♯3",
             "highest_note": "B6",
             "genres": [
-                "classical"
-            ]
+                "정보 없음"
+            ],
+            "year": null
         },
         {
             "title": "내 사랑",
             "lowest_note": "A♯3",
             "highest_note": "B6",
             "genres": [
-                "classical"
-            ]
+                "k-ballad",
+                "k-pop"
+            ],
+            "year": 2016
         }
     ],
+    "이하이": [],
     "폴킴 (Paul Kim) ": [
         {
-            "title": "- 너의 잠을 채워줄게",
+            "title": "너의 잠을 채워줄게",
             "lowest_note": "F♯3",
             "highest_note": "A6",
             "genres": [
-                "classical"
-            ]
+                "k-ballad"
+            ],
+            "year": 2022
         },
         {
-            "title": "- paul kim - empty",
+            "title": "empty",
             "lowest_note": "E3",
             "highest_note": "F♯6",
             "genres": [
-                "blues"
-            ]
+                "k-ballad"
+            ],
+            "year": 2019
         },
         {
-            "title": "- paul kim - but ill miss you",
+            "title": "but ill miss you",
             "lowest_note": "F♯3",
             "highest_note": "B5",
             "genres": [
-                "blues"
-            ]
+                "k-ballad"
+            ],
+            "year": 2020
         },
         {
-            "title": "- 폴킴 - 마음",
+            "title": "마음",
             "lowest_note": "F♯3",
             "highest_note": "D♯6",
             "genres": [
-                "blues"
-            ]
+                "k-ballad"
+            ],
+            "year": 2019
         },
         {
-            "title": "- one more time",
+            "title": "one more time",
             "lowest_note": "F♯3",
             "highest_note": "A♯5",
             "genres": [
-                "jazz"
-            ]
+                "k-ballad"
+            ],
+            "year": 2022
         },
         {
-            "title": "- paul kim - hangover",
+            "title": "hangover",
             "lowest_note": "F3",
             "highest_note": "F♯6",
             "genres": [
-                "blues"
-            ]
+                "k-ballad"
+            ],
+            "year": 2020
         },
         {
-            "title": "- paul kim - cant get over you",
+            "title": "cant get over you",
             "lowest_note": "E3",
             "highest_note": "G♯6",
             "genres": [
-                "blues"
-            ]
+                "k-ballad"
+            ],
+            "year": 2024
         },
         {
-            "title": "- 헤어질 걸 알아",
+            "title": "헤어질 걸 알아",
             "lowest_note": "G♯3",
             "highest_note": "G♯5",
             "genres": [
-                "blues"
-            ]
+                "k-ballad"
+            ],
+            "year": 2019
         },
         {
-            "title": "- 너에 대하여",
+            "title": "너에 대하여",
             "lowest_note": "D♯3",
             "highest_note": "A6",
             "genres": [
-                "classical"
-            ]
+                "k-ballad"
+            ],
+            "year": 2023
         },
         {
-            "title": "- 집돌이",
+            "title": "집돌이",
             "lowest_note": "E3",
             "highest_note": "D♯6",
             "genres": [
-                "blues"
-            ]
+                "k-ballad"
+            ],
+            "year": 2020
         }
     ],
+    "폴킴": [],
     "younha": [
         {
-            "title": "윤하 - 사건의 지평선 mr제거",
+            "title": "사건의 지평선 mr제거",
             "lowest_note": "F♯3",
             "highest_note": "A♯6",
             "genres": [
-                "classical"
-            ]
+                "정보 없음"
+            ],
+            "year": null
         },
         {
-            "title": "윤하 - 내 마음이 뭐가 돼",
+            "title": "내 마음이 뭐가 돼",
             "lowest_note": "E4",
             "highest_note": "B6",
             "genres": [
-                "classical"
-            ]
+                "k-ballad"
+            ],
+            "year": 2014
         },
         {
-            "title": "윤하 - 미워하다",
+            "title": "미워하다",
             "lowest_note": "C4",
             "highest_note": "A♯6",
             "genres": [
-                "classical"
-            ]
+                "k-ballad"
+            ],
+            "year": 2023
         },
         {
-            "title": "윤하 - 기다리다 mr제거",
+            "title": "기다리다 mr제거",
             "lowest_note": "B3",
             "highest_note": "D6",
             "genres": [
-                "country"
-            ]
+                "정보 없음"
+            ],
+            "year": null
         },
         {
-            "title": "윤하 - 혜성 mr제거",
+            "title": "혜성 mr제거",
             "lowest_note": "D4",
             "highest_note": "B6",
             "genres": [
-                "classical"
-            ]
+                "정보 없음"
+            ],
+            "year": null
         },
         {
-            "title": "윤하 - 우산",
+            "title": "우산",
             "lowest_note": "B3",
             "highest_note": "A♯6",
             "genres": [
-                "classical"
-            ]
+                "k-rap",
+                "k-pop",
+                "k-ballad"
+            ],
+            "year": 2008
         },
         {
             "title": "윤하 오르트구름 mr 제거",
             "lowest_note": "A3",
             "highest_note": "B6",
             "genres": [
-                "classical"
-            ]
+                "정보 없음"
+            ],
+            "year": null
         },
         {
             "title": "윤하 물의 여행 younha wish",
             "lowest_note": "C4",
             "highest_note": "A♯6",
             "genres": [
-                "classical"
-            ]
+                "정보 없음"
+            ],
+            "year": null
         }
     ],
+    "윤하": [],
     "iu": [
         {
-            "title": "아이유 시간의바깥 반주제거",
+            "title": "아이유 시간의바깥",
             "lowest_note": "D4",
             "highest_note": "A6",
             "genres": [
-                "blues"
-            ]
+                "정보 없음"
+            ],
+            "year": null
         },
         {
-            "title": "- 잊어야 한다는 마음으로 mr제거",
+            "title": "잊어야 한다는 마음으로 mr제거",
             "lowest_note": "A♯3",
             "highest_note": "C7",
             "genres": [
-                "classical"
-            ]
+                "정보 없음"
+            ],
+            "year": null
         },
         {
-            "title": "아이유 - love wins all",
+            "title": "love wins all",
             "lowest_note": "C4",
             "highest_note": "A♯6",
             "genres": [
-                "classical"
-            ]
+                "k-pop",
+                "k-ballad"
+            ],
+            "year": 2024
         },
         {
-            "title": "Never ending story -",
+            "title": "Never ending story",
             "lowest_note": "A♯3",
             "highest_note": "A6",
             "genres": [
-                "jazz"
-            ]
+                "k-pop",
+                "k-ballad"
+            ],
+            "year": 2025
         },
         {
-            "title": "아이유 - 겨울잠",
+            "title": "겨울잠",
             "lowest_note": "A3",
             "highest_note": "B6",
             "genres": [
-                "classical"
-            ]
+                "k-pop",
+                "k-ballad"
+            ],
+            "year": 2021
         },
         {
-            "title": "아이유 - 밤편지",
+            "title": "밤편지",
             "lowest_note": "A♯3",
             "highest_note": "B6",
             "genres": [
-                "classical"
-            ]
+                "k-pop",
+                "k-ballad"
+            ],
+            "year": 2017
         },
         {
-            "title": "아이유 아이와 나의바다 풀버전",
+            "title": "아이유 아이와 나의바다",
             "lowest_note": "A♯3",
             "highest_note": "B6",
             "genres": [
-                "jazz"
-            ]
+                "정보 없음"
+            ],
+            "year": null
         },
         {
-            "title": "아이유 - 팔레트",
+            "title": "팔레트",
             "lowest_note": "G3",
             "highest_note": "C7",
             "genres": [
-                "classical"
-            ]
+                "k-pop",
+                "k-ballad"
+            ],
+            "year": 2017
         },
         {
-            "title": "아이유 - 이름에게",
+            "title": "이름에게",
             "lowest_note": "C♯4",
             "highest_note": "B6",
             "genres": [
-                "classical"
-            ]
+                "k-pop",
+                "k-ballad"
+            ],
+            "year": 2017
         },
         {
-            "title": "바이, 썸머 -",
+            "title": "바이, 썸머",
             "lowest_note": "B3",
             "highest_note": "B6",
             "genres": [
-                "jazz"
-            ]
+                "k-pop",
+                "k-ballad"
+            ],
+            "year": 2025
         },
         {
             "title": "아이유 에잇 반주제거",
             "lowest_note": "C4",
             "highest_note": "A6",
             "genres": [
-                "blues"
-            ]
+                "정보 없음"
+            ],
+            "year": null
         }
     ],
+    "아이유": [],
     "HuhGak": [
         {
-            "title": "Huhgak - 허각 —나를 잊지 말아요",
+            "title": "허각 —나를 잊지 말아요",
             "lowest_note": "F3",
             "highest_note": "D♯6",
             "genres": [
-                "blues"
-            ]
+                "정보 없음"
+            ],
+            "year": null
         },
         {
-            "title": "Huhgak - huh gak 허각 - hello",
+            "title": "hello",
             "lowest_note": "F♯3",
             "highest_note": "A6",
             "genres": [
-                "classical"
-            ]
+                "k-ballad"
+            ],
+            "year": 2011
         },
         {
-            "title": "Huhgak - 사월의 눈",
+            "title": "사월의 눈",
             "lowest_note": "F♯3",
             "highest_note": "A6",
             "genres": [
-                "classical"
-            ]
+                "k-ballad"
+            ],
+            "year": 2015
         },
         {
-            "title": "Huhgak - miss you",
+            "title": "miss you",
             "lowest_note": "F♯3",
             "highest_note": "A6",
             "genres": [
-                "blues"
-            ]
+                "k-ballad"
+            ],
+            "year": 2017
         },
         {
-            "title": "Huhgak - huh gak - 향기만 남아",
+            "title": "향기만 남아",
             "lowest_note": "A♯3",
             "highest_note": "A6",
             "genres": [
-                "classical"
-            ]
+                "k-ballad"
+            ],
+            "year": 2013
         },
         {
-            "title": "Huhgak - 허각 - 한사람 -",
+            "title": "한사람",
             "lowest_note": "F3",
             "highest_note": "A♯6",
             "genres": [
-                "blues"
-            ]
+                "k-ballad"
+            ],
+            "year": 2012
         },
         {
-            "title": "Huhgak - empty words",
+            "title": "empty words",
             "lowest_note": "F3",
             "highest_note": "G♯6",
             "genres": [
-                "jazz"
-            ]
+                "k-ballad"
+            ],
+            "year": 2020
         },
         {
-            "title": "Huhgak - only you",
+            "title": "only you",
             "lowest_note": "F♯3",
             "highest_note": "G6",
             "genres": [
-                "jazz"
-            ]
+                "k-ballad"
+            ],
+            "year": 2020
         },
         {
             "title": "Huhgak - 1440",
             "lowest_note": "A3",
             "highest_note": "A♯5",
             "genres": [
-                "classical"
-            ]
+                "정보 없음"
+            ],
+            "year": null
         },
         {
-            "title": "Huhgak - 허각 나를 사랑했던 사람아",
+            "title": "허각 나를 사랑했던 사람아",
             "lowest_note": "G♯3",
             "highest_note": "G6",
             "genres": [
-                "jazz"
-            ]
+                "정보 없음"
+            ],
+            "year": null
         }
-    ]
+    ],
+    "허각": []
 }

@@ -61,15 +61,41 @@ def get_xvector(file_path, model):
         return None
 
 def analyze_vocal_range(file_path):
+    """librosa.pyin을 사용해 더 정확하게 음역대를 분석하는 함수"""
     try:
         y, sr = librosa.load(file_path, sr=16000)
-        pitches, magnitudes = librosa.piptrack(y=y, sr=sr)
-        valid_pitches = [pitches[magnitudes[:, t].argmax(), t] for t in range(pitches.shape[1]) if pitches[magnitudes[:, t].argmax(), t] > 0]
-        if not valid_pitches: return None, None
-        min_freq, max_freq = np.percentile(valid_pitches, 5), np.percentile(valid_pitches, 95)
-        return librosa.hz_to_note(min_freq), librosa.hz_to_note(max_freq)
+        
+        # 1. pYIN 알고리즘으로 기본 주파수(F0) 추정
+        # fmin/fmax로 사람 목소리의 합리적인 범위만 탐색하도록 제한
+        f0, voiced_flag, voiced_probs = librosa.pyin(
+            y,
+            fmin=librosa.note_to_hz('C2'), # 최저음 (약 65Hz)
+            fmax=librosa.note_to_hz('C7')  # 최고음 (약 2093Hz)
+        )
+        
+        # 2. '노래가 불린 구간(voiced)'의 유효한 음높이 값만 추출
+        valid_pitches = f0[voiced_flag]
+
+        if valid_pitches is None or valid_pitches.size == 0:
+            return None, None
+            
+        # 3. NaN 값 제거 (pYIN 결과에 포함될 수 있음)
+        valid_pitches = valid_pitches[~np.isnan(valid_pitches)]
+        
+        if valid_pitches.size == 0:
+            return None, None
+
+        # 4. 백분위수를 사용해 극단적인 아웃라이어 값 제거
+        min_freq = np.percentile(valid_pitches, 5)  # 하위 5%
+        max_freq = np.percentile(valid_pitches, 95) # 상위 95%
+        
+        lowest_note = librosa.hz_to_note(min_freq)
+        highest_note = librosa.hz_to_note(max_freq)
+        
+        return lowest_note, highest_note
+        
     except Exception as e:
-        print(f"음역대 분석 중 오류: {e}")
+        print(f"'{os.path.basename(file_path)}' 음역대 분석 중 오류: {e}")
         return None, None
 
 def is_in_range(song_low, song_high, user_low, user_high):
