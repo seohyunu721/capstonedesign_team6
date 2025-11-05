@@ -1,208 +1,111 @@
 {
-    "sungsikyung": [
+    "성시경": [
         {
-            "title": "희재",
-            "lowest_note": "E3",
-            "highest_note": "G♯6",
+            "title": "희재",
+            "lowest_note": "A3",
+            "highest_note": "D5",
             "genres": [
                 "k-ballad"
             ],
             "year": 2003
         },
         {
-            "title": "영원히",
-            "lowest_note": "F3",
-            "highest_note": "G6",
+            "title": "영원히",
+            "lowest_note": "B3",
+            "highest_note": "C5",
             "genres": [
                 "k-ballad"
             ],
             "year": 2018
         },
         {
-            "title": "아픈 나를",
-            "lowest_note": "G3",
-            "highest_note": "F♯6",
+            "title": "아픈 나를",
+            "lowest_note": "C4",
+            "highest_note": "C♯5",
             "genres": [
                 "k-ballad"
             ],
             "year": 2022
         },
         {
-            "title": "너의 모든 순간",
-            "lowest_note": "E3",
-            "highest_note": "G♯6",
+            "title": "너의 모든 순간",
+            "lowest_note": "G3",
+            "highest_note": "B4",
             "genres": [
                 "k-ballad"
             ],
             "year": 2014
         },
         {
-            "title": "널 잊는 기적은 없었다",
-            "lowest_note": "F3",
-            "highest_note": "G♯6",
+            "title": "널 잊는 기적은 없었다",
+            "lowest_note": "A♯3",
+            "highest_note": "B4",
             "genres": [
                 "k-ballad"
             ],
             "year": 2021
         },
         {
-            "title": "넌 감동이었어",
-            "lowest_note": "G3",
-            "highest_note": "F♯6",
+            "title": "넌 감동이었어",
+            "lowest_note": "F♯3",
+            "highest_note": "B4",
             "genres": [
                 "k-ballad"
             ],
             "year": 2002
         },
         {
-            "title": "한번 더 이별",
-            "lowest_note": "F♯3",
-            "highest_note": "A6",
+            "title": "한번 더 이별",
+            "lowest_note": "A3",
+            "highest_note": "C5",
             "genres": [
                 "k-ballad"
             ],
             "year": 2007
         },
         {
-            "title": "다정하게 안녕히",
+            "title": "다정하게 안녕히",
             "lowest_note": "E3",
-            "highest_note": "A6",
+            "highest_note": "E5",
             "genres": [
                 "k-ballad"
             ],
             "year": 2016
         },
         {
-            "title": "니 곁이라면",
-            "lowest_note": "F3",
-            "highest_note": "A6",
+            "title": "니 곁이라면",
+            "lowest_note": "F♯3",
+            "highest_note": "C5",
             "genres": [
                 "k-ballad"
             ],
             "year": 2019
         },
         {
-            "title": "난 좋아",
-            "lowest_note": "F3",
-            "highest_note": "G6",
+            "title": "난 좋아",
+            "lowest_note": "A3",
+            "highest_note": "C♯5",
             "genres": [
                 "k-ballad"
             ],
             "year": 2011
         }
     ],
-    "성시경": [],
-    "kwill": [
+    "케이윌": [
         {
-            "title": "이러지마 제발",
-            "lowest_note": "F♯3",
-            "highest_note": "G♯6",
+            "title": "이러지마 제발",
+            "lowest_note": "C4",
+            "highest_note": "G5",
             "genres": [
                 "k-ballad",
                 "soundtrack"
             ],
             "year": 2012
-        },
-        {
-            "title": "k.will like a star 2)",
-            "lowest_note": "F3",
-            "highest_note": "E6",
-            "genres": [
-                "정보 없음"
-            ],
-            "year": null
-        },
-        {
-            "title": "눈물이 뚝뚝",
-            "lowest_note": "G3",
-            "highest_note": "G♯6",
-            "genres": [
-                "k-ballad",
-                "soundtrack"
-            ],
-            "year": 2009
-        },
-        {
-            "title": "k.will thank u . 1)",
-            "lowest_note": "A3",
-            "highest_note": "F♯6",
-            "genres": [
-                "정보 없음"
-            ],
-            "year": null
-        },
-        {
-            "title": "k.will day 1",
-            "lowest_note": "F♯3",
-            "highest_note": "F♯6",
-            "genres": [
-                "정보 없음"
-            ],
-            "year": null
-        },
-        {
-            "title": "니가 필요해",
-            "lowest_note": "G♯3",
-            "highest_note": "A6",
-            "genres": [
-                "k-ballad",
-                "soundtrack"
-            ],
-            "year": 2012
-        },
-        {
-            "title": "love blossom",
-            "lowest_note": "G♯3",
-            "highest_note": "D♯6",
-            "genres": [
-                "k-ballad",
-                "soundtrack"
-            ],
-            "year": 2013
-        },
-        {
-            "title": "그립고 그립고 그립다",
-            "lowest_note": "E3",
-            "highest_note": "G♯6",
-            "genres": [
-                "k-ballad",
-                "soundtrack"
-            ],
-            "year": 2009
-        },
-        {
-            "title": "내 생에 아름다운",
-            "lowest_note": "G♯3",
-            "highest_note": "F6",
-            "genres": [
-                "k-ballad",
-                "soundtrack"
-            ],
-            "year": 2018
-        },
-        {
-            "title": "k.will growing",
-            "lowest_note": "F3",
-            "highest_note": "F6",
-            "genres": [
-                "정보 없음"
-            ],
-            "year": null
-        },
-        {
-            "title": "촌스럽게 왜 이래",
-            "lowest_note": "G3",
-            "highest_note": "B5",
-            "genres": [
-                "k-ballad",
-                "soundtrack"
-            ],
-            "year": 2013
         },
         {
             "title": "like a star",
-            "lowest_note": "F3",
-            "highest_note": "E6",
+            "lowest_note": "C3",
+            "highest_note": "D♯5",
             "genres": [
                 "k-ballad",
                 "soundtrack"
@@ -210,9 +113,19 @@
             "year": 2014
         },
         {
-            "title": "thank u",
+            "title": "눈물이 뚝뚝",
             "lowest_note": "A3",
-            "highest_note": "F♯6",
+            "highest_note": "E5",
+            "genres": [
+                "k-ballad",
+                "soundtrack"
+            ],
+            "year": 2009
+        },
+        {
+            "title": "thank u",
+            "lowest_note": "D4",
+            "highest_note": "D5",
             "genres": [
                 "k-ballad",
                 "soundtrack"
@@ -221,8 +134,8 @@
         },
         {
             "title": "day 1",
-            "lowest_note": "F♯3",
-            "highest_note": "F♯6",
+            "lowest_note": "A3",
+            "highest_note": "F5",
             "genres": [
                 "k-ballad",
                 "soundtrack"
@@ -230,116 +143,203 @@
             "year": 2014
         },
         {
+            "title": "니가 필요해",
+            "lowest_note": "D4",
+            "highest_note": "D♯5",
+            "genres": [
+                "k-ballad",
+                "soundtrack"
+            ],
+            "year": 2012
+        },
+        {
+            "title": "love blossom",
+            "lowest_note": "C4",
+            "highest_note": "E5",
+            "genres": [
+                "k-ballad",
+                "soundtrack"
+            ],
+            "year": 2013
+        },
+        {
+            "title": "그립고 그립고 그립다",
+            "lowest_note": "G♯3",
+            "highest_note": "F5",
+            "genres": [
+                "k-ballad",
+                "soundtrack"
+            ],
+            "year": 2009
+        },
+        {
+            "title": "내 생에 아름다운",
+            "lowest_note": "A2",
+            "highest_note": "E5",
+            "genres": [
+                "k-ballad",
+                "soundtrack"
+            ],
+            "year": 2018
+        },
+        {
             "title": "growing",
-            "lowest_note": "F3",
-            "highest_note": "F6",
+            "lowest_note": "G♯3",
+            "highest_note": "F♯5",
             "genres": [
                 "k-ballad",
                 "soundtrack"
             ],
             "year": 2015
-        }
-    ],
-    "케이윌": [],
-    "limchangjung": [
-        {
-            "title": "임창정 - 하루도 그대를 사랑하지 않은 적이 없었다 m - v",
-            "lowest_note": "F3",
-            "highest_note": "F♯6",
-            "genres": [
-                "정보 없음"
-            ],
-            "year": null
         },
         {
-            "title": "임창정",
-            "lowest_note": "G3",
-            "highest_note": "F♯6",
+            "title": "촌스럽게 왜 이래",
+            "lowest_note": "C4",
+            "highest_note": "F♯5",
             "genres": [
                 "k-ballad",
-                "k-rap"
+                "soundtrack"
             ],
-            "year": 2012
-        },
-        {
-            "title": "그 사람을 아나요",
-            "lowest_note": "F3",
-            "highest_note": "E6",
-            "genres": [
-                "k-ballad"
-            ],
-            "year": 2017
-        },
+            "year": 2013
+        }
+    ],
+    "임창정": [
         {
             "title": "소주 한 잔",
-            "lowest_note": "D♯3",
-            "highest_note": "C♯7",
+            "lowest_note": "E3",
+            "highest_note": "C♯5",
             "genres": [
                 "k-ballad"
             ],
             "year": 2002
         },
         {
-            "title": "또 다시 사랑 뮤직비디오 .",
-            "lowest_note": "F3",
-            "highest_note": "A6",
-            "genres": [
-                "정보 없음"
-            ],
-            "year": null
-        },
-        {
-            "title": "반복재생",
-            "lowest_note": "G3",
-            "highest_note": "A6",
-            "genres": [
-                "정보 없음"
-            ],
-            "year": null
-        },
-        {
-            "title": "오랜만이야 by lim chang jung",
-            "lowest_note": "F♯3",
-            "highest_note": "D7",
-            "genres": [
-                "정보 없음"
-            ],
-            "year": null
-        },
-        {
-            "title": "임창정 love affair",
+            "title": "오랜만이야",
             "lowest_note": "E3",
-            "highest_note": "E7",
+            "highest_note": "G5",
+            "genres": [
+                "k-ballad"
+            ],
+            "year": 2009
+        },
+        {
+            "title": "내가 저지른 사랑",
+            "lowest_note": "G♯3",
+            "highest_note": "C6",
+            "genres": [
+                "k-ballad"
+            ],
+            "year": 2016
+        },
+        {
+            "title": "날 닮은 너",
+            "lowest_note": "B3",
+            "highest_note": "E5",
+            "genres": [
+                "k-ballad"
+            ],
+            "year": 2000
+        },
+        {
+            "title": "또 다시 사랑",
+            "lowest_note": "A♯3",
+            "highest_note": "D♯5",
+            "genres": [
+                "k-ballad"
+            ],
+            "year": 2015
+        },
+        {
+            "title": "그 사람을 아나요",
+            "lowest_note": "F♯3",
+            "highest_note": "G♯5",
+            "genres": [
+                "k-ballad"
+            ],
+            "year": 2017
+        },
+        {
+            "title": "love affair",
+            "lowest_note": "G3",
+            "highest_note": "F♯5",
             "genres": [
                 "정보 없음"
             ],
             "year": null
         },
         {
-            "title": "lim chang jung ordinary song",
-            "lowest_note": "F3",
-            "highest_note": "G♯6",
+            "title": "하루도 그대를 사랑하지 않은 적이 없었다",
+            "lowest_note": "G3",
+            "highest_note": "G5",
             "genres": [
-                "정보 없음"
+                "k-ballad"
             ],
-            "year": null
+            "year": 2018
         },
         {
             "title": "문을 여시오",
-            "lowest_note": "F♯3",
-            "highest_note": "G♯7",
+            "lowest_note": "G3",
+            "highest_note": "A♯4",
             "genres": [
                 "k-ballad"
             ],
             "year": 2013
+        },
+        {
+            "title": "ordinary song",
+            "lowest_note": "F3",
+            "highest_note": "D5",
+            "genres": [
+                "정보 없음"
+            ],
+            "year": null
         }
     ],
-    "임창정": [],
-    "LEE HI ": [
+    "이하이": [
+        {
+            "title": "손잡아 줘요",
+            "lowest_note": "D♯4",
+            "highest_note": "E5",
+            "genres": [
+                "k-ballad",
+                "k-pop"
+            ],
+            "year": 2016
+        },
+        {
+            "title": "한숨",
+            "lowest_note": "C♯4",
+            "highest_note": "A5",
+            "genres": [
+                "k-ballad",
+                "k-pop"
+            ],
+            "year": 2016
+        },
+        {
+            "title": "1.2.3.4",
+            "lowest_note": "D♯3",
+            "highest_note": "F♯5",
+            "genres": [
+                "k-ballad",
+                "k-pop"
+            ],
+            "year": 2012
+        },
+        {
+            "title": "It's Over",
+            "lowest_note": "C4",
+            "highest_note": "E5",
+            "genres": [
+                "k-ballad",
+                "k-pop"
+            ],
+            "year": 2013
+        },
         {
             "title": "Darling",
-            "lowest_note": "D4",
-            "highest_note": "D6",
+            "lowest_note": "C♯4",
+            "highest_note": "F♯5",
             "genres": [
                 "k-ballad",
                 "k-pop"
@@ -348,27 +348,18 @@
         },
         {
             "title": "Only",
-            "lowest_note": "A3",
-            "highest_note": "C6",
+            "lowest_note": "D♯4",
+            "highest_note": "E5",
             "genres": [
                 "k-ballad",
                 "k-pop"
             ],
             "year": 2021
-        },
-        {
-            "title": "손잡아 줘요 m - v",
-            "lowest_note": "A♯3",
-            "highest_note": "D7",
-            "genres": [
-                "정보 없음"
-            ],
-            "year": null
         },
         {
             "title": "Safety zone",
-            "lowest_note": "A3",
-            "highest_note": "A5",
+            "lowest_note": "D4",
+            "highest_note": "D♯5",
             "genres": [
                 "k-ballad",
                 "k-pop"
@@ -376,9 +367,19 @@
             "year": 2021
         },
         {
-            "title": "홀로",
-            "lowest_note": "F♯3",
-            "highest_note": "G♯6",
+            "title": "Rose",
+            "lowest_note": "C4",
+            "highest_note": "E5",
+            "genres": [
+                "k-ballad",
+                "k-pop"
+            ],
+            "year": 2013
+        },
+        {
+            "title": "홀로",
+            "lowest_note": "C4",
+            "highest_note": "B5",
             "genres": [
                 "k-ballad",
                 "k-pop"
@@ -386,45 +387,9 @@
             "year": 2020
         },
         {
-            "title": "1.2.3.4 m - v",
-            "lowest_note": "G♯3",
-            "highest_note": "A♯6",
-            "genres": [
-                "정보 없음"
-            ],
-            "year": null
-        },
-        {
-            "title": "Its over m - v",
-            "lowest_note": "G♯3",
-            "highest_note": "G♯6",
-            "genres": [
-                "정보 없음"
-            ],
-            "year": null
-        },
-        {
-            "title": "Rose m - v",
-            "lowest_note": "G3",
-            "highest_note": "A6",
-            "genres": [
-                "lovers rock"
-            ],
-            "year": 2014
-        },
-        {
-            "title": "한숨 m - v",
-            "lowest_note": "G♯3",
-            "highest_note": "B6",
-            "genres": [
-                "정보 없음"
-            ],
-            "year": null
-        },
-        {
-            "title": "내 사랑",
-            "lowest_note": "A♯3",
-            "highest_note": "B6",
+            "title": "내 사랑",
+            "lowest_note": "D♯4",
+            "highest_note": "E5",
             "genres": [
                 "k-ballad",
                 "k-pop"
@@ -432,12 +397,11 @@
             "year": 2016
         }
     ],
-    "이하이": [],
-    "폴킴 (Paul Kim) ": [
+    "폴킴": [
         {
             "title": "너의 잠을 채워줄게",
-            "lowest_note": "F♯3",
-            "highest_note": "A6",
+            "lowest_note": "B3",
+            "highest_note": "C5",
             "genres": [
                 "k-ballad"
             ],
@@ -445,8 +409,8 @@
         },
         {
             "title": "empty",
-            "lowest_note": "E3",
-            "highest_note": "F♯6",
+            "lowest_note": "F3",
+            "highest_note": "C♯5",
             "genres": [
                 "k-ballad"
             ],
@@ -454,17 +418,17 @@
         },
         {
             "title": "but ill miss you",
-            "lowest_note": "F♯3",
-            "highest_note": "B5",
+            "lowest_note": "G♯3",
+            "highest_note": "C5",
             "genres": [
                 "k-ballad"
             ],
             "year": 2020
         },
         {
-            "title": "마음",
-            "lowest_note": "F♯3",
-            "highest_note": "D♯6",
+            "title": "마음",
+            "lowest_note": "B3",
+            "highest_note": "D5",
             "genres": [
                 "k-ballad"
             ],
@@ -472,8 +436,8 @@
         },
         {
             "title": "one more time",
-            "lowest_note": "F♯3",
-            "highest_note": "A♯5",
+            "lowest_note": "G♯3",
+            "highest_note": "C5",
             "genres": [
                 "k-ballad"
             ],
@@ -481,8 +445,8 @@
         },
         {
             "title": "hangover",
-            "lowest_note": "F3",
-            "highest_note": "F♯6",
+            "lowest_note": "G3",
+            "highest_note": "D5",
             "genres": [
                 "k-ballad"
             ],
@@ -490,8 +454,8 @@
         },
         {
             "title": "cant get over you",
-            "lowest_note": "E3",
-            "highest_note": "G♯6",
+            "lowest_note": "D3",
+            "highest_note": "C5",
             "genres": [
                 "k-ballad"
             ],
@@ -499,8 +463,8 @@
         },
         {
             "title": "헤어질 걸 알아",
-            "lowest_note": "G♯3",
-            "highest_note": "G♯5",
+            "lowest_note": "B3",
+            "highest_note": "D♯5",
             "genres": [
                 "k-ballad"
             ],
@@ -508,8 +472,8 @@
         },
         {
             "title": "너에 대하여",
-            "lowest_note": "D♯3",
-            "highest_note": "A6",
+            "lowest_note": "E3",
+            "highest_note": "F♯6",
             "genres": [
                 "k-ballad"
             ],
@@ -517,20 +481,19 @@
         },
         {
             "title": "집돌이",
-            "lowest_note": "E3",
-            "highest_note": "D♯6",
+            "lowest_note": "A3",
+            "highest_note": "D5",
             "genres": [
                 "k-ballad"
             ],
             "year": 2020
         }
     ],
-    "폴킴": [],
-    "younha": [
+    "윤하": [
         {
-            "title": "사건의 지평선 mr제거",
-            "lowest_note": "F♯3",
-            "highest_note": "A♯6",
+            "title": "물의 여행",
+            "lowest_note": "E4",
+            "highest_note": "A♯5",
             "genres": [
                 "정보 없음"
             ],
@@ -539,7 +502,7 @@
         {
             "title": "내 마음이 뭐가 돼",
             "lowest_note": "E4",
-            "highest_note": "B6",
+            "highest_note": "F♯5",
             "genres": [
                 "k-ballad"
             ],
@@ -547,26 +510,26 @@
         },
         {
             "title": "미워하다",
-            "lowest_note": "C4",
-            "highest_note": "A♯6",
+            "lowest_note": "A3",
+            "highest_note": "F♯5",
             "genres": [
                 "k-ballad"
             ],
             "year": 2023
         },
         {
-            "title": "기다리다 mr제거",
-            "lowest_note": "B3",
-            "highest_note": "D6",
+            "title": "사건의 지평선",
+            "lowest_note": "D♯2",
+            "highest_note": "G5",
             "genres": [
-                "정보 없음"
+                "k-ballad"
             ],
-            "year": null
+            "year": 2022
         },
         {
-            "title": "혜성 mr제거",
-            "lowest_note": "D4",
-            "highest_note": "B6",
+            "title": "오르트구름",
+            "lowest_note": "D♯4",
+            "highest_note": "G♯5",
             "genres": [
                 "정보 없음"
             ],
@@ -574,8 +537,8 @@
         },
         {
             "title": "우산",
-            "lowest_note": "B3",
-            "highest_note": "A♯6",
+            "lowest_note": "E3",
+            "highest_note": "E5",
             "genres": [
                 "k-rap",
                 "k-pop",
@@ -584,48 +547,29 @@
             "year": 2008
         },
         {
-            "title": "윤하 오르트구름 mr 제거",
-            "lowest_note": "A3",
-            "highest_note": "B6",
+            "title": "기다리다",
+            "lowest_note": "E4",
+            "highest_note": "D♯5",
             "genres": [
-                "정보 없음"
+                "k-ballad"
             ],
-            "year": null
+            "year": 2006
         },
         {
-            "title": "윤하 물의 여행 younha wish",
-            "lowest_note": "C4",
-            "highest_note": "A♯6",
+            "title": "혜성",
+            "lowest_note": "F♯4",
+            "highest_note": "F♯5",
             "genres": [
-                "정보 없음"
+                "k-ballad"
             ],
-            "year": null
+            "year": 2007
         }
     ],
-    "윤하": [],
-    "iu": [
-        {
-            "title": "아이유 시간의바깥",
-            "lowest_note": "D4",
-            "highest_note": "A6",
-            "genres": [
-                "정보 없음"
-            ],
-            "year": null
-        },
-        {
-            "title": "잊어야 한다는 마음으로 mr제거",
-            "lowest_note": "A♯3",
-            "highest_note": "C7",
-            "genres": [
-                "정보 없음"
-            ],
-            "year": null
-        },
+    "아이유": [
         {
             "title": "love wins all",
-            "lowest_note": "C4",
-            "highest_note": "A♯6",
+            "lowest_note": "F4",
+            "highest_note": "A♯5",
             "genres": [
                 "k-pop",
                 "k-ballad"
@@ -633,19 +577,18 @@
             "year": 2024
         },
         {
-            "title": "Never ending story",
-            "lowest_note": "A♯3",
-            "highest_note": "A6",
+            "title": "잊어야 한다는 마음으로",
+            "lowest_note": "A3",
+            "highest_note": "F5",
             "genres": [
-                "k-pop",
-                "k-ballad"
+                "정보 없음"
             ],
-            "year": 2025
+            "year": null
         },
         {
-            "title": "겨울잠",
-            "lowest_note": "A3",
-            "highest_note": "B6",
+            "title": "겨울잠",
+            "lowest_note": "D♯4",
+            "highest_note": "F♯5",
             "genres": [
                 "k-pop",
                 "k-ballad"
@@ -653,9 +596,19 @@
             "year": 2021
         },
         {
-            "title": "밤편지",
-            "lowest_note": "A♯3",
-            "highest_note": "B6",
+            "title": "에잇",
+            "lowest_note": "F♯4",
+            "highest_note": "F♯5",
+            "genres": [
+                "k-pop",
+                "k-ballad"
+            ],
+            "year": 2020
+        },
+        {
+            "title": "밤편지",
+            "lowest_note": "G♯3",
+            "highest_note": "E5",
             "genres": [
                 "k-pop",
                 "k-ballad"
@@ -663,18 +616,18 @@
             "year": 2017
         },
         {
-            "title": "아이유 아이와 나의바다",
+            "title": "아이와 나의바다",
             "lowest_note": "A♯3",
-            "highest_note": "B6",
+            "highest_note": "A♯5",
             "genres": [
                 "정보 없음"
             ],
             "year": null
         },
         {
-            "title": "팔레트",
-            "lowest_note": "G3",
-            "highest_note": "C7",
+            "title": "팔레트",
+            "lowest_note": "F♯3",
+            "highest_note": "D5",
             "genres": [
                 "k-pop",
                 "k-ballad"
@@ -682,9 +635,19 @@
             "year": 2017
         },
         {
+            "title": "Never ending story",
+            "lowest_note": "C4",
+            "highest_note": "G5",
+            "genres": [
+                "k-pop",
+                "k-ballad"
+            ],
+            "year": 2025
+        },
+        {
             "title": "이름에게",
-            "lowest_note": "C♯4",
-            "highest_note": "B6",
+            "lowest_note": "F♯4",
+            "highest_note": "A♯5",
             "genres": [
                 "k-pop",
                 "k-ballad"
@@ -693,8 +656,8 @@
         },
         {
             "title": "바이, 썸머",
-            "lowest_note": "B3",
-            "highest_note": "B6",
+            "lowest_note": "E2",
+            "highest_note": "G♯5",
             "genres": [
                 "k-pop",
                 "k-ballad"
@@ -702,39 +665,38 @@
             "year": 2025
         },
         {
-            "title": "아이유 에잇 반주제거",
-            "lowest_note": "C4",
-            "highest_note": "A6",
+            "title": "시간의바깥",
+            "lowest_note": "G♯4",
+            "highest_note": "F♯5",
             "genres": [
                 "정보 없음"
             ],
             "year": null
         }
     ],
-    "아이유": [],
-    "HuhGak": [
+    "허각": [
         {
-            "title": "허각 —나를 잊지 말아요",
-            "lowest_note": "F3",
-            "highest_note": "D♯6",
-            "genres": [
-                "정보 없음"
-            ],
-            "year": null
-        },
-        {
-            "title": "hello",
-            "lowest_note": "F♯3",
-            "highest_note": "A6",
+            "title": "나를 잊지 말아요",
+            "lowest_note": "G♯3",
+            "highest_note": "D5",
             "genres": [
                 "k-ballad"
             ],
             "year": 2011
         },
         {
-            "title": "사월의 눈",
-            "lowest_note": "F♯3",
-            "highest_note": "A6",
+            "title": "hello",
+            "lowest_note": "C4",
+            "highest_note": "D5",
+            "genres": [
+                "k-ballad"
+            ],
+            "year": 2011
+        },
+        {
+            "title": "사월의 눈",
+            "lowest_note": "B3",
+            "highest_note": "E5",
             "genres": [
                 "k-ballad"
             ],
@@ -742,26 +704,26 @@
         },
         {
             "title": "miss you",
-            "lowest_note": "F♯3",
-            "highest_note": "A6",
+            "lowest_note": "A♯3",
+            "highest_note": "D♯5",
             "genres": [
                 "k-ballad"
             ],
             "year": 2017
         },
         {
-            "title": "향기만 남아",
-            "lowest_note": "A♯3",
-            "highest_note": "A6",
+            "title": "향기만 남아",
+            "lowest_note": "D♯4",
+            "highest_note": "E5",
             "genres": [
                 "k-ballad"
             ],
             "year": 2013
         },
         {
-            "title": "한사람",
-            "lowest_note": "F3",
-            "highest_note": "A♯6",
+            "title": "한사람",
+            "lowest_note": "G♯3",
+            "highest_note": "D5",
             "genres": [
                 "k-ballad"
             ],
@@ -769,8 +731,8 @@
         },
         {
             "title": "empty words",
-            "lowest_note": "F3",
-            "highest_note": "G♯6",
+            "lowest_note": "G♯3",
+            "highest_note": "G5",
             "genres": [
                 "k-ballad"
             ],
@@ -778,31 +740,30 @@
         },
         {
             "title": "only you",
-            "lowest_note": "F♯3",
-            "highest_note": "G6",
+            "lowest_note": "B3",
+            "highest_note": "E5",
             "genres": [
                 "k-ballad"
             ],
             "year": 2020
         },
         {
-            "title": "Huhgak - 1440",
-            "lowest_note": "A3",
-            "highest_note": "A♯5",
+            "title": "1440",
+            "lowest_note": "D4",
+            "highest_note": "E5",
             "genres": [
-                "정보 없음"
+                "k-ballad"
             ],
-            "year": null
+            "year": 2013
         },
         {
-            "title": "허각 나를 사랑했던 사람아",
-            "lowest_note": "G♯3",
-            "highest_note": "G6",
+            "title": "나를 사랑했던 사람아",
+            "lowest_note": "C4",
+            "highest_note": "F5",
             "genres": [
-                "정보 없음"
+                "k-ballad"
             ],
-            "year": null
+            "year": 2020
         }
-    ],
-    "허각": []
+    ]
 }
