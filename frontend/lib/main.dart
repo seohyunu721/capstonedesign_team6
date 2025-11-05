@@ -384,27 +384,63 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
   }
 
   Future<void> _stopRecordingAndAnalyze() async {
-    if (!_isRecorderInitialized) return;
-
     try {
-      final path = await _recorder.stopRecorder();
-      setState(() => _isRecording = false);
+      final path = await _recorder.stopRecorder(); // 녹음 종료
+      if (path == null) return;
 
-      if (path != null) {
-        final fileBytes = await File(path).readAsBytes();
-        setState(() {
-          _fileBytes = fileBytes;
-          _fileName = path.split('/').last;
-          _statusMessage = "녹음 완료!";
-        });
+      print("녹음 저장 경로: $path");
 
-        // 자동 분석
-        await _analyzeVoice();
-      }
+      setState(() {
+        _isRecording = false;
+        _isLoading = true;
+      });
+
+      // FastAPI 서버 URL
+      final uri = Uri.parse("http://127.0.0.1:8000/analyze");
+
+      // Multipart로 파일 전송
+      var request = http.MultipartRequest('POST', uri)
+        ..files.add(await http.MultipartFile.fromPath('file', path));
+
+      var response = await request.send();
+      var responseBody = await response.stream.bytesToString();
+
+      print("서버 응답: $responseBody");
+
+      setState(() {
+        _analysisResult = json.decode(responseBody);
+      });
     } catch (e) {
-      setState(() => _statusMessage = "녹음 중지 실패: $e");
+      print("업로드 실패: $e");
+    } finally {
+      setState(() {
+        _isLoading = false;
+      });
     }
   }
+
+  // 안되면 다시 수정
+  //   if (!_isRecorderInitialized) return;
+
+  //   try {
+  //     final path = await _recorder.stopRecorder();
+  //     setState(() => _isRecording = false);
+
+  //     if (path != null) {
+  //       final fileBytes = await File(path).readAsBytes();
+  //       setState(() {
+  //         _fileBytes = fileBytes;
+  //         _fileName = path.split('/').last;
+  //         _statusMessage = "녹음 완료!";
+  //       });
+
+  //       // 자동 분석
+  //       await _analyzeVoice();
+  //     }
+  //   } catch (e) {
+  //     setState(() => _statusMessage = "녹음 중지 실패: $e");
+  //   }
+  // }
 
   ////////////////////////////////////////////
 
@@ -467,11 +503,11 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
   ////////////////////////////////////////////
 
   /// 앱 종료 시 Recorder 닫기 용
-  @override
-  void dispose() {
-    _recorder.closeRecorder();
-    super.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   _recorder.closeRecorder();
+  //   super.dispose();
+  // }
   //////////////////////////////////////////
 
   /// 로딩 창 위젯 /////////////////////////////
@@ -498,15 +534,15 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
         _analysisResult?['recommended_songs'] ?? [];
     List<dynamic> topKResults = _analysisResult?['top_k_results'] ?? [];
 
-    Map<String, String> singerImageUrls = {
-      'iu': 'https://i.scdn.co/image/ab67616100005174f7143ba09d29b200021c27f6',
-      'younha':
-          'https://i.scdn.co/image/ab6761610000517405532578503c5b3b0799b6f1',
-      'sungsikyung':
-          'https://i.scdn.co/image/ab67616100005174a7065e4490f230537487d63b',
-      'kwill':
-          'https://i.scdn.co/image/ab6761610000517406a0c0e5a889f4b16260a996',
-    };
+    // Map<String, String> singerImageUrls = {
+    //   'iu': 'https://i.scdn.co/image/ab67616100005174f7143ba09d29b200021c27f6',
+    //   'younha':
+    //       'https://i.scdn.co/image/ab6761610000517405532578503c5b3b0799b6f1',
+    //   'sungsikyung':
+    //       'https://i.scdn.co/image/ab67616100005174a7065e4490f230537487d63b',
+    //   'kwill':
+    //       'https://i.scdn.co/image/ab6761610000517406a0c0e5a889f4b16260a996',
+    // };
 
     return Card(
       elevation: 6,
@@ -524,12 +560,12 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
             Divider(height: 30, thickness: 1),
             CircleAvatar(
               radius: 50,
-              backgroundImage: CachedNetworkImageProvider(
-                singerImageUrls[bestMatch.toLowerCase()] ??
-                    'https://via.placeholder.com/150',
+              backgroundImage: AssetImage(
+                'assets/singers/${bestMatch.toLowerCase().replaceAll(" ", "")}.jpg',
               ),
               backgroundColor: Colors.grey[200],
             ),
+
             SizedBox(height: 12),
             Text("가장 유사한 가수는...", style: TextStyle(fontSize: 16)),
             Text(

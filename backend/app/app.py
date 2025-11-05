@@ -13,11 +13,13 @@ import asyncio
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.concurrency import run_in_threadpool
-from speechbrain.pretrained import EncoderClassifier
+# from speechbrain.pretrained import EncoderClassifier
+from speechbrain.inference import EncoderClassifier
 from torchaudio.transforms import Resample
 
 # --- 1. FastAPI 앱 및 모델 로딩 ---
 app = FastAPI()
+
 origins = ["*"]
 app.add_middleware(
     CORSMiddleware,
@@ -25,6 +27,12 @@ app.add_middleware(
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
+)
+
+# 모델 로드 [spkrec-ecapa-voxceleb] ECAPA 사용
+model = EncoderClassifier.from_hparams(
+    source="speechbrain/spkrec-ecapa-voxceleb",
+# 저장 dir 지울 가능성 있음
 )
 
 APP_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -127,6 +135,7 @@ async def analyze(voice_file: UploadFile = File(...)):
 
     temp_file_path = f"temp_{voice_file.filename}"
     try:
+        # --- 업로드된 파일 임시 저장 ---
         with open(temp_file_path, "wb") as buffer:
             shutil.copyfileobj(voice_file.file, buffer)
 
