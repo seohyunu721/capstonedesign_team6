@@ -8,12 +8,15 @@ import torchaudio
 import faiss
 import librosa
 import json
-import time  # <-- 시간 측정을 위한 라이브러리
+import time  
 import asyncio
+# 추가 본 ###################
+import soundfile as sf
+from pydub import AudioSegment
+#########################
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.concurrency import run_in_threadpool
-# from speechbrain.pretrained import EncoderClassifier
 from speechbrain.inference import EncoderClassifier
 from torchaudio.transforms import Resample
 
@@ -32,6 +35,7 @@ app.add_middleware(
 # 모델 로드 [spkrec-ecapa-voxceleb] ECAPA 사용
 model = EncoderClassifier.from_hparams(
     source="speechbrain/spkrec-ecapa-voxceleb",
+    run_opts={"device":"cuda" if torch.cuda.is_available() else "cpu"}
 # 저장 dir 지울 가능성 있음
 )
 
@@ -52,8 +56,44 @@ except Exception as e:
     classifier, singer_index, singer_id_map, songs_db = None, None, None, None
 
 # --- 2. 핵심 분석 함수들 ---
+from pydub import AudioSegment
+
+def convert_to_wav(aac_path, wav_file_path):
+    audio = AudioSegment.from_file(aac_path, format="aac")
+    audio = audio.set_frame_rate(16000).set_channels(1)
+    audio.export(wav_file_path, format="wav")
+    return wav_file_path
+
+
+
+
+# 녹음 파일 안전하게 로딩되게 
+def safe_load_audio(file_path, target_sr=16000, mono=True):
+    try:
+        # librosa가 wav 헤더 깨진 것도 자동 복원
+        y, sr = librosa.load(file_path, sr=target_sr) # mono=True
+        # 무음 방지용 아주 작은 노이즈 추가
+        if np.max(np.abs(y)) < 1e-5:
+            y = y + np.random.randn(len(y)) * 1e-5
+        return y, target_sr
+    except Exception as e:
+        print(f"[Audio Load Error] {e}")
+        data, sr = sf.read(file_path)
+        return data.astype(np.float32), sr
+
+
+
+def extract_xvector(file_path):
+    signal, sr = sf.read(file_path)
+    # 최소 길이 체크
+    if len(signal) < sr * 0.5:  # 0.5초 미만
+        raise ValueError("Audio too short for x-vector extraction")
+    return classifier.encode_file(file_path)
+
+
 def get_xvector(file_path, model):
     TARGET_SR = 16000
+    MIN_LENGTH_SEC = 0.5
     try:
         signal, fs = torchaudio.load(file_path)
         if signal.shape[0] > 1:
@@ -61,6 +101,12 @@ def get_xvector(file_path, model):
         if fs != TARGET_SR:
             resampler = Resample(orig_freq=fs, new_freq=TARGET_SR)
             signal = resampler(signal)
+
+        min_length_samples = int(MIN_LENGTH_SEC * TARGET_SR)
+        if signal.shape[1] < min_length_samples:
+            pad = min_length_samples - signal.shape[1]
+            signal = torch.nn.functional.pad(signal, (0, pad))
+        
         with torch.no_grad():
             embedding = model.encode_batch(signal)
         return embedding.squeeze().cpu().numpy()
@@ -72,13 +118,34 @@ def analyze_vocal_range(file_path):
     """librosa.pyin을 사용해 더 정확하게 음역대를 분석하는 함수"""
     try:
         y, sr = librosa.load(file_path, sr=16000)
+
+        # 노이즈 줄이는 코드 (짧은 무음 구간 제거)
+        y, _ = librosa.effects.trim(y, top_db=30)
+
+        rms = np.sqrt(np.mean(y**2))
+        
+        if len(y) < sr * 0.5:
+            print(f"[경고] {file_path} 길이가 너무 짧음")
+            return None, None
+        
+       
+        if rms < 0.005:
+            print(f"[경고] {file_path} 음량이 너무 작습니다 (rms={rms:.4f})")
+            return None, None
+
+        
         
         # 1. pYIN 알고리즘으로 기본 주파수(F0) 추정
         # fmin/fmax로 사람 목소리의 합리적인 범위만 탐색하도록 제한
         f0, voiced_flag, voiced_probs = librosa.pyin(
             y,
-            fmin=librosa.note_to_hz('C2'), # 최저음 (약 65Hz)
-            fmax=librosa.note_to_hz('C7')  # 최고음 (약 2093Hz)
+            sr=sr,
+            fmin=librosa.note_to_hz('A1'),  # 55Hz
+            fmax=librosa.note_to_hz('C8'), 
+            # fmin=librosa.note_to_hz('C2'), # 최저음 (약 65Hz)
+            # fmax=librosa.note_to_hz('C7'),
+            frame_length=2048,
+              hop_length=256  # 최고음 (약 2093Hz)
         )
         
         # 2. '노래가 불린 구간(voiced)'의 유효한 음높이 값만 추출
@@ -105,6 +172,9 @@ def analyze_vocal_range(file_path):
     except Exception as e:
         print(f"'{os.path.basename(file_path)}' 음역대 분석 중 오류: {e}")
         return None, None
+    
+
+
 
 def is_in_range(song_low, song_high, user_low, user_high):
     try:
@@ -134,19 +204,34 @@ async def analyze(voice_file: UploadFile = File(...)):
         raise HTTPException(status_code=500, detail="서버 모델/데이터가 준비되지 않았습니다.")
 
     temp_file_path = f"temp_{voice_file.filename}"
+    # 추가
+    wav_file_path = temp_file_path.rsplit('.',1)[0] + ".wav"
+    analysis_path = temp_file_path
+
     try:
         # --- 업로드된 파일 임시 저장 ---
         with open(temp_file_path, "wb") as buffer:
             shutil.copyfileobj(voice_file.file, buffer)
+        # 추가ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ
+        # AAC / 다른 포맷이면 WAV로 변환
+        ext = temp_file_path.rsplit('.', 1)[-1].lower()
+        if ext in ["m4a", "aac", "mp4"]:
+            audio = AudioSegment.from_file(temp_file_path, format=ext)
+            audio = audio.set_frame_rate(16000).set_channels(1)  # librosa 용으로 16kHz mono
+            audio.export(wav_file_path, format="wav")
+            analysis_path = wav_file_path
+        else:
+            analysis_path = temp_file_path
+
 
         # --- 비동기 작업 실행 ---
         loop = asyncio.get_running_loop()
         
         # 1. x-vector 추출 (별도 스레드에서)
-        xvector_task = loop.run_in_executor(None, get_xvector, temp_file_path, classifier)
+        xvector_task = loop.run_in_executor(None, get_xvector, analysis_path, classifier)
         
         # 2. 음역대 분석 (별도 스레드에서)
-        vocal_range_task = loop.run_in_executor(None, analyze_vocal_range, temp_file_path)
+        vocal_range_task = loop.run_in_executor(None, analyze_vocal_range, analysis_path)
 
         # 두 개의 무거운 작업을 동시에 실행하고 결과를 기다림
         user_xvector, (user_lowest_note, user_highest_note) = await asyncio.gather(
@@ -163,7 +248,6 @@ async def analyze(voice_file: UploadFile = File(...)):
         # --- Faiss 검색 (매우 빠르므로 직접 실행) ---
         user_xvector_normalized = user_xvector.astype('float32').reshape(1, -1)
         faiss.normalize_L2(user_xvector_normalized)
-        
         k = 3
         scores, ids = singer_index.search(user_xvector_normalized, k)
         
@@ -198,3 +282,5 @@ async def analyze(voice_file: UploadFile = File(...)):
     finally:
         if os.path.exists(temp_file_path):
             os.remove(temp_file_path)
+        if os.path.exists(wav_file_path):
+            os.remove(wav_file_path)
