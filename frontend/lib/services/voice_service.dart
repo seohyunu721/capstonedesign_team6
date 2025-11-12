@@ -108,10 +108,7 @@ class VoiceService {
       } else if (defaultTargetPlatform == TargetPlatform.iOS) {
         recordingCodec = Codec.aacMP4;
         extension = ".m4a";
-      } else {
-        recordingCodec = Codec.aacADTS;
-        extension = ".aac";
-      }
+      } 
       _tempRecordingPath =
           '${tempDir.path}/voice_${DateTime.now().millisecondsSinceEpoch}$extension';
 

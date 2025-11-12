@@ -52,7 +52,7 @@ def analyze_vocal_range(file_path):
     try:
         y, sr = librosa.load(file_path, sr=16000)
         f0, voiced_flag, voiced_probs = librosa.pyin(
-            y, fmin=librosa.note_to_hz('C2'), fmax=librosa.note_to_hz('C7'), hop_length=1024) 
+            y, fmin=librosa.note_to_hz('A1'), fmax=librosa.note_to_hz('C8'), hop_length=1024) 
         valid_pitches = f0[voiced_flag]
         if valid_pitches is None or valid_pitches.size == 0: return None, None
         valid_pitches = valid_pitches[~np.isnan(valid_pitches)]

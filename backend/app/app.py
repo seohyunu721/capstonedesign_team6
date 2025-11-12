@@ -145,7 +145,7 @@ def analyze_vocal_range(file_path):
             # fmin=librosa.note_to_hz('C2'), # 최저음 (약 65Hz)
             # fmax=librosa.note_to_hz('C7'),
             frame_length=2048,
-              hop_length=256  # 최고음 (약 2093Hz)
+            hop_length=256  # 최고음 (약 2093Hz)
         )
         
         # 2. '노래가 불린 구간(voiced)'의 유효한 음높이 값만 추출
@@ -282,5 +282,5 @@ async def analyze(voice_file: UploadFile = File(...)):
     finally:
         if os.path.exists(temp_file_path):
             os.remove(temp_file_path)
-        if os.path.exists(wav_file_path):
-            os.remove(wav_file_path)
+        # if os.path.exists(wav_file_path):
+        #     os.remove(wav_file_path)
