@@ -52,7 +52,7 @@ class _SplashScreenState extends State<SplashScreen> {
             const Text(
               'Vocalize',
               style: TextStyle(
-                color: Colors.white,
+                color: CustomColors.white,
                 fontWeight: FontWeight.bold,
                 fontFamily: 'Pretendard',
               ),

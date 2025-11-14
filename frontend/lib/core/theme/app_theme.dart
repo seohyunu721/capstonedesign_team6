@@ -6,7 +6,7 @@ class AppTheme {
   static ThemeData get lightTheme {
     return ThemeData(
       // Scaffolds
-      scaffoldBackgroundColor: Colors.white,
+      scaffoldBackgroundColor: CustomColors.background,
 
       // Colors
       primarySwatch: CustomColors.primaryPurple,
@@ -17,7 +17,7 @@ class AppTheme {
 
       // App Bar Theme
       appBarTheme: const AppBarTheme(
-        backgroundColor: Colors.white,
+        backgroundColor: CustomColors.white,
         elevation: 1,
         centerTitle: true,
         titleTextStyle: AppTextStyles
@@ -27,7 +27,7 @@ class AppTheme {
       // Button Theme (ElevatedButton)
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          foregroundColor: Colors.white,
+          foregroundColor: CustomColors.white,
           backgroundColor: CustomColors.deepPurple, // 버튼 배경색
           // ⭐️ FIX: BorderRadius.circular()는 const가 아니므로, const 제거
           shape: RoundedRectangleBorder(

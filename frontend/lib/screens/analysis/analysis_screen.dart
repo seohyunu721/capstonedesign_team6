@@ -9,6 +9,7 @@ import '/widgets/loading_indicator.dart';
 import '/widgets/result_card.dart';
 import '/core/theme/colors.dart';
 import 'package:file_picker/file_picker.dart';
+import 'package:lottie/lottie.dart';
 
 // --- 음성 분석 메인 화면 ---
 class AnalysisScreen extends StatefulWidget {
@@ -139,7 +140,7 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
     if (_fileBytes == null || _fileName == null) return;
     setState(() {
       _isLoading = true;
-      _statusMessage = "음성을 분석 중입니다...";
+      // _statusMessage = "음성을 분석 중입니다...";
     });
 
     try {
@@ -243,9 +244,11 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
 
   Widget _buildLoadingWidget() {
     return LoadingIndicator(
-      message: "노래 분석 중...",
-      progressIndicator: LinearProgressIndicator(
-        color: CustomColors.deepPurple,
+      message: "음성 분석 중...",
+      progressIndicator: Lottie.asset(
+        'assets/Lottie/loading.json',
+        width: 250,
+        height: 250,
       ),
     );
   }

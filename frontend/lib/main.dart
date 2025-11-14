@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import '/screens/analysis/analysis_screen.dart';
-import '/screens/setup/setup_screen.dart';
 import '/core/theme/app_theme.dart';
 import '/screens/splash/splash_screen.dart';
 
