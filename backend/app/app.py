@@ -13,6 +13,7 @@ import asyncio
 # 추가 본 ###################
 import soundfile as sf
 from pydub import AudioSegment
+import yt_dlp
 #########################
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
@@ -191,6 +192,38 @@ def search_faiss_with_timing(index, query, k):
     print(f"--- [내부 측정] faiss.search 실제 실행 시간: {(search_end_time - search_start_time) * 1000:.4f} ms ---")
     return scores, ids
 
+def search_youtube_video(singer, song_title):
+    """YouTube에서 노래를 검색하여 비디오 ID를 반환하는 함수"""
+    try:
+        search_query = f"{singer} {song_title} audio"
+        
+        ydl_opts = {
+            'quiet': True,
+            'no_warnings': True,
+            'extract_flat': 'in_playlist',  # 플레이리스트 내에서만 flat 모드
+        }
+        
+        with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+            # ytsearch: 접두사를 사용한 검색
+            search_url = f"ytsearch1:{search_query}"
+            info = ydl.extract_info(search_url, download=False)
+            
+            if info and 'entries' in info and len(info['entries']) > 0:
+                video = info['entries'][0]
+                video_id = video.get('id')
+                video_url = f"https://www.youtube.com/watch?v={video_id}" if video_id else None
+                video_title = video.get('title', '')
+                return {
+                    'video_id': video_id,
+                    'video_url': video_url,
+                    'title': video_title
+                }
+        
+        return None
+    except Exception as e:
+        print(f"YouTube 검색 오류 ({singer} - {song_title}): {e}")
+        return None
+
 
 # --- 3. API 엔드포인트 ---
 @app.get("/")
@@ -270,14 +303,99 @@ async def analyze(voice_file: UploadFile = File(...)):
                 if is_in_range(song['lowest_note'], song['highest_note'], user_lowest_note, user_highest_note):
                     recommended_songs.append(song['title'])
         
+        # Top3 노래에 대해 YouTube 비디오 ID 검색
+        top3_songs_with_youtube = []
+        
+        # 음역대 기반 추천곡이 있으면 그것을 사용, 없으면 best_match 가수의 대표곡 사용
+        songs_to_search = []
+        if recommended_songs:
+            songs_to_search = [(best_match_singer, song_title) for song_title in recommended_songs[:3]]
+        else:
+            # 음역대 데이터가 없을 때: best_match 가수의 노래 중 처음 3개 사용
+            if best_match_singer in songs_db:
+                songs_to_search = [(best_match_singer, song['title']) for song in songs_db[best_match_singer][:3]]
+
+        # 그래도 비어있다면 top-k 가수들의 대표곡을 찾아봄
+        if not songs_to_search:
+            seen_singers = set()
+            for result in similarity_results:
+                singer_name = result['singer']
+                if singer_name in seen_singers:
+                    continue
+                seen_singers.add(singer_name)
+                if singer_name in songs_db and songs_db[singer_name]:
+                    songs_to_search.append((singer_name, songs_db[singer_name][0]['title']))
+                if len(songs_to_search) >= 3:
+                    break
+
+        # 그래도 없으면 가수 이름만으로 검색 (임의 타이틀)
+        if not songs_to_search:
+            for result in similarity_results[:3]:
+                singer_name = result['singer']
+                songs_to_search.append((singer_name, f"{singer_name} 노래"))
+        
+        if songs_to_search:
+            # 비동기로 YouTube 검색 실행
+            loop = asyncio.get_running_loop()
+            youtube_search_tasks = []
+            
+            for singer, song_title in songs_to_search:
+                task = loop.run_in_executor(None, search_youtube_video, singer, song_title)
+                youtube_search_tasks.append((singer, song_title, task))
+            
+            # 모든 YouTube 검색 완료 대기
+            for singer, song_title, task in youtube_search_tasks:
+                youtube_info = await task
+                if youtube_info:
+                    top3_songs_with_youtube.append({
+                        'title': song_title,
+                        'singer': singer,
+                        'youtube_video_id': youtube_info.get('video_id'),
+                        'youtube_url': youtube_info.get('video_url'),
+                        'youtube_title': youtube_info.get('title', '')
+                    })
+                else:
+                    # YouTube 검색 실패 시에도 노래 정보는 포함
+                    top3_songs_with_youtube.append({
+                        'title': song_title,
+                        'singer': singer,
+                        'youtube_video_id': None,
+                        'youtube_url': None,
+                        'youtube_title': None
+                    })
+        
         end_time = time.time()
         print(f"[Time Check] 총 API 처리 시간: {end_time - start_time:.4f} 초")
+
+        # best_match 가수의 전체 곡 목록 (프론트에서 전체 플레이리스트 UI용)
+        matched_singer_full_songs = []
+        if best_match_singer in songs_db:
+            matched_singer_full_songs = songs_db[best_match_singer]
+
+        # Top3 가수의 전곡 리스트 데이터
+        top_singers_full_songs = []
+        seen_top_singers = set()
+        for result in similarity_results:
+            singer_name = result['singer']
+            if singer_name in seen_top_singers:
+                continue
+            seen_top_singers.add(singer_name)
+            if singer_name in songs_db:
+                top_singers_full_songs.append({
+                    'singer': singer_name,
+                    'songs': songs_db[singer_name]
+                })
+            if len(top_singers_full_songs) >= 3:
+                break
 
         return {
             "best_match": best_match_singer,
             "user_vocal_range": user_range_str,
             "recommended_songs": recommended_songs,
             "top_k_results": similarity_results,
+            "top3_songs_with_youtube": top3_songs_with_youtube,  # YouTube 정보 포함
+            "matched_singer_full_songs": matched_singer_full_songs,
+            "top_singers_full_songs": top_singers_full_songs,
         }
     finally:
         if os.path.exists(temp_file_path):
