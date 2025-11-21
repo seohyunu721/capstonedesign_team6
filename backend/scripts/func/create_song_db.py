@@ -51,17 +51,62 @@ def analyze_vocal_range(file_path):
     """librosa.pyin을 사용해 더 정확하게 음역대를 분석하는 함수"""
     try:
         y, sr = librosa.load(file_path, sr=16000)
+
+        # 노이즈 줄이는 코드 (짧은 무음 구간 제거)
+        y, _ = librosa.effects.trim(y, top_db=30)
+
+        rms = np.sqrt(np.mean(y**2))
+        
+        if len(y) < sr * 0.5:
+            print(f"[경고] {file_path} 길이가 너무 짧음")
+            return None, None
+        
+       
+        if rms < 0.005:
+            print(f"[경고] {file_path} 음량이 너무 작습니다 (rms={rms:.4f})")
+            return None, None
+
+        
+        
+        # 1. pYIN 알고리즘으로 기본 주파수(F0) 추정
+        # fmin/fmax로 사람 목소리의 합리적인 범위만 탐색하도록 제한
         f0, voiced_flag, voiced_probs = librosa.pyin(
-            y, fmin=librosa.note_to_hz('A1'), fmax=librosa.note_to_hz('C8'), hop_length=1024) 
+            y,
+            sr=sr,
+            fmin=librosa.note_to_hz('A1'),  # 55Hz
+            fmax=librosa.note_to_hz('C8'), 
+            # fmin=librosa.note_to_hz('C2'), # 최저음 (약 65Hz)
+            # fmax=librosa.note_to_hz('C7'),
+            frame_length=2048,
+            hop_length=1024  # 최고음 (약 2093Hz)
+        )
+        
+        # 2. '노래가 불린 구간(voiced)'의 유효한 음높이 값만 추출
         valid_pitches = f0[voiced_flag]
-        if valid_pitches is None or valid_pitches.size == 0: return None, None
+
+        if valid_pitches is None or valid_pitches.size == 0:
+            return None, None
+            
+        # 3. NaN 값 제거 (pYIN 결과에 포함될 수 있음)
         valid_pitches = valid_pitches[~np.isnan(valid_pitches)]
-        if valid_pitches.size == 0: return None, None
-        min_freq, max_freq = np.percentile(valid_pitches, 5), np.percentile(valid_pitches, 95)
-        return librosa.hz_to_note(min_freq), librosa.hz_to_note(max_freq)
+        
+        if valid_pitches.size == 0:
+            return None, None
+
+        # 4. 백분위수를 사용해 극단적인 아웃라이어 값 제거
+        min_freq = np.percentile(valid_pitches, 5)  # 하위 5%
+        max_freq = np.percentile(valid_pitches, 95) # 상위 95%
+        
+        lowest_note = librosa.hz_to_note(min_freq)
+        highest_note = librosa.hz_to_note(max_freq)
+        
+        return lowest_note, highest_note
+        
     except Exception as e:
         print(f"'{os.path.basename(file_path)}' 음역대 분석 중 오류: {e}")
         return None, None
+    
+
 
 def get_song_info_from_spotify(song_title, singer_name):
     """스포티파이 API로 장르와 발매 연도를 가져옵니다."""

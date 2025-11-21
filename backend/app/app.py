@@ -14,7 +14,7 @@ import asyncio
 import soundfile as sf
 from pydub import AudioSegment
 #########################
-from fastapi import FastAPI, UploadFile, File, HTTPException
+from fastapi import FastAPI, UploadFile, File, HTTPException,Form
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.concurrency import run_in_threadpool
 from speechbrain.inference import EncoderClassifier
@@ -31,6 +31,14 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+USER_TO_GTZAN_MAP = {
+    "발라드": ["pop", "classical", "jazz", "blues", "k-ballad"], 
+    "댄스": ["disco", "pop", "hiphop", "k-pop", "dance-pop"], 
+    "R&B": ["hiphop", "jazz", "pop", "r&b", "soul"],
+    "록": ["rock", "metal", "k-rock"],
+    "랩/힙합": ["hiphop", "rap", "k-rap"],
+    "팝": ["pop", "disco", "k-pop"]
+}
 
 # 모델 로드 [spkrec-ecapa-voxceleb] ECAPA 사용
 model = EncoderClassifier.from_hparams(
@@ -45,11 +53,21 @@ MODELS_DIR = os.path.join(BACKEND_DIR, 'models')
 DATA_DIR = os.path.join(BACKEND_DIR, 'data')
 
 try:
-    classifier = EncoderClassifier.from_hparams(source="speechbrain/spkrec-ecapa-voxceleb")
+    print("모델/데이터 로딩을 시작합니다...")
+    classifier = EncoderClassifier.from_hparams(
+        source="speechbrain/spkrec-ecapa-voxceleb",
+        run_opts={"device":"cuda" if torch.cuda.is_available() else "cpu"}
+    )    
+        
     singer_index = faiss.read_index(os.path.join(MODELS_DIR, "singers.index"))
     singer_id_map = joblib.load(os.path.join(MODELS_DIR, "singer_id_map.pkl"))
+    
     with open(os.path.join(DATA_DIR, "songs_db.json"), 'r', encoding='utf-8') as f:
         songs_db = json.load(f)
+        
+    with open(os.path.join(DATA_DIR, "singer_info.json"), 'r', encoding='utf-8') as f:
+        singer_info = json.load(f)
+    
     print("모든 모델 및 데이터 로딩 완료!")
 except Exception as e:
     print(f"모델/데이터 로딩 중 오류 발생: {e}")
@@ -145,7 +163,7 @@ def analyze_vocal_range(file_path):
             # fmin=librosa.note_to_hz('C2'), # 최저음 (약 65Hz)
             # fmax=librosa.note_to_hz('C7'),
             frame_length=2048,
-            hop_length=256  # 최고음 (약 2093Hz)
+            hop_length=512  # 최고음 (약 2093Hz)
         )
         
         # 2. '노래가 불린 구간(voiced)'의 유효한 음높이 값만 추출
@@ -198,42 +216,48 @@ def read_root():
     return {"message": "AI 음성 분석 및 노래 추천 API"}
 
 @app.post("/analyze")
-async def analyze(voice_file: UploadFile = File(...)):
+async def analyze(
+    voice_file: UploadFile = File(...),
+    gender: str = Form("none"),
+    genre: str = Form("none"),
+    start_year: int = Form(1980),
+    end_year: int = Form(2025)
+):
+    print(f"\n========== [분석 시작] ==========")
+    print(f"📥 사용자 입력 정보: 성별={gender}, 장르={genre}, 년도={start_year}~{end_year}")
+    
     start_time = time.time()
-    if not all([classifier, singer_index, singer_id_map, songs_db]):
+    # [수정 1] singer_info도 확인 목록에 추가
+    if not all([classifier, singer_index, singer_id_map, songs_db, singer_info]):
         raise HTTPException(status_code=500, detail="서버 모델/데이터가 준비되지 않았습니다.")
 
     temp_file_path = f"temp_{voice_file.filename}"
-    # 추가
     wav_file_path = temp_file_path.rsplit('.',1)[0] + ".wav"
     analysis_path = temp_file_path
 
     try:
-        # --- 업로드된 파일 임시 저장 ---
+        # --- 파일 저장 및 변환 (기존과 동일) ---
         with open(temp_file_path, "wb") as buffer:
             shutil.copyfileobj(voice_file.file, buffer)
-        # 추가ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ
-        # AAC / 다른 포맷이면 WAV로 변환
+
         ext = temp_file_path.rsplit('.', 1)[-1].lower()
         if ext in ["m4a", "aac", "mp4"]:
-            audio = AudioSegment.from_file(temp_file_path, format=ext)
-            audio = audio.set_frame_rate(16000).set_channels(1)  # librosa 용으로 16kHz mono
-            audio.export(wav_file_path, format="wav")
-            analysis_path = wav_file_path
+            try:
+                audio = AudioSegment.from_file(temp_file_path, format=ext)
+                audio = audio.set_frame_rate(16000).set_channels(1)
+                audio.export(wav_file_path, format="wav")
+                analysis_path = wav_file_path
+            except Exception as e:
+                 print(f"오디오 변환 실패: {e}")
+                 # 변환 실패 시 원본 사용 시도 (선택 사항)
         else:
             analysis_path = temp_file_path
 
-
-        # --- 비동기 작업 실행 ---
+        # --- 비동기 분석 실행 (기존과 동일) ---
         loop = asyncio.get_running_loop()
-        
-        # 1. x-vector 추출 (별도 스레드에서)
         xvector_task = loop.run_in_executor(None, get_xvector, analysis_path, classifier)
-        
-        # 2. 음역대 분석 (별도 스레드에서)
         vocal_range_task = loop.run_in_executor(None, analyze_vocal_range, analysis_path)
 
-        # 두 개의 무거운 작업을 동시에 실행하고 결과를 기다림
         user_xvector, (user_lowest_note, user_highest_note) = await asyncio.gather(
             xvector_task,
             vocal_range_task
@@ -245,42 +269,87 @@ async def analyze(voice_file: UploadFile = File(...)):
         if user_xvector is None:
             raise HTTPException(status_code=400, detail="음성 파일을 분석할 수 없습니다.")
 
-        # --- Faiss 검색 (매우 빠르므로 직접 실행) ---
+        # --- Faiss 검색 ---
         user_xvector_normalized = user_xvector.astype('float32').reshape(1, -1)
         faiss.normalize_L2(user_xvector_normalized)
-        k = 3
+        k = 5 # 후보를 넉넉하게 5명 정도 뽑습니다
         scores, ids = singer_index.search(user_xvector_normalized, k)
         
-        # --- 결과 처리 ---
-        similarity_results = []
+        # [수정 2] raw_top_k 정의 (필터링을 위한 원본 데이터)
+        raw_top_k = []
         for i in range(k):
             singer_id = ids[0][i]
             if singer_id != -1:
-                similarity_results.append({
+                raw_top_k.append({
                     "singer": singer_id_map[singer_id],
-                    "similarity": f"{scores[0][i] * 100:.2f}%"
+                    "similarity": float(scores[0][i]) * 100 # 숫자형으로 저장
                 })
 
-        best_match_singer = similarity_results[0]['singer'] if similarity_results else "N/A"
-        user_range_str = f"{user_lowest_note} ~ {user_highest_note}" if user_lowest_note else "분석 불가"
+        # --- 필터링 로직 ---
         
+        # 1. 성별 필터링
+        filtered_artists = []
+        if gender == 'none':
+            filtered_artists = [res['singer'] for res in raw_top_k]
+        else:
+            for res in raw_top_k:
+                artist_name = res['singer']
+                # singer_info에 정보가 없으면 일단 포함하거나 제외 (여기선 포함으로 가정)
+                if singer_info.get(artist_name) == gender:
+                    filtered_artists.append(artist_name)
+        
+        # 만약 성별 필터링 후 남은 가수가 없으면, 원래 Top K 그대로 사용 (Fallback)
+        if not filtered_artists:
+             filtered_artists = [res['singer'] for res in raw_top_k]
+
+        # 2. 최종 노래 추천 (장르, 년도, 음역대)
         recommended_songs = []
-        if user_lowest_note and best_match_singer in songs_db:
-            for song in songs_db[best_match_singer]:
+        best_match_singer = filtered_artists[0] if filtered_artists else "N/A"
+        target_gtzan_genres = USER_TO_GTZAN_MAP.get(genre, []) # 상단에 정의된 MAP 사용
+
+        # 필터링된 가수 목록을 순회하며 조건에 맞는 노래 찾기
+        for artist_name in filtered_artists:
+            if recommended_songs: # 이미 추천곡을 찾았다면 루프 중단
+                break
+                
+            singer_song_list = songs_db.get(artist_name, [])
+            
+            for song in singer_song_list:
+                song_year = song.get('year')
+                # API 장르와 모델 예측 장르 모두 확인
+                song_genres = song.get('genres_api', []) + song.get('genres_model', [])
+
+                # A. 년도 필터
+                if song_year and not (start_year <= song_year <= end_year):
+                    continue
+                # B. 장르 필터 (교집합 확인)
+                if genre != 'none' and not any(g in target_gtzan_genres for g in song_genres):
+                    continue
+                # C. 음역대 필터
                 if is_in_range(song['lowest_note'], song['highest_note'], user_lowest_note, user_highest_note):
                     recommended_songs.append(song['title'])
+        
+        # [중요] 위에서 구한 결과를 그대로 반환해야 함 (덮어쓰기 코드 삭제됨)
+        
+        user_range_str = f"{user_lowest_note} ~ {user_highest_note}" if user_lowest_note else "분석 불가"
         
         end_time = time.time()
         print(f"[Time Check] 총 API 처리 시간: {end_time - start_time:.4f} 초")
 
+        # 반환값 생성
         return {
             "best_match": best_match_singer,
             "user_vocal_range": user_range_str,
             "recommended_songs": recommended_songs,
-            "top_k_results": similarity_results,
+            # 프론트엔드 표시용 포맷으로 변환
+            "top_k_results": [
+                {"singer": res['singer'], "similarity": f"{res['similarity']:.2f}%"} 
+                for res in raw_top_k
+            ],
         }
     finally:
         if os.path.exists(temp_file_path):
             os.remove(temp_file_path)
-        # if os.path.exists(wav_file_path):
+        # 변환된 파일도 삭제하는 것이 좋음
+        # if os.path.exists(wav_file_path) and analysis_path != temp_file_path:
         #     os.remove(wav_file_path)
