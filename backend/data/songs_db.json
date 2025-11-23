@@ -388,7 +388,7 @@
             "year": null
         }
     ],
-    "LEE HI": [
+    "LEE HI ": [
         {
             "title": "손잡아 줘요",
             "lowest_note": "E3",
@@ -443,7 +443,7 @@
         },
         {
             "title": "Darling",
-            "lowest_note": "F3",
+            "lowest_note": "G3",
             "highest_note": "C5",
             "genres_api": [
                 "k-ballad",
@@ -520,7 +520,7 @@
             "year": 2016
         }
     ],
-    "폴킴 (Paul Kim)": [
+    "폴킴 (Paul Kim) ": [
         {
             "title": "너의 잠을 채워줄게",
             "lowest_note": "F3",

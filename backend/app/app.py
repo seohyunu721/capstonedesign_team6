@@ -194,9 +194,25 @@ def analyze_vocal_range(file_path):
 
 
 
-def is_in_range(song_low, song_high, user_low, user_high):
+def is_in_range(song_low, song_high, user_low, user_high, tolerance=2):
+    """
+    음역대 비교 (tolerance: 반음 단위 허용 오차, 기본값 2)
+    사용자의 음역대가 노래 음역대보다 조금 좁아도 통과시킴
+    """
     try:
-        return librosa.note_to_midi(user_low) <= librosa.note_to_midi(song_low) and librosa.note_to_midi(user_high) >= librosa.note_to_midi(song_high)
+        if not all([song_low, song_high, user_low, user_high]):
+            return False
+            
+        song_low_midi = librosa.note_to_midi(song_low)
+        song_high_midi = librosa.note_to_midi(song_high)
+        user_low_midi = librosa.note_to_midi(user_low)
+        user_high_midi = librosa.note_to_midi(user_high)
+        
+        # [수정] 사용자의 최저음이 노래보다 2키 높아도 OK (user_low - 2 <= song_low)
+        #        사용자의 최고음이 노래보다 2키 낮아도 OK (user_high + 2 >= song_high)
+        return (user_low_midi - tolerance) <= song_low_midi and \
+               (user_high_midi + tolerance) >= song_high_midi
+               
     except Exception:
         return False
 
