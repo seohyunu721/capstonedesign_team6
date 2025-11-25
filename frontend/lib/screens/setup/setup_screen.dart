@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
-import '/screens/analysis/analysis_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+// import '/screens/analysis/analysis_screen.dart';
+import '/screens/navigator/main_navigator_screen.dart';
 import '/services/preferences_service.dart';
 import '/core/constants/text_styles.dart';
 import '/core/theme/colors.dart';
 
 // --- 사용자 정보 입력 화면 ---
 class SetupScreen extends StatefulWidget {
+  const SetupScreen({Key? key}) : super(key: key);
   @override
   _SetupScreenState createState() => _SetupScreenState();
 }
@@ -32,9 +35,14 @@ class _SetupScreenState extends State<SetupScreen> {
       endYear: _selectedYears.end,
     );
 
+    final prefs = await SharedPreferences.getInstance(); // 추가
+    await prefs.setBool('isSetupComplete', true);
+
     // 설정 완료 후 AnalysisScreen으로 이동
     Navigator.of(context).pushReplacement(
-      MaterialPageRoute(builder: (context) => AnalysisScreen()),
+      MaterialPageRoute(
+        builder: (context) => MainNavigatorScreen(initialIndex: 1),
+      ),
     );
   }
 

@@ -89,19 +89,9 @@ def analyze_vocal_range(file_path):
             
         # 3. NaN 값 제거 (pYIN 결과에 포함될 수 있음)
         valid_pitches = valid_pitches[~np.isnan(valid_pitches)]
-        
-        if valid_pitches.size == 0:
-            return None, None
-
-        # 4. 백분위수를 사용해 극단적인 아웃라이어 값 제거
-        min_freq = np.percentile(valid_pitches, 5)  # 하위 5%
-        max_freq = np.percentile(valid_pitches, 95) # 상위 95%
-        
-        lowest_note = librosa.hz_to_note(min_freq)
-        highest_note = librosa.hz_to_note(max_freq)
-        
-        return lowest_note, highest_note
-        
+        if valid_pitches.size == 0: return None, None
+        min_freq, max_freq = np.percentile(valid_pitches, 5), np.percentile(valid_pitches, 95)
+        return librosa.hz_to_note(min_freq), librosa.hz_to_note(max_freq)
     except Exception as e:
         print(f"'{os.path.basename(file_path)}' 음역대 분석 중 오류: {e}")
         return None, None

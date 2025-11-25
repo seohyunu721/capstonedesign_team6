@@ -49,6 +49,11 @@ class AppTheme {
         thumbColor: CustomColors.deepPurple,
         overlayColor: CustomColors.deepPurple.withOpacity(0.2),
       ),
+
+      // navigationBarTheme: NavigationBarThemeData(
+      //   backgroundColor: CustomColors.darkGrey
+
+      // )
     );
   }
 }

@@ -2,17 +2,19 @@ import 'dart:io';
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
+import 'package:file_picker/file_picker.dart';
+import 'package:lottie/lottie.dart';
 import '/services/voice_service.dart';
 import '/services/api_service.dart';
 import '/services/preferences_service.dart';
 import '/widgets/loading_indicator.dart';
 import '/widgets/result_card.dart';
 import '/core/theme/colors.dart';
-import 'package:file_picker/file_picker.dart';
-import 'package:lottie/lottie.dart';
 
 // --- 음성 분석 메인 화면 ---
 class AnalysisScreen extends StatefulWidget {
+  const AnalysisScreen({Key? key}) : super(key: key); // 추가
+
   @override
   _AnalysisScreenState createState() => _AnalysisScreenState();
 }
@@ -41,14 +43,26 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
     _initServices();
   }
 
+  // Future<void> _initServices() async {
+  //   await _voiceService.initRecorder();
+  //   setState(() {
+  //     _isRecorderInitialized = _voiceService.isRecorderInitialized;
+  //     if (!_isRecorderInitialized) {
+  //       _statusMessage = "마이크 권한이 필요합니다.";
+  //     }
+  //   });
+  // }
+
   Future<void> _initServices() async {
     await _voiceService.initRecorder();
-    setState(() {
-      _isRecorderInitialized = _voiceService.isRecorderInitialized;
-      if (!_isRecorderInitialized) {
-        _statusMessage = "마이크 권한이 필요합니다.";
-      }
-    });
+    if (mounted) {
+      setState(() {
+        _isRecorderInitialized = _voiceService.isRecorderInitialized;
+        if (!_isRecorderInitialized) {
+          _statusMessage = " 마이크 권한이 필요합니다.";
+        }
+      });
+    }
   }
 
   @override
@@ -175,7 +189,7 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Vocalize")),
+      // appBar: AppBar(title: const Text("Vocalize")),
       body: Center(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(24.0),
