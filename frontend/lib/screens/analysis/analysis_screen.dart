@@ -3,13 +3,15 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:file_picker/file_picker.dart';
+import 'package:frontend/screens/searching/searching_screen.dart';
+import 'package:frontend/services/result_storage_service.dart';
 import 'package:lottie/lottie.dart';
 import '/services/voice_service.dart';
 import '/services/api_service.dart';
 import '/services/preferences_service.dart';
 import '/widgets/loading_indicator.dart';
-import '/widgets/result_card.dart';
 import '/core/theme/colors.dart';
+import '/services/result_storage_service.dart';
 
 // --- 음성 분석 메인 화면 ---
 class AnalysisScreen extends StatefulWidget {
@@ -24,6 +26,7 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
   final VoiceService _voiceService = VoiceService();
   final ApiService _apiService = ApiService();
   final PreferencesService _prefsService = PreferencesService();
+  final ResultStorageService _resultStorageService = ResultStorageService();
 
   bool _isRecorderInitialized = false;
   bool _isRecording = false;
@@ -42,16 +45,6 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
     super.initState();
     _initServices();
   }
-
-  // Future<void> _initServices() async {
-  //   await _voiceService.initRecorder();
-  //   setState(() {
-  //     _isRecorderInitialized = _voiceService.isRecorderInitialized;
-  //     if (!_isRecorderInitialized) {
-  //       _statusMessage = "마이크 권한이 필요합니다.";
-  //     }
-  //   });
-  // }
 
   Future<void> _initServices() async {
     await _voiceService.initRecorder();
@@ -170,10 +163,18 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
         endYear: prefs['endYear'] as int,
       );
 
+      await _resultStorageService.saveAnalysisResult(result); // 추가
+
       setState(() {
         _analysisResult = result;
         _statusMessage = "분석 완료!";
       });
+      // 추가로 새로운 화면으로 세팅
+      if (mounted) {
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => const SearchingScreen()),
+        );
+      }
     } catch (e) {
       setState(() {
         _statusMessage = "오류 발생: $e";
@@ -199,7 +200,7 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
               if (!_isLoading) _buildUploadWidget(),
               const SizedBox(height: 40),
               if (_isLoading) _buildLoadingWidget(),
-              if (!_isLoading && _analysisResult != null) _buildResultWidget(),
+              // if (!_isLoading && _analysisResult != null) _buildResultWidget(),
               const SizedBox(height: 20),
               Text(
                 _statusMessage,
@@ -264,13 +265,6 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
         width: 250,
         height: 250,
       ),
-    );
-  }
-
-  Widget _buildResultWidget() {
-    return ResultCard(
-      analysisResult: _analysisResult!,
-      // CustomColors.deepPurple 사용
     );
   }
 }
