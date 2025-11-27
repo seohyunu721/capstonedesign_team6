@@ -18,7 +18,7 @@ if CURRENT_OS == "Windows":
     
     # 백엔드 실행 (Windows)
     subprocess.Popen(
-        f'start cmd /k "cd /d {backend_path} && call {venv_activate} && OMP_NUM_THREADS=1 python main.py"',
+        f'start cmd /k "cd /d {backend_path} && call {venv_activate} && OMP_NUM_THREADS=1 python -m uvicorn app.app:app --host 0.0.0.0 --port 8000 --reload"',
         shell=True
     )
     # 프론트엔드 실행 (Windows)

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '/core/theme/colors.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'dart:io' show Platform; // 추가
 
 class ResultCard extends StatefulWidget {
   final Map<String, dynamic> analysisResult;
@@ -140,8 +141,45 @@ class _ResultCardState extends State<ResultCard> {
     String searchQuery = Uri.encodeComponent('$singer $songTitle');
     String youtubeUrl = 'https://www.youtube.com/results?search_query=$searchQuery';
     
-    if (await canLaunchUrl(Uri.parse(youtubeUrl))) {
-      await launchUrl(Uri.parse(youtubeUrl), mode: LaunchMode.externalApplication);
+    print('🔍 [YouTube] 검색 시도: $youtubeUrl');
+    debugPrint('🔍 [YouTube] 검색 시도: $youtubeUrl');
+    
+    try {
+      final uri = Uri.parse(youtubeUrl);
+      print('🔍 [YouTube] URI 파싱 완료: $uri');
+      
+      final canLaunch = await canLaunchUrl(uri);
+      print('🔍 [YouTube] canLaunchUrl 결과: $canLaunch');
+      
+      if (canLaunch) {
+        print('🔍 [YouTube] launchUrl 호출 중...');
+        final result = await launchUrl(uri, mode: LaunchMode.externalApplication);
+        print('✅ [YouTube] 검색 성공: $result');
+        debugPrint('✅ [YouTube] 검색 성공');
+        
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('YouTube를 여는 중...')),
+          );
+        }
+      } else {
+        print('❌ [YouTube] URL을 실행할 수 없습니다: $youtubeUrl');
+        debugPrint('❌ [YouTube] URL을 실행할 수 없습니다: $youtubeUrl');
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('YouTube를 열 수 없습니다. 브라우저나 YouTube 앱이 필요합니다.')),
+          );
+        }
+      }
+    } catch (e, stackTrace) {
+      print('❌ [YouTube] 검색 오류: $e');
+      print('❌ [YouTube] 스택 트레이스: $stackTrace');
+      debugPrint('❌ [YouTube] 검색 오류: $e');
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('오류 발생: $e')),
+        );
+      }
     }
   }
 
@@ -170,32 +208,49 @@ class _ResultCardState extends State<ResultCard> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              children: [
-                Icon(Icons.music_video, color: CustomColors.deepPurple),
-                const SizedBox(width: 8),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        songTitle,
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
+            GestureDetector(
+              onTap: () {
+                print('🎵 [추천곡] 곡 정보 클릭됨: $songTitle - $singer');
+                if (youtubeUrl != null) {
+                  _openYouTubeUrl(youtubeUrl);
+                } else {
+                  _openYouTubeSearch(singer, songTitle);
+                }
+              },
+              child: Row(
+                children: [
+                  Icon(Icons.music_video, color: CustomColors.deepPurple),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            Expanded(
+                              child: Text(
+                                songTitle,
+                                style: const TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            Icon(Icons.open_in_new, size: 16, color: CustomColors.deepPurple),
+                          ],
                         ),
-                      ),
-                      Text(
-                        singer,
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: CustomColors.mediumGrey,
+                        Text(
+                          singer,
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: CustomColors.mediumGrey,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
             const SizedBox(height: 12),
             _buildVideoPreview(
@@ -209,9 +264,20 @@ class _ResultCardState extends State<ResultCard> {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton.icon(
-                onPressed: youtubeUrl != null
-                    ? () => _openYouTubeUrl(youtubeUrl)
-                    : () => _openYouTubeSearch(singer, songTitle),
+                onPressed: () {
+                  print('🎵 [YouTube] 버튼 클릭됨!');
+                  print('🎵 [YouTube] youtubeUrl: $youtubeUrl');
+                  print('🎵 [YouTube] singer: $singer, songTitle: $songTitle');
+                  debugPrint('🎵 [YouTube] 버튼 클릭됨');
+                  
+                  if (youtubeUrl != null) {
+                    print('🎵 [YouTube] _openYouTubeUrl 호출');
+                    _openYouTubeUrl(youtubeUrl);
+                  } else {
+                    print('🎵 [YouTube] _openYouTubeSearch 호출');
+                    _openYouTubeSearch(singer, songTitle);
+                  }
+                },
                 icon: const Icon(Icons.play_arrow),
                 label: Text(videoId != null ? 'YouTube에서 전체 보기' : 'YouTube에서 검색'),
                 style: ElevatedButton.styleFrom(
@@ -237,9 +303,15 @@ class _ResultCardState extends State<ResultCard> {
 
     return GestureDetector(
       onTap: () {
+        print('🖼️ [YouTube] 비디오 프리뷰 클릭됨!');
+        print('🖼️ [YouTube] youtubeUrl: $youtubeUrl');
+        debugPrint('🖼️ [YouTube] 비디오 프리뷰 클릭됨');
+        
         if (youtubeUrl != null) {
+          print('🖼️ [YouTube] _openYouTubeUrl 호출');
           _openYouTubeUrl(youtubeUrl);
         } else {
+          print('🖼️ [YouTube] _openYouTubeSearch 호출');
           _openYouTubeSearch(singer, songTitle);
         }
       },
@@ -393,9 +465,15 @@ class _ResultCardState extends State<ResultCard> {
           trailing: IconButton(
             icon: const Icon(Icons.open_in_new, color: Colors.white),
             onPressed: () {
+              print('📋 [YouTube] 리스트 아이템 클릭됨!');
+              print('📋 [YouTube] youtubeUrl: $youtubeUrl');
+              debugPrint('📋 [YouTube] 리스트 아이템 클릭됨');
+              
               if (youtubeUrl != null) {
+                print('📋 [YouTube] _openYouTubeUrl 호출');
                 _openYouTubeUrl(youtubeUrl);
               } else {
+                print('📋 [YouTube] _openYouTubeSearch 호출');
                 _openYouTubeSearch(singer, songTitle);
               }
             },
@@ -487,8 +565,45 @@ class _ResultCardState extends State<ResultCard> {
   }
 
   Future<void> _openYouTubeUrl(String url) async {
-    if (await canLaunchUrl(Uri.parse(url))) {
-      await launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication);
+    print('🔗 [YouTube] URL 열기 시도: $url');
+    debugPrint('🔗 [YouTube] URL 열기 시도: $url');
+    
+    try {
+      final uri = Uri.parse(url);
+      print('🔗 [YouTube] URI 파싱 완료: $uri');
+      
+      final canLaunch = await canLaunchUrl(uri);
+      print('🔗 [YouTube] canLaunchUrl 결과: $canLaunch');
+      
+      if (canLaunch) {
+        print('🔗 [YouTube] launchUrl 호출 중...');
+        final result = await launchUrl(uri, mode: LaunchMode.externalApplication);
+        print('✅ [YouTube] URL 열기 성공: $result');
+        debugPrint('✅ [YouTube] URL 열기 성공');
+        
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('YouTube를 여는 중...')),
+          );
+        }
+      } else {
+        print('❌ [YouTube] URL을 실행할 수 없습니다: $url');
+        debugPrint('❌ [YouTube] URL을 실행할 수 없습니다: $url');
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('YouTube를 열 수 없습니다. 브라우저나 YouTube 앱이 필요합니다.')),
+          );
+        }
+      }
+    } catch (e, stackTrace) {
+      print('❌ [YouTube] URL 열기 오류: $e');
+      print('❌ [YouTube] 스택 트레이스: $stackTrace');
+      debugPrint('❌ [YouTube] URL 열기 오류: $e');
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('오류 발생: $e')),
+        );
+      }
     }
   }
 
@@ -520,6 +635,14 @@ class _ResultCardState extends State<ResultCard> {
       userLowMidi = _noteToMidi(parts[0]);
       userHighMidi = _noteToMidi(parts[1]);
     }
+
+    // graph URL 처리 (서버가 반환한 절대/상대 URL, AVD 대응)
+    final String? rawGraphUrl = widget.analysisResult['pitch_graph_url'] as String?;
+    String? graphUrl = rawGraphUrl;
+    if (graphUrl != null && Platform.isAndroid) {
+      graphUrl = graphUrl.replaceFirst('127.0.0.1', '10.0.2.2').replaceFirst('localhost', '10.0.2.2');
+    }
+    debugPrint('ResultCard: graphUrl -> $graphUrl');
 
     final sections = _buildSingerSongSections(
       top3SongsWithYoutube,
@@ -573,6 +696,38 @@ class _ResultCardState extends State<ResultCard> {
             // 음역대 정보
             _buildInfoTile(Icons.mic_none_outlined, "나의 음역대", userVocalRange),
             const SizedBox(height: 24),
+            // 그래프 이미지 표시 (있으면)
+            if (graphUrl != null && graphUrl.isNotEmpty)
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text("📊 음역대 정밀 분석", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                    const SizedBox(height: 8),
+                    Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.grey.shade300),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(8),
+                        child: Image.network(
+                          graphUrl,
+                          fit: BoxFit.contain,
+                          errorBuilder: (_, error, stackTrace) {
+                            debugPrint('ResultCard image error: $error');
+                            return const Padding(
+                              padding: EdgeInsets.all(20.0),
+                              child: Text("그래프를 불러올 수 없습니다.", textAlign: TextAlign.center),
+                            );
+                          },
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             // Top3 추천곡 YouTube 플레이어
             Row(
               children: [
@@ -606,12 +761,18 @@ class _ResultCardState extends State<ResultCard> {
               // YouTube 정보가 아직 없을 때 (로딩 중)
               Column(
                 children: recommended_songs.take(3).map((song) {
+                  final songTitle = song.toString();
                   return Card(
                     margin: const EdgeInsets.symmetric(vertical: 8.0),
                     child: ListTile(
                       leading: Icon(Icons.music_note, color: CustomColors.deepPurple),
-                      title: Text(song.toString()),
+                      title: Text(songTitle),
                       subtitle: Text(bestMatch),
+                      trailing: Icon(Icons.open_in_new, color: CustomColors.deepPurple),
+                      onTap: () {
+                        print('🎵 [추천곡] 클릭됨: $songTitle - $bestMatch');
+                        _openYouTubeSearch(bestMatch, songTitle);
+                      },
                     ),
                   );
                 }).toList(),
