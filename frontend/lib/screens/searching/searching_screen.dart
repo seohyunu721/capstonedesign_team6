@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '/services/result_storage_service.dart';
 import '/core/theme/colors.dart';
+import 'dart:io' show Platform;
 
 // ⭐️ StatefulWidget으로 변경 ⭐️
 class SearchingScreen extends StatefulWidget {
@@ -47,8 +48,6 @@ class _SearchingScreenState extends State<SearchingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // final ResultStorageService resultStorageService = ResultStorageService(); // State 변수로 이동
-
     return Scaffold(
       appBar: AppBar(
         title: const Text("분석 결과 카드"),
@@ -76,8 +75,6 @@ class _SearchingScreenState extends State<SearchingScreen> {
               key: _futureKey,
               future: _resultStorageService.loadAnalysisResult(),
               builder: (context, snapshot) {
-                // ... (기존 로딩, 오류, 데이터 있음, 데이터 없음 로직 유지) ...
-
                 // 로딩 중
                 if (snapshot.connectionState == ConnectionState.waiting) {
                   return const Center(
@@ -97,22 +94,35 @@ class _SearchingScreenState extends State<SearchingScreen> {
                 // 데이터 로드 성공 (결과가 있을 경우)
                 else if (snapshot.data != null) {
                   final analysisResult = snapshot.data!;
-                  // ... (기존 변수 초기화 로직 유지) ...
+                  // 기존 변수 초기화 로직 유지
                   final String bestMatch =
                       analysisResult['best_match'] as String? ?? 'N/A';
                   final String userVocalRange =
                       analysisResult['user_vocal_range'] as String? ?? '분석 불가';
                   final List<dynamic> recommended_songs =
                       analysisResult['recommended_songs'] is List
-                      ? analysisResult['recommended_songs']
-                      : [];
+                          ? analysisResult['recommended_songs']
+                          : [];
                   final List<dynamic> topKResults =
                       analysisResult['top_k_results'] is List
-                      ? analysisResult['top_k_results']
-                      : [];
+                          ? analysisResult['top_k_results']
+                          : [];
+
+                  // 추가: 그래프 URL 파싱
+                  final String? rawGraphUrl =
+                      analysisResult['pitch_graph_url'] as String?;
+                  String? graphUrl = rawGraphUrl;
+                  if (graphUrl != null) {
+                    // Android AVD: 127.0.0.1 -> 10.0.2.2
+                    if (Platform.isAndroid) {
+                      graphUrl = graphUrl
+                          .replaceFirst("127.0.0.1", "10.0.2.2")
+                          .replaceFirst("localhost", "10.0.2.2");
+                    }
+                  }
+                  debugPrint("DEBUG: final graphUrl -> $graphUrl");
 
                   return Card(
-                    // ... (기존 Card 및 결과 표시 UI 로직 유지) ...
                     margin: const EdgeInsets.symmetric(vertical: 16),
                     elevation: 8,
                     shape: RoundedRectangleBorder(
@@ -159,6 +169,49 @@ class _SearchingScreenState extends State<SearchingScreen> {
                             "나의 음역대",
                             userVocalRange,
                           ),
+                          const SizedBox(height: 24),
+
+                          // 추가: 음역대 그래프 이미지 표시
+                          if (graphUrl != null && graphUrl.isNotEmpty)
+                            Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 16.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  const Text(
+                                    "📊 음역대 정밀 분석",
+                                    style: TextStyle(
+                                        fontSize: 16, fontWeight: FontWeight.bold),
+                                  ),
+                                  const SizedBox(height: 8),
+                                  Container(
+                                    decoration: BoxDecoration(
+                                      border: Border.all(color: Colors.grey.shade300),
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(8),
+                                      child: Image.network(
+                                        graphUrl,
+                                        fit: BoxFit.contain,
+                                        errorBuilder:
+                                            (context, error, stackTrace) {
+                                          debugPrint("Image load error: $error");
+                                          return const Padding(
+                                            padding: EdgeInsets.all(20.0),
+                                            child: Text(
+                                              "그래프를 불러올 수 없습니다.",
+                                              textAlign: TextAlign.center,
+                                            ),
+                                          );
+                                        },
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+
                           const SizedBox(height: 24),
                           // 추천곡 목록
                           const Align(
@@ -213,11 +266,6 @@ class _SearchingScreenState extends State<SearchingScreen> {
                                 result as Map<String, dynamic>;
                             final singer =
                                 resultData['singer'] as String? ?? 'N/A';
-                            // final similarityValue =
-                            //     resultData['similarity'] is double
-                            //     ? resultData['similarity'] as double
-                            //     : (resultData['similarity'] as int?)
-                            //               ?.toDouble() ?? 0.0;
 
                             final dynamic similarityRaw =
                                 resultData['similarity'];
