@@ -1,9 +1,9 @@
 {
-    "성시경": [
+    "sungsikyung": [
         {
             "title": "희재",
-            "lowest_note": "A3",
-            "highest_note": "D5",
+            "lowest_note": "D♯3",
+            "highest_note": "G♯4",
             "genres_api": [
                 "k-ballad"
             ],
@@ -14,8 +14,8 @@
         },
         {
             "title": "영원히",
-            "lowest_note": "B3",
-            "highest_note": "C5",
+            "lowest_note": "F3",
+            "highest_note": "F♯4",
             "genres_api": [
                 "k-ballad"
             ],
@@ -26,8 +26,8 @@
         },
         {
             "title": "아픈 나를",
-            "lowest_note": "C4",
-            "highest_note": "C♯5",
+            "lowest_note": "F3",
+            "highest_note": "G♯4",
             "genres_api": [
                 "k-ballad"
             ],
@@ -38,8 +38,8 @@
         },
         {
             "title": "너의 모든 순간",
-            "lowest_note": "G3",
-            "highest_note": "B4",
+            "lowest_note": "C♯3",
+            "highest_note": "F4",
             "genres_api": [
                 "k-ballad"
             ],
@@ -50,8 +50,8 @@
         },
         {
             "title": "널 잊는 기적은 없었다",
-            "lowest_note": "A♯3",
-            "highest_note": "B4",
+            "lowest_note": "F3",
+            "highest_note": "F4",
             "genres_api": [
                 "k-ballad"
             ],
@@ -62,8 +62,8 @@
         },
         {
             "title": "넌 감동이었어",
-            "lowest_note": "F♯3",
-            "highest_note": "B4",
+            "lowest_note": "C♯3",
+            "highest_note": "F4",
             "genres_api": [
                 "k-ballad"
             ],
@@ -74,8 +74,8 @@
         },
         {
             "title": "한번 더 이별",
-            "lowest_note": "A3",
-            "highest_note": "C5",
+            "lowest_note": "E3",
+            "highest_note": "G4",
             "genres_api": [
                 "k-ballad"
             ],
@@ -86,8 +86,8 @@
         },
         {
             "title": "다정하게 안녕히",
-            "lowest_note": "E3",
-            "highest_note": "E5",
+            "lowest_note": "A♯2",
+            "highest_note": "A♯4",
             "genres_api": [
                 "k-ballad"
             ],
@@ -98,8 +98,8 @@
         },
         {
             "title": "니 곁이라면",
-            "lowest_note": "F♯3",
-            "highest_note": "C5",
+            "lowest_note": "C3",
+            "highest_note": "G4",
             "genres_api": [
                 "k-ballad"
             ],
@@ -110,8 +110,8 @@
         },
         {
             "title": "난 좋아",
-            "lowest_note": "A3",
-            "highest_note": "C♯5",
+            "lowest_note": "E3",
+            "highest_note": "G♯4",
             "genres_api": [
                 "k-ballad"
             ],
@@ -121,11 +121,11 @@
             "year": 2011
         }
     ],
-    "케이윌": [
+    "kwill": [
         {
             "title": "이러지마 제발",
-            "lowest_note": "A♯1",
-            "highest_note": "G5",
+            "lowest_note": "F♯3",
+            "highest_note": "C♯5",
             "genres_api": [
                 "k-ballad",
                 "soundtrack"
@@ -137,8 +137,8 @@
         },
         {
             "title": "like a star",
-            "lowest_note": "A♯1",
-            "highest_note": "E5",
+            "lowest_note": "F♯2",
+            "highest_note": "A4",
             "genres_api": [
                 "k-ballad",
                 "soundtrack"
@@ -150,8 +150,8 @@
         },
         {
             "title": "눈물이 뚝뚝",
-            "lowest_note": "A3",
-            "highest_note": "E5",
+            "lowest_note": "D♯3",
+            "highest_note": "A♯4",
             "genres_api": [
                 "k-ballad",
                 "soundtrack"
@@ -163,8 +163,8 @@
         },
         {
             "title": "thank u",
-            "lowest_note": "C♯4",
-            "highest_note": "D5",
+            "lowest_note": "G♯3",
+            "highest_note": "G♯4",
             "genres_api": [
                 "k-ballad",
                 "soundtrack"
@@ -176,8 +176,8 @@
         },
         {
             "title": "day 1",
-            "lowest_note": "G♯3",
-            "highest_note": "F5",
+            "lowest_note": "D♯3",
+            "highest_note": "B4",
             "genres_api": [
                 "k-ballad",
                 "soundtrack"
@@ -189,8 +189,8 @@
         },
         {
             "title": "니가 필요해",
-            "lowest_note": "C♯4",
-            "highest_note": "D♯5",
+            "lowest_note": "G♯3",
+            "highest_note": "A♯4",
             "genres_api": [
                 "k-ballad",
                 "soundtrack"
@@ -202,8 +202,8 @@
         },
         {
             "title": "love blossom",
-            "lowest_note": "C4",
-            "highest_note": "E5",
+            "lowest_note": "F3",
+            "highest_note": "A♯4",
             "genres_api": [
                 "k-ballad",
                 "soundtrack"
@@ -215,8 +215,8 @@
         },
         {
             "title": "그립고 그립고 그립다",
-            "lowest_note": "G♯3",
-            "highest_note": "D♯5",
+            "lowest_note": "D3",
+            "highest_note": "A4",
             "genres_api": [
                 "k-ballad",
                 "soundtrack"
@@ -228,8 +228,8 @@
         },
         {
             "title": "내 생에 아름다운",
-            "lowest_note": "A2",
-            "highest_note": "E5",
+            "lowest_note": "G♯2",
+            "highest_note": "A♯4",
             "genres_api": [
                 "k-ballad",
                 "soundtrack"
@@ -241,8 +241,8 @@
         },
         {
             "title": "growing",
-            "lowest_note": "G3",
-            "highest_note": "F♯5",
+            "lowest_note": "D♯3",
+            "highest_note": "C5",
             "genres_api": [
                 "k-ballad",
                 "soundtrack"
@@ -254,8 +254,8 @@
         },
         {
             "title": "촌스럽게 왜 이래",
-            "lowest_note": "C4",
-            "highest_note": "F♯5",
+            "lowest_note": "F♯3",
+            "highest_note": "B4",
             "genres_api": [
                 "k-ballad",
                 "soundtrack"
@@ -266,11 +266,11 @@
             "year": 2013
         }
     ],
-    "임창정": [
+    "limchangjung": [
         {
             "title": "소주 한 잔",
-            "lowest_note": "A♯1",
-            "highest_note": "C♯5",
+            "lowest_note": "B2",
+            "highest_note": "G♯4",
             "genres_api": [
                 "k-ballad"
             ],
@@ -281,8 +281,8 @@
         },
         {
             "title": "오랜만이야",
-            "lowest_note": "E3",
-            "highest_note": "D5",
+            "lowest_note": "A♯2",
+            "highest_note": "A♯4",
             "genres_api": [
                 "k-ballad"
             ],
@@ -293,8 +293,8 @@
         },
         {
             "title": "내가 저지른 사랑",
-            "lowest_note": "G3",
-            "highest_note": "B5",
+            "lowest_note": "D3",
+            "highest_note": "G5",
             "genres_api": [
                 "k-ballad"
             ],
@@ -305,8 +305,8 @@
         },
         {
             "title": "날 닮은 너",
-            "lowest_note": "B3",
-            "highest_note": "E5",
+            "lowest_note": "F3",
+            "highest_note": "A♯4",
             "genres_api": [
                 "k-ballad"
             ],
@@ -317,8 +317,8 @@
         },
         {
             "title": "또 다시 사랑 뮤직비디오 .",
-            "lowest_note": "G♯3",
-            "highest_note": "D5",
+            "lowest_note": "F3",
+            "highest_note": "A♯4",
             "genres_api": [
                 "정보 없음"
             ],
@@ -329,8 +329,8 @@
         },
         {
             "title": "그 사람을 아나요",
-            "lowest_note": "E3",
-            "highest_note": "D♯5",
+            "lowest_note": "C3",
+            "highest_note": "F5",
             "genres_api": [
                 "k-ballad"
             ],
@@ -341,8 +341,8 @@
         },
         {
             "title": "임창정 love affair",
-            "lowest_note": "G3",
-            "highest_note": "F5",
+            "lowest_note": "D3",
+            "highest_note": "B4",
             "genres_api": [
                 "정보 없음"
             ],
@@ -353,8 +353,8 @@
         },
         {
             "title": "하루도 그대를 사랑하지 않은 적이 없었다",
-            "lowest_note": "G3",
-            "highest_note": "F5",
+            "lowest_note": "D3",
+            "highest_note": "E5",
             "genres_api": [
                 "k-ballad"
             ],
@@ -365,8 +365,8 @@
         },
         {
             "title": "문을 여시오",
-            "lowest_note": "G3",
-            "highest_note": "A♯4",
+            "lowest_note": "C♯3",
+            "highest_note": "E5",
             "genres_api": [
                 "k-ballad"
             ],
@@ -377,8 +377,8 @@
         },
         {
             "title": "ordinary song",
-            "lowest_note": "D3",
-            "highest_note": "D5",
+            "lowest_note": "B2",
+            "highest_note": "A4",
             "genres_api": [
                 "정보 없음"
             ],
@@ -388,11 +388,11 @@
             "year": null
         }
     ],
-    "이하이": [
+    "LEE HI ": [
         {
             "title": "손잡아 줘요",
-            "lowest_note": "D♯4",
-            "highest_note": "E5",
+            "lowest_note": "E3",
+            "highest_note": "A♯4",
             "genres_api": [
                 "k-ballad",
                 "k-pop"
@@ -404,8 +404,8 @@
         },
         {
             "title": "한숨",
-            "lowest_note": "C♯4",
-            "highest_note": "G♯5",
+            "lowest_note": "G3",
+            "highest_note": "C5",
             "genres_api": [
                 "k-ballad",
                 "k-pop"
@@ -417,8 +417,8 @@
         },
         {
             "title": ".2.3.4",
-            "lowest_note": "B2",
-            "highest_note": "F♯5",
+            "lowest_note": "A2",
+            "highest_note": "C♯5",
             "genres_api": [
                 "k-ballad",
                 "k-pop"
@@ -430,8 +430,8 @@
         },
         {
             "title": "Its over",
-            "lowest_note": "C4",
-            "highest_note": "E5",
+            "lowest_note": "G3",
+            "highest_note": "B4",
             "genres_api": [
                 "k-ballad",
                 "k-pop"
@@ -443,8 +443,8 @@
         },
         {
             "title": "Darling",
-            "lowest_note": "C♯4",
-            "highest_note": "F♯5",
+            "lowest_note": "G3",
+            "highest_note": "C5",
             "genres_api": [
                 "k-ballad",
                 "k-pop"
@@ -456,8 +456,8 @@
         },
         {
             "title": "Only",
-            "lowest_note": "D3",
-            "highest_note": "E5",
+            "lowest_note": "G♯3",
+            "highest_note": "B4",
             "genres_api": [
                 "k-ballad",
                 "k-pop"
@@ -469,8 +469,8 @@
         },
         {
             "title": "Safety zone",
-            "lowest_note": "C♯3",
-            "highest_note": "D♯5",
+            "lowest_note": "C3",
+            "highest_note": "A4",
             "genres_api": [
                 "k-ballad",
                 "k-pop"
@@ -482,8 +482,8 @@
         },
         {
             "title": "Rose",
-            "lowest_note": "C4",
-            "highest_note": "E5",
+            "lowest_note": "F♯3",
+            "highest_note": "B4",
             "genres_api": [
                 "k-ballad",
                 "k-pop"
@@ -495,8 +495,8 @@
         },
         {
             "title": "홀로",
-            "lowest_note": "A3",
-            "highest_note": "G5",
+            "lowest_note": "F♯3",
+            "highest_note": "A♯4",
             "genres_api": [
                 "k-ballad",
                 "k-pop"
@@ -508,8 +508,8 @@
         },
         {
             "title": "내 사랑",
-            "lowest_note": "A♯1",
-            "highest_note": "E5",
+            "lowest_note": "A♯3",
+            "highest_note": "B4",
             "genres_api": [
                 "k-ballad",
                 "k-pop"
@@ -520,11 +520,11 @@
             "year": 2016
         }
     ],
-    "폴킴": [
+    "폴킴 (Paul Kim) ": [
         {
             "title": "너의 잠을 채워줄게",
-            "lowest_note": "G♯3",
-            "highest_note": "C5",
+            "lowest_note": "F3",
+            "highest_note": "G♯4",
             "genres_api": [
                 "k-ballad"
             ],
@@ -535,8 +535,8 @@
         },
         {
             "title": "empty",
-            "lowest_note": "E3",
-            "highest_note": "C♯5",
+            "lowest_note": "A2",
+            "highest_note": "G4",
             "genres_api": [
                 "k-ballad"
             ],
@@ -547,8 +547,8 @@
         },
         {
             "title": "but ill miss you",
-            "lowest_note": "G3",
-            "highest_note": "C5",
+            "lowest_note": "D3",
+            "highest_note": "F♯4",
             "genres_api": [
                 "k-ballad"
             ],
@@ -559,8 +559,8 @@
         },
         {
             "title": "마음",
-            "lowest_note": "A♯1",
-            "highest_note": "D5",
+            "lowest_note": "D3",
+            "highest_note": "G♯4",
             "genres_api": [
                 "k-ballad"
             ],
@@ -571,8 +571,8 @@
         },
         {
             "title": "one more time",
-            "lowest_note": "F♯3",
-            "highest_note": "C5",
+            "lowest_note": "D3",
+            "highest_note": "G4",
             "genres_api": [
                 "k-ballad"
             ],
@@ -583,8 +583,8 @@
         },
         {
             "title": "hangover",
-            "lowest_note": "D2",
-            "highest_note": "D5",
+            "lowest_note": "C♯3",
+            "highest_note": "G♯4",
             "genres_api": [
                 "k-ballad"
             ],
@@ -595,8 +595,8 @@
         },
         {
             "title": "cant get over you",
-            "lowest_note": "A♯1",
-            "highest_note": "C5",
+            "lowest_note": "B2",
+            "highest_note": "F♯4",
             "genres_api": [
                 "k-ballad"
             ],
@@ -607,8 +607,8 @@
         },
         {
             "title": "헤어질 걸 알아",
-            "lowest_note": "A♯3",
-            "highest_note": "D♯5",
+            "lowest_note": "F3",
+            "highest_note": "A♯4",
             "genres_api": [
                 "k-ballad"
             ],
@@ -619,8 +619,8 @@
         },
         {
             "title": "너에 대하여",
-            "lowest_note": "A♯1",
-            "highest_note": "C7",
+            "lowest_note": "C3",
+            "highest_note": "G6",
             "genres_api": [
                 "k-ballad"
             ],
@@ -631,8 +631,8 @@
         },
         {
             "title": "집돌이",
-            "lowest_note": "A3",
-            "highest_note": "D5",
+            "lowest_note": "E3",
+            "highest_note": "G♯4",
             "genres_api": [
                 "k-ballad"
             ],
@@ -642,11 +642,11 @@
             "year": 2020
         }
     ],
-    "윤하": [
+    "younha": [
         {
             "title": "윤하 물의 여행",
-            "lowest_note": "E4",
-            "highest_note": "A♯5",
+            "lowest_note": "B3",
+            "highest_note": "G5",
             "genres_api": [
                 "정보 없음"
             ],
@@ -657,8 +657,8 @@
         },
         {
             "title": "내 마음이 뭐가 돼",
-            "lowest_note": "E4",
-            "highest_note": "F♯5",
+            "lowest_note": "A3",
+            "highest_note": "C5",
             "genres_api": [
                 "k-ballad"
             ],
@@ -669,8 +669,8 @@
         },
         {
             "title": "미워하다",
-            "lowest_note": "F♯3",
-            "highest_note": "F♯5",
+            "lowest_note": "A2",
+            "highest_note": "C5",
             "genres_api": [
                 "k-ballad"
             ],
@@ -681,8 +681,8 @@
         },
         {
             "title": "사건의 지평선",
-            "lowest_note": "D♯2",
-            "highest_note": "G5",
+            "lowest_note": "B1",
+            "highest_note": "D5",
             "genres_api": [
                 "k-ballad"
             ],
@@ -693,8 +693,8 @@
         },
         {
             "title": "윤하 오르트구름",
-            "lowest_note": "D♯4",
-            "highest_note": "G♯5",
+            "lowest_note": "G3",
+            "highest_note": "D5",
             "genres_api": [
                 "정보 없음"
             ],
@@ -705,8 +705,8 @@
         },
         {
             "title": "우산",
-            "lowest_note": "F3",
-            "highest_note": "E5",
+            "lowest_note": "G♯2",
+            "highest_note": "B4",
             "genres_api": [
                 "k-rap",
                 "k-pop",
@@ -719,8 +719,8 @@
         },
         {
             "title": "기다리다",
-            "lowest_note": "E4",
-            "highest_note": "D♯5",
+            "lowest_note": "G3",
+            "highest_note": "A4",
             "genres_api": [
                 "k-ballad"
             ],
@@ -731,8 +731,8 @@
         },
         {
             "title": "혜성",
-            "lowest_note": "F♯4",
-            "highest_note": "F♯5",
+            "lowest_note": "A3",
+            "highest_note": "C♯5",
             "genres_api": [
                 "k-ballad"
             ],
@@ -742,11 +742,11 @@
             "year": 2007
         }
     ],
-    "아이유": [
+    "iu": [
         {
             "title": "love wins all",
-            "lowest_note": "F4",
-            "highest_note": "A♯5",
+            "lowest_note": "B3",
+            "highest_note": "E5",
             "genres_api": [
                 "k-pop",
                 "k-ballad"
@@ -758,8 +758,8 @@
         },
         {
             "title": "잊어야 한다는 마음으로",
-            "lowest_note": "A3",
-            "highest_note": "F5",
+            "lowest_note": "A♯2",
+            "highest_note": "E6",
             "genres_api": [
                 "정보 없음"
             ],
@@ -770,8 +770,8 @@
         },
         {
             "title": "겨울잠",
-            "lowest_note": "D♯4",
-            "highest_note": "F♯5",
+            "lowest_note": "A3",
+            "highest_note": "C5",
             "genres_api": [
                 "k-pop",
                 "k-ballad"
@@ -783,8 +783,8 @@
         },
         {
             "title": "에잇",
-            "lowest_note": "F♯4",
-            "highest_note": "F♯5",
+            "lowest_note": "C4",
+            "highest_note": "C♯5",
             "genres_api": [
                 "k-pop",
                 "k-ballad"
@@ -796,8 +796,8 @@
         },
         {
             "title": "밤편지",
-            "lowest_note": "G♯3",
-            "highest_note": "E5",
+            "lowest_note": "D♯3",
+            "highest_note": "B4",
             "genres_api": [
                 "k-pop",
                 "k-ballad"
@@ -809,8 +809,8 @@
         },
         {
             "title": "아이와 나의바다",
-            "lowest_note": "A♯3",
-            "highest_note": "A♯5",
+            "lowest_note": "E3",
+            "highest_note": "F5",
             "genres_api": [
                 "정보 없음"
             ],
@@ -821,8 +821,8 @@
         },
         {
             "title": "팔레트",
-            "lowest_note": "F♯3",
-            "highest_note": "C♯5",
+            "lowest_note": "C3",
+            "highest_note": "D♯5",
             "genres_api": [
                 "k-pop",
                 "k-ballad"
@@ -834,8 +834,8 @@
         },
         {
             "title": "Never ending story",
-            "lowest_note": "B3",
-            "highest_note": "G5",
+            "lowest_note": "F3",
+            "highest_note": "D5",
             "genres_api": [
                 "k-pop",
                 "k-ballad"
@@ -847,8 +847,8 @@
         },
         {
             "title": "이름에게",
-            "lowest_note": "F♯4",
-            "highest_note": "A♯5",
+            "lowest_note": "C4",
+            "highest_note": "E5",
             "genres_api": [
                 "k-pop",
                 "k-ballad"
@@ -860,8 +860,8 @@
         },
         {
             "title": "바이, 썸머",
-            "lowest_note": "D♯2",
-            "highest_note": "G♯5",
+            "lowest_note": "C♯2",
+            "highest_note": "D♯5",
             "genres_api": [
                 "k-pop",
                 "k-ballad"
@@ -873,8 +873,8 @@
         },
         {
             "title": "시간의바깥",
-            "lowest_note": "G♯4",
-            "highest_note": "F♯5",
+            "lowest_note": "C4",
+            "highest_note": "C5",
             "genres_api": [
                 "정보 없음"
             ],
@@ -884,11 +884,11 @@
             "year": null
         }
     ],
-    "허각": [
+    "HuhGak": [
         {
             "title": "나를 잊지 말아요",
-            "lowest_note": "G3",
-            "highest_note": "D5",
+            "lowest_note": "D3",
+            "highest_note": "A4",
             "genres_api": [
                 "k-ballad"
             ],
@@ -899,8 +899,8 @@
         },
         {
             "title": "hello",
-            "lowest_note": "C4",
-            "highest_note": "D5",
+            "lowest_note": "F♯3",
+            "highest_note": "G♯4",
             "genres_api": [
                 "k-ballad"
             ],
@@ -911,8 +911,8 @@
         },
         {
             "title": "사월의 눈",
-            "lowest_note": "A♯3",
-            "highest_note": "E5",
+            "lowest_note": "F3",
+            "highest_note": "B4",
             "genres_api": [
                 "k-ballad"
             ],
@@ -923,8 +923,8 @@
         },
         {
             "title": "miss you",
-            "lowest_note": "A♯3",
-            "highest_note": "D♯5",
+            "lowest_note": "F3",
+            "highest_note": "A♯4",
             "genres_api": [
                 "k-ballad"
             ],
@@ -935,18 +935,20 @@
         },
         {
             "title": "향기만 남아",
-            "lowest_note": "D4",
-            "highest_note": "E5",
-            "genres_api": [],
+            "lowest_note": "A♯3",
+            "highest_note": "C5",
+            "genres_api": [
+                "k-ballad"
+            ],
             "genres_model": [
                 "classical"
             ],
-            "year": null
+            "year": 2013
         },
         {
             "title": "한사람",
-            "lowest_note": "G♯3",
-            "highest_note": "D5",
+            "lowest_note": "D♯3",
+            "highest_note": "A4",
             "genres_api": [
                 "k-ballad"
             ],
@@ -957,8 +959,8 @@
         },
         {
             "title": "empty words",
-            "lowest_note": "A♯1",
-            "highest_note": "E5",
+            "lowest_note": "E3",
+            "highest_note": "B4",
             "genres_api": [
                 "k-ballad"
             ],
@@ -969,8 +971,8 @@
         },
         {
             "title": "only you",
-            "lowest_note": "B3",
-            "highest_note": "E5",
+            "lowest_note": "F3",
+            "highest_note": "C5",
             "genres_api": [
                 "k-ballad"
             ],
@@ -981,8 +983,8 @@
         },
         {
             "title": "1440",
-            "lowest_note": "D4",
-            "highest_note": "E5",
+            "lowest_note": "F♯3",
+            "highest_note": "A♯4",
             "genres_api": [
                 "k-ballad"
             ],
@@ -993,8 +995,8 @@
         },
         {
             "title": "나를 사랑했던 사람아",
-            "lowest_note": "B3",
-            "highest_note": "F5",
+            "lowest_note": "F♯3",
+            "highest_note": "B4",
             "genres_api": [
                 "k-ballad"
             ],

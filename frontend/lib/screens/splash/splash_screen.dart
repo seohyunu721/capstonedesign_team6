@@ -1,13 +1,17 @@
 import 'dart:async';
+// import 'package:frontend/widgets/custom_curved_nav_bar.dart';
 import 'package:lottie/lottie.dart';
-import '/screens/analysis/analysis_screen.dart';
+import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+// import '/screens/analysis/analysis_screen.dart';
+import '/screens/navigator/main_navigator_screen.dart';
 import '/screens/setup/setup_screen.dart';
 import '/core/theme/colors.dart';
-import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
-  const SplashScreen({super.key});
+  final bool isSetupComplete; // 받아오기
+
+  const SplashScreen({super.key, required this.isSetupComplete});
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();
@@ -29,8 +33,13 @@ class _SplashScreenState extends State<SplashScreen> {
 
     Navigator.of(context).pushReplacement(
       MaterialPageRoute(
-        builder: (context) =>
-            isSetupComplete ? AnalysisScreen() : SetupScreen(),
+        builder: (context) {
+          if (isSetupComplete) {
+            return const MainNavigatorScreen(initialIndex: 1);
+          } else {
+            return SetupScreen();
+          }
+        }, // const 키워드 추가
       ),
     );
   }
