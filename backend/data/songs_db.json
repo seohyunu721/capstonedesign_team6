@@ -1,153 +1,1007 @@
 {
-    "sungsikyung": [
+    "성시경": [
         {
-            "title": "[MR 제거] 성시경 - 다정하게 안녕히",
-            "lowest_note": "E3",
-            "highest_note": "A6"
+            "title": "희재",
+            "lowest_note": "A3",
+            "highest_note": "D5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": 2003
         },
         {
-            "title": "성시경 ＂너의 모든 순간＂ 무반주 (MR제거) 역대급 고퀄리티",
-            "lowest_note": "E3",
-            "highest_note": "G♯6"
+            "title": "영원히",
+            "lowest_note": "B3",
+            "highest_note": "C5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2018
         },
         {
-            "title": "[MR 제거] 성시경 - 아픈 나를",
+            "title": "아픈 나를",
+            "lowest_note": "C4",
+            "highest_note": "C♯5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": 2022
+        },
+        {
+            "title": "너의 모든 순간",
             "lowest_note": "G3",
-            "highest_note": "F♯6"
+            "highest_note": "B4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": 2014
         },
         {
-            "title": "[MR 제거] 성시경 - 난 좋아",
-            "lowest_note": "F3",
-            "highest_note": "G6"
+            "title": "널 잊는 기적은 없었다",
+            "lowest_note": "A♯3",
+            "highest_note": "B4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": 2021
         },
         {
-            "title": "[MR제거] 성시경 - 니 곁이라면(Acapella ver.)",
-            "lowest_note": "F3",
-            "highest_note": "A6"
-        },
-        {
-            "title": "[MR 제거] 성시경 - 한번 더 이별",
+            "title": "넌 감동이었어",
             "lowest_note": "F♯3",
-            "highest_note": "A6"
+            "highest_note": "B4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "country"
+            ],
+            "year": 2002
         },
         {
-            "title": "[MR 제거] 성시경 - 영원히",
-            "lowest_note": "F3",
-            "highest_note": "G6"
+            "title": "한번 더 이별",
+            "lowest_note": "A3",
+            "highest_note": "C5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": 2007
         },
         {
-            "title": "성시경 ＂희재＂ 무반주 (MR제거) 역대급 고퀄리티",
+            "title": "다정하게 안녕히",
             "lowest_note": "E3",
-            "highest_note": "G♯6"
+            "highest_note": "E5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "country"
+            ],
+            "year": 2016
         },
         {
-            "title": "[MR 제거] 성시경 - 널 잊는 기적은 없었다",
-            "lowest_note": "F3",
-            "highest_note": "G♯6"
+            "title": "니 곁이라면",
+            "lowest_note": "F♯3",
+            "highest_note": "C5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": 2019
         },
         {
-            "title": "[MR 제거] 성시경 - 넌 감동이었어",
-            "lowest_note": "G3",
-            "highest_note": "F♯6"
+            "title": "난 좋아",
+            "lowest_note": "A3",
+            "highest_note": "C♯5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": 2011
         }
     ],
-    "younha": [
+    "케이윌": [
         {
-            "title": "윤하 - 미워하다 MR제거 [MR Removed]",
-            "lowest_note": "C4",
-            "highest_note": "A♯6"
+            "title": "이러지마 제발",
+            "lowest_note": "A♯1",
+            "highest_note": "G5",
+            "genres_api": [
+                "k-ballad",
+                "soundtrack"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2012
         },
         {
-            "title": "윤하 - 사건의 지평선 MR제거",
-            "lowest_note": "F♯3",
-            "highest_note": "A♯6"
+            "title": "like a star",
+            "lowest_note": "A♯1",
+            "highest_note": "E5",
+            "genres_api": [
+                "k-ballad",
+                "soundtrack"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": 2014
         },
         {
-            "title": "윤하 - 기다리다 MR제거 [MR Removed]",
-            "lowest_note": "B3",
-            "highest_note": "D6"
-        },
-        {
-            "title": "윤하 - 혜성 MR제거 [MR Removed]",
-            "lowest_note": "D4",
-            "highest_note": "B6"
-        },
-        {
-            "title": "윤하 물의 여행 MR제거 Younha Wish Vocal Only",
-            "lowest_note": "C4",
-            "highest_note": "A♯6"
-        },
-        {
-            "title": "윤하(Younha) - 내 마음이 뭐가 돼 MR제거 [MR Removed]",
-            "lowest_note": "E4",
-            "highest_note": "B6"
-        },
-        {
-            "title": "윤하 오르트구름 MR 제거",
+            "title": "눈물이 뚝뚝",
             "lowest_note": "A3",
-            "highest_note": "B6"
+            "highest_note": "E5",
+            "genres_api": [
+                "k-ballad",
+                "soundtrack"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2009
         },
         {
-            "title": "윤하(Younha) - 우산(Umbrella) MR제거 [MR Removed]",
-            "lowest_note": "B3",
-            "highest_note": "A♯6"
-        }
-    ],
-    "iu": [
-        {
-            "title": "아이유 (IU) - Love wins all (러브 윈스 올) MR제거 (Vocal Only)",
-            "lowest_note": "C4",
-            "highest_note": "A♯6"
-        },
-        {
-            "title": "아이유 시간의바깥 반주제거",
-            "lowest_note": "D4",
-            "highest_note": "A6"
-        },
-        {
-            "title": "IU (아이유) - Never Ending Story Acapella ⧸ MR제거",
-            "lowest_note": "A♯3",
-            "highest_note": "A6"
-        },
-        {
-            "title": "[MR 제거] 아이유 (IU) - '겨울잠'",
-            "lowest_note": "A3",
-            "highest_note": "B6"
-        },
-        {
-            "title": "(아이유)-잊어야 한다는 마음으로_mr제거_",
-            "lowest_note": "A♯3",
-            "highest_note": "C7"
-        },
-        {
-            "title": "[ MR제거 ]아이유(IU)-팔레트",
-            "lowest_note": "G3",
-            "highest_note": "C7"
-        },
-        {
-            "title": "[ MR제거 ]아이유 (IU)- 밤편지",
-            "lowest_note": "A♯3",
-            "highest_note": "B6"
-        },
-        {
-            "title": "IU (아이유) - 바이, 썸머 (Bye, Summer) Acapella ｜ MR제거",
-            "lowest_note": "B3",
-            "highest_note": "B6"
-        },
-        {
-            "title": "[MR 제거] 아이유 - '이름에게'",
+            "title": "thank u",
             "lowest_note": "C♯4",
-            "highest_note": "B6"
+            "highest_note": "D5",
+            "genres_api": [
+                "k-ballad",
+                "soundtrack"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": 2015
         },
         {
-            "title": "아이유(IU)_아이와 나의바다 mr제거_풀버전",
-            "lowest_note": "A♯3",
-            "highest_note": "B6"
+            "title": "day 1",
+            "lowest_note": "G♯3",
+            "highest_note": "F5",
+            "genres_api": [
+                "k-ballad",
+                "soundtrack"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": 2014
         },
         {
-            "title": "아이유 에잇 반주제거",
+            "title": "니가 필요해",
+            "lowest_note": "C♯4",
+            "highest_note": "D♯5",
+            "genres_api": [
+                "k-ballad",
+                "soundtrack"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2012
+        },
+        {
+            "title": "love blossom",
             "lowest_note": "C4",
-            "highest_note": "A6"
+            "highest_note": "E5",
+            "genres_api": [
+                "k-ballad",
+                "soundtrack"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2013
+        },
+        {
+            "title": "그립고 그립고 그립다",
+            "lowest_note": "G♯3",
+            "highest_note": "D♯5",
+            "genres_api": [
+                "k-ballad",
+                "soundtrack"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2009
+        },
+        {
+            "title": "내 생에 아름다운",
+            "lowest_note": "A2",
+            "highest_note": "E5",
+            "genres_api": [
+                "k-ballad",
+                "soundtrack"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": 2018
+        },
+        {
+            "title": "growing",
+            "lowest_note": "G3",
+            "highest_note": "F♯5",
+            "genres_api": [
+                "k-ballad",
+                "soundtrack"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": 2015
+        },
+        {
+            "title": "촌스럽게 왜 이래",
+            "lowest_note": "C4",
+            "highest_note": "F♯5",
+            "genres_api": [
+                "k-ballad",
+                "soundtrack"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2013
+        }
+    ],
+    "임창정": [
+        {
+            "title": "소주 한 잔",
+            "lowest_note": "A♯1",
+            "highest_note": "C♯5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": 2002
+        },
+        {
+            "title": "오랜만이야",
+            "lowest_note": "E3",
+            "highest_note": "D5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": 2009
+        },
+        {
+            "title": "내가 저지른 사랑",
+            "lowest_note": "G3",
+            "highest_note": "B5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2016
+        },
+        {
+            "title": "날 닮은 너",
+            "lowest_note": "B3",
+            "highest_note": "E5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": 2000
+        },
+        {
+            "title": "또 다시 사랑 뮤직비디오 .",
+            "lowest_note": "G♯3",
+            "highest_note": "D5",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": null
+        },
+        {
+            "title": "그 사람을 아나요",
+            "lowest_note": "E3",
+            "highest_note": "D♯5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": 2017
+        },
+        {
+            "title": "임창정 love affair",
+            "lowest_note": "G3",
+            "highest_note": "F5",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": null
+        },
+        {
+            "title": "하루도 그대를 사랑하지 않은 적이 없었다",
+            "lowest_note": "G3",
+            "highest_note": "F5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": 2018
+        },
+        {
+            "title": "문을 여시오",
+            "lowest_note": "G3",
+            "highest_note": "A♯4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "country"
+            ],
+            "year": 2013
+        },
+        {
+            "title": "ordinary song",
+            "lowest_note": "D3",
+            "highest_note": "D5",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": null
+        }
+    ],
+    "이하이": [
+        {
+            "title": "손잡아 줘요",
+            "lowest_note": "D♯4",
+            "highest_note": "E5",
+            "genres_api": [
+                "k-ballad",
+                "k-pop"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2016
+        },
+        {
+            "title": "한숨",
+            "lowest_note": "C♯4",
+            "highest_note": "G♯5",
+            "genres_api": [
+                "k-ballad",
+                "k-pop"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2016
+        },
+        {
+            "title": ".2.3.4",
+            "lowest_note": "B2",
+            "highest_note": "F♯5",
+            "genres_api": [
+                "k-ballad",
+                "k-pop"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2012
+        },
+        {
+            "title": "Its over",
+            "lowest_note": "C4",
+            "highest_note": "E5",
+            "genres_api": [
+                "k-ballad",
+                "k-pop"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2013
+        },
+        {
+            "title": "Darling",
+            "lowest_note": "C♯4",
+            "highest_note": "F♯5",
+            "genres_api": [
+                "k-ballad",
+                "k-pop"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": 2021
+        },
+        {
+            "title": "Only",
+            "lowest_note": "D3",
+            "highest_note": "E5",
+            "genres_api": [
+                "k-ballad",
+                "k-pop"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": 2021
+        },
+        {
+            "title": "Safety zone",
+            "lowest_note": "C♯3",
+            "highest_note": "D♯5",
+            "genres_api": [
+                "k-ballad",
+                "k-pop"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2021
+        },
+        {
+            "title": "Rose",
+            "lowest_note": "C4",
+            "highest_note": "E5",
+            "genres_api": [
+                "k-ballad",
+                "k-pop"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2013
+        },
+        {
+            "title": "홀로",
+            "lowest_note": "A3",
+            "highest_note": "G5",
+            "genres_api": [
+                "k-ballad",
+                "k-pop"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": 2020
+        },
+        {
+            "title": "내 사랑",
+            "lowest_note": "A♯1",
+            "highest_note": "E5",
+            "genres_api": [
+                "k-ballad",
+                "k-pop"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2016
+        }
+    ],
+    "폴킴": [
+        {
+            "title": "너의 잠을 채워줄게",
+            "lowest_note": "G♯3",
+            "highest_note": "C5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2022
+        },
+        {
+            "title": "empty",
+            "lowest_note": "E3",
+            "highest_note": "C♯5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": 2019
+        },
+        {
+            "title": "but ill miss you",
+            "lowest_note": "G3",
+            "highest_note": "C5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": 2020
+        },
+        {
+            "title": "마음",
+            "lowest_note": "A♯1",
+            "highest_note": "D5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": 2019
+        },
+        {
+            "title": "one more time",
+            "lowest_note": "F♯3",
+            "highest_note": "C5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": 2022
+        },
+        {
+            "title": "hangover",
+            "lowest_note": "D2",
+            "highest_note": "D5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": 2020
+        },
+        {
+            "title": "cant get over you",
+            "lowest_note": "A♯1",
+            "highest_note": "C5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": 2024
+        },
+        {
+            "title": "헤어질 걸 알아",
+            "lowest_note": "A♯3",
+            "highest_note": "D♯5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": 2019
+        },
+        {
+            "title": "너에 대하여",
+            "lowest_note": "A♯1",
+            "highest_note": "C7",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2023
+        },
+        {
+            "title": "집돌이",
+            "lowest_note": "A3",
+            "highest_note": "D5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": 2020
+        }
+    ],
+    "윤하": [
+        {
+            "title": "윤하 물의 여행",
+            "lowest_note": "E4",
+            "highest_note": "A♯5",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": null
+        },
+        {
+            "title": "내 마음이 뭐가 돼",
+            "lowest_note": "E4",
+            "highest_note": "F♯5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2014
+        },
+        {
+            "title": "미워하다",
+            "lowest_note": "F♯3",
+            "highest_note": "F♯5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2023
+        },
+        {
+            "title": "사건의 지평선",
+            "lowest_note": "D♯2",
+            "highest_note": "G5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2022
+        },
+        {
+            "title": "윤하 오르트구름",
+            "lowest_note": "D♯4",
+            "highest_note": "G♯5",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": null
+        },
+        {
+            "title": "우산",
+            "lowest_note": "F3",
+            "highest_note": "E5",
+            "genres_api": [
+                "k-rap",
+                "k-pop",
+                "k-ballad"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2008
+        },
+        {
+            "title": "기다리다",
+            "lowest_note": "E4",
+            "highest_note": "D♯5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "country"
+            ],
+            "year": 2006
+        },
+        {
+            "title": "혜성",
+            "lowest_note": "F♯4",
+            "highest_note": "F♯5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2007
+        }
+    ],
+    "아이유": [
+        {
+            "title": "love wins all",
+            "lowest_note": "F4",
+            "highest_note": "A♯5",
+            "genres_api": [
+                "k-pop",
+                "k-ballad"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2024
+        },
+        {
+            "title": "잊어야 한다는 마음으로",
+            "lowest_note": "A3",
+            "highest_note": "F5",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": null
+        },
+        {
+            "title": "겨울잠",
+            "lowest_note": "D♯4",
+            "highest_note": "F♯5",
+            "genres_api": [
+                "k-pop",
+                "k-ballad"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2021
+        },
+        {
+            "title": "에잇",
+            "lowest_note": "F♯4",
+            "highest_note": "F♯5",
+            "genres_api": [
+                "k-pop",
+                "k-ballad"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": 2020
+        },
+        {
+            "title": "밤편지",
+            "lowest_note": "G♯3",
+            "highest_note": "E5",
+            "genres_api": [
+                "k-pop",
+                "k-ballad"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2017
+        },
+        {
+            "title": "아이와 나의바다",
+            "lowest_note": "A♯3",
+            "highest_note": "A♯5",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": null
+        },
+        {
+            "title": "팔레트",
+            "lowest_note": "F♯3",
+            "highest_note": "C♯5",
+            "genres_api": [
+                "k-pop",
+                "k-ballad"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2017
+        },
+        {
+            "title": "Never ending story",
+            "lowest_note": "B3",
+            "highest_note": "G5",
+            "genres_api": [
+                "k-pop",
+                "k-ballad"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": 2025
+        },
+        {
+            "title": "이름에게",
+            "lowest_note": "F♯4",
+            "highest_note": "A♯5",
+            "genres_api": [
+                "k-pop",
+                "k-ballad"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2017
+        },
+        {
+            "title": "바이, 썸머",
+            "lowest_note": "D♯2",
+            "highest_note": "G♯5",
+            "genres_api": [
+                "k-pop",
+                "k-ballad"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": 2025
+        },
+        {
+            "title": "시간의바깥",
+            "lowest_note": "G♯4",
+            "highest_note": "F♯5",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": null
+        }
+    ],
+    "허각": [
+        {
+            "title": "나를 잊지 말아요",
+            "lowest_note": "G3",
+            "highest_note": "D5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": 2011
+        },
+        {
+            "title": "hello",
+            "lowest_note": "C4",
+            "highest_note": "D5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2011
+        },
+        {
+            "title": "사월의 눈",
+            "lowest_note": "A♯3",
+            "highest_note": "E5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2015
+        },
+        {
+            "title": "miss you",
+            "lowest_note": "A♯3",
+            "highest_note": "D♯5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": 2017
+        },
+        {
+            "title": "향기만 남아",
+            "lowest_note": "D4",
+            "highest_note": "E5",
+            "genres_api": [],
+            "genres_model": [
+                "classical"
+            ],
+            "year": null
+        },
+        {
+            "title": "한사람",
+            "lowest_note": "G♯3",
+            "highest_note": "D5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": 2012
+        },
+        {
+            "title": "empty words",
+            "lowest_note": "A♯1",
+            "highest_note": "E5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": 2020
+        },
+        {
+            "title": "only you",
+            "lowest_note": "B3",
+            "highest_note": "E5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": 2020
+        },
+        {
+            "title": "1440",
+            "lowest_note": "D4",
+            "highest_note": "E5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2013
+        },
+        {
+            "title": "나를 사랑했던 사람아",
+            "lowest_note": "B3",
+            "highest_note": "F5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": 2020
         }
     ]
 }
