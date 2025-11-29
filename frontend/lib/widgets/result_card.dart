@@ -764,12 +764,17 @@ class _ResultCardState extends State<ResultCard> {
                           color: CustomColors.mediumGrey,
                         )
                       : null,
-              onBackgroundImageError: (e, s) {
-                print('❌ [ResultCard] Spotify 이미지 로드 실패: $e');
-                setState(() {
-                  _artistImageUrl = null;
-                });
-              },
+              // backgroundImage가 null이 아닐 때만 onBackgroundImageError 설정
+              onBackgroundImageError: _artistImageUrl != null
+                  ? (e, s) {
+                      print('❌ [ResultCard] Spotify 이미지 로드 실패: $e');
+                      if (mounted) {
+                        setState(() {
+                          _artistImageUrl = null;
+                        });
+                      }
+                    }
+                  : null,
             ),
             const SizedBox(height: 12),
             const Text("가장 유사한 가수는...", style: TextStyle(fontSize: 16)),
