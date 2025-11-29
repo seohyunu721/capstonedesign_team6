@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '/core/theme/app_theme.dart';
 import '/screens/splash/splash_screen.dart';
-import '/screens/navigator/main_navigator_screen.dart';
-import '/screens/setup/setup_screen.dart';
 
 // --- 앱 시작점 ---
 void main() async {

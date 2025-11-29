@@ -468,5 +468,5 @@ async def analyze(
         if os.path.exists(temp_file_path):
             os.remove(temp_file_path)
         # 변환된 파일도 삭제하는 것이 좋음
-        # if os.path.exists(wav_file_path) and analysis_path != temp_file_path:
-        #     os.remove(wav_file_path)
+        if os.path.exists(wav_file_path) and analysis_path != temp_file_path:
+            os.remove(wav_file_path)

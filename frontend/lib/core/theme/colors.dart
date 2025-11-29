@@ -7,11 +7,11 @@ class CustomColors {
   static const Color primaryBlue = Color(0xFF1A237E);
   static const Color accentTeal = Color(0xFF00BCD4);
   static const Color mediumGrey = Color(0xFF757575);
+  static const Color darkGery = Color(0xFF616161);
   // primarySwatch를 위한 MaterialColor 정의
   static const MaterialColor primaryPurple = Colors.deepPurple;
 
   // 기타 색상
   static Color? lightGrey = Colors.grey[300];
-  static Color? darkGrey = Colors.grey[700];
   static const Color accentRed = Colors.redAccent;
 }

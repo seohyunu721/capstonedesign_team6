@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import '/services/result_storage_service.dart';
 import '/core/theme/colors.dart';
-import 'dart:io' show Platform;
+import 'dart:io' show Platform; // 이거 땜에 웹에서 실행 하면 오류 뜨기에 앱으로 만 실행
 import '/widgets/result_card.dart'; // 추가: ResultCard import
 
-// ⭐️ StatefulWidget으로 변경 ⭐️
 class SearchingScreen extends StatefulWidget {
   const SearchingScreen({super.key});
 
@@ -12,7 +11,6 @@ class SearchingScreen extends StatefulWidget {
   State<SearchingScreen> createState() => _SearchingScreenState();
 }
 
-// ⭐️ State 클래스 구현 ⭐️
 class _SearchingScreenState extends State<SearchingScreen> {
   // ResultStorageService 인스턴스를 State에 보관
   final ResultStorageService _resultStorageService = ResultStorageService();
@@ -20,21 +18,8 @@ class _SearchingScreenState extends State<SearchingScreen> {
   // FutureBuilder의 future를 관리하기 위한 Key
   Key _futureKey = UniqueKey();
 
-  // ResultCard에서 사용하던 정보 표시 타일 위젯
-  Widget _buildInfoTile(IconData icon, String title, String subtitle) {
-    return ListTile(
-      leading: Icon(icon, color: CustomColors.deepPurple),
-      title: Text(
-        title,
-        style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-      ),
-      subtitle: Text(subtitle, style: const TextStyle(fontSize: 18)),
-    );
-  }
-
-  // ⭐️ 핵심 함수: 분석 결과 삭제 및 화면 새로고침 ⭐️
   Future<void> _clearResultAndRefresh(BuildContext context) async {
-    await _resultStorageService.clearAnalysisResult();
+    await _resultStorageService.clearAnalysisResults();
 
     // 사용자에게 피드백 제공
     ScaffoldMessenger.of(
@@ -71,10 +56,10 @@ class _SearchingScreenState extends State<SearchingScreen> {
             const SizedBox(height: 10),
 
             // FutureBuilder를 사용하여 비동기 데이터 로드
-            FutureBuilder<Map<String, dynamic>?>(
+            FutureBuilder<List<Map<String, dynamic>>>(
               // ⭐️ Key와 State 변수 사용 ⭐️
               key: _futureKey,
-              future: _resultStorageService.loadAnalysisResult(),
+              future: _resultStorageService.loadAnalysisResults(),
               builder: (context, snapshot) {
                 // 로딩 중
                 if (snapshot.connectionState == ConnectionState.waiting) {
@@ -88,15 +73,57 @@ class _SearchingScreenState extends State<SearchingScreen> {
                 // 오류 발생
                 else if (snapshot.hasError) {
                   return const Text(
-                    "결과 로드 중 오류가 발생했습니다.",
+                    "결과 로드 중 오류가 발생했습니다. ",
                     style: TextStyle(color: CustomColors.accentRed),
                   );
                 }
                 // 데이터 로드 성공 (결과가 있을 경우)
-                else if (snapshot.data != null) {
-                  final analysisResult = snapshot.data!;
-                  // ResultCard로 통합
-                  return ResultCard(analysisResult: analysisResult);
+                else if (snapshot.hasData && snapshot.data!.isNotEmpty) {
+                  final analysisResultList = snapshot.data!;
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: analysisResultList.asMap().entries.map((entry) {
+                      final index = entry.key;
+                      final result = entry.value;
+
+                      // 결과 맵에서 요약 정보를 추출합니다. (키 이름은 실제 데이터에 맞춰 수정하세요!)
+                      final timestamp = result['timestamp'] ?? '일시 미상';
+                      final score =
+                          result['score']?.toString() ?? 'N/A'; // 점수 정보
+                      return Padding(
+                        padding: const EdgeInsets.only(bottom: 8.0),
+                        child: Card(
+                          // 각 항목을 카드로 감싸 박스 느낌 강조
+                          elevation: 2,
+                          child: ExpansionTile(
+                            // 접혀 있을 때 보이는 제목 (몇 번째 분석 결과인지 표시)
+                            title: Text(
+                              '분석 결과 #${index + 1}',
+                              style: const TextStyle(
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            // 접혀 있을 때 보이는 부제목 (요약 정보)
+                            subtitle: Text('분석 일시: $timestamp, 종합 점수: $score점'),
+
+                            // 박스를 눌렀을 때 펼쳐지는 내용 (상세 ResultCard 포함)
+                            children: [
+                              Divider(
+                                height: 1,
+                                thickness: 1,
+                                color: CustomColors.lightGrey,
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(16.0),
+                                // ⭐️ ResultCard를 상세 내용으로 표시 ⭐️
+                                child: ResultCard(analysisResult: result),
+                              ),
+                            ],
+                          ),
+                        ),
+                      );
+                    }).toList(),
+                  );
                 }
                 // 데이터가 없을 경우
                 else {
@@ -126,21 +153,6 @@ class _SearchingScreenState extends State<SearchingScreen> {
                 style: TextStyle(color: CustomColors.accentRed),
               ),
               onTap: () => _clearResultAndRefresh(context),
-            ),
-
-            // ------------------------------------
-            const Divider(height: 30, thickness: 1),
-            const Text(
-              "기타 설정 및 정보",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
-            ListTile(
-              leading: const Icon(
-                Icons.info_outline,
-                color: CustomColors.mediumGrey,
-              ),
-              title: const Text("앱 정보"),
-              onTap: () {},
             ),
           ],
         ),

@@ -11,7 +11,6 @@ import '/services/api_service.dart';
 import '/services/preferences_service.dart';
 import '/widgets/loading_indicator.dart';
 import '/core/theme/colors.dart';
-import '/services/result_storage_service.dart';
 
 // --- 음성 분석 메인 화면 ---
 class AnalysisScreen extends StatefulWidget {

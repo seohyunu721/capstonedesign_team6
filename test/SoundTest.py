@@ -69,7 +69,8 @@ def analyze_audio_precision(file_path):
     # 삑사리(Outlier) 제거: 상위/하위 1%를 제외한 범위를 진짜 범위로 인정
     # 이렇게 해야 순간적인 잡음을 최고음으로 인식하는 오류를 막음
     low_p = np.percentile(valid_midi, 1)  
-    high_p = np.percentile(valid_midi, 99)
+    # high_p = np.percentile(valid_midi, 99) 
+    high_p = np.percentile(valid_midi) 
     
     # 가장 빈번하게 등장한 음 (중심음)
     median_midi = np.median(valid_midi)
