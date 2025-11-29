@@ -14,10 +14,9 @@ class ResultCard extends StatefulWidget {
 }
 
 class _ResultCardState extends State<ResultCard> {
-  // spotify사진
-
   final SpotifyService _spotifyService = SpotifyService();
   String? _artistImageUrl;
+  bool _isLoadingImage = false;
 
   @override
   void initState() {
@@ -26,21 +25,30 @@ class _ResultCardState extends State<ResultCard> {
   }
 
   Future<void> _loadArtistImage() async {
-    final artistName = widget.analysisResult['bset_match'] as String?;
-    if (artistName == null || artistName.isEmpty) return;
+    final bestMatch = widget.analysisResult['best_match'] ?? 'N/A';
+    if (bestMatch == 'N/A') return;
+
+    setState(() {
+      _isLoadingImage = true;
+    });
 
     try {
-      final url = await _spotifyService.fetchArtistImage(artistName);
+      final imageUrl = await _spotifyService.fetchArtistImage(bestMatch);
       if (mounted) {
         setState(() {
-          _artistImageUrl = url;
+          _artistImageUrl = imageUrl;
+          _isLoadingImage = false;
         });
       }
     } catch (e) {
-      debugPrint("Spotify 가수 이미지 로드 실패: $e");
+      print('❌ [ResultCard] Spotify 이미지 로드 실패: $e');
+      if (mounted) {
+        setState(() {
+          _isLoadingImage = false;
+        });
+      }
     }
   }
-  /////////////////////////////////////////////
 
   // note 문자열 -> midi 변환
   int? _noteToMidi(String? note) {
@@ -740,44 +748,28 @@ class _ResultCardState extends State<ResultCard> {
               ).textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.bold),
             ),
             const Divider(height: 30, thickness: 1),
-            // 이미지 처리
+            // 이미지 처리 (Spotify API 사용)
             CircleAvatar(
-              backgroundColor: CustomColors.lightGrey,
               radius: 50,
-              child: _artistImageUrl != null
-                  ? ClipOval(
-                      child: Image.network(
-                        _artistImageUrl!,
-                        fit: BoxFit.cover,
-                        width: 100,
-                        height: 100,
-                        loadingBuilder: (context, child, loadingProgress) {
-                          if (loadingProgress == null) return child;
-                          return Center(
-                            child: CircularProgressIndicator(
-                              value: loadingProgress.expectedTotalBytes != null
-                                  ? loadingProgress.cumulativeBytesLoaded /
-                                        loadingProgress.expectedTotalBytes!
-                                  : null,
-                              color: CustomColors.deepPurple,
-                            ),
-                          );
-                        },
-                        errorBuilder: (context, error, StackTrace) {
-                          print("사진 가져오기 불가: $error");
-                          return Icon(
-                            Icons.person_outline,
-                            size: 50,
-                            color: CustomColors.darkGery,
-                          );
-                        },
-                      ),
-                    )
-                  : const Icon(
-                      Icons.person_outline,
-                      size: 50,
-                      color: CustomColors.darkGery,
-                    ),
+              backgroundColor: CustomColors.lightGrey,
+              backgroundImage: _artistImageUrl != null
+                  ? NetworkImage(_artistImageUrl!)
+                  : null,
+              child: _isLoadingImage
+                  ? const CircularProgressIndicator()
+                  : _artistImageUrl == null
+                      ? Icon(
+                          Icons.person,
+                          size: 50,
+                          color: CustomColors.mediumGrey,
+                        )
+                      : null,
+              onBackgroundImageError: (e, s) {
+                print('❌ [ResultCard] Spotify 이미지 로드 실패: $e');
+                setState(() {
+                  _artistImageUrl = null;
+                });
+              },
             ),
             const SizedBox(height: 12),
             const Text("가장 유사한 가수는...", style: TextStyle(fontSize: 16)),

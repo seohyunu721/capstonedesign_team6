@@ -17,6 +17,8 @@ from pydub import AudioSegment
 from fastapi import FastAPI, UploadFile, File, HTTPException,Form, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.concurrency import run_in_threadpool
+import httpx
+import base64
 from speechbrain.inference import EncoderClassifier
 from torchaudio.transforms import Resample
 import matplotlib
@@ -312,10 +314,106 @@ def search_faiss_with_timing(index, query, k):
     return scores, ids
 
 
+# --- Spotify API 설정 (환경 변수 또는 직접 설정) ---
+SPOTIFY_CLIENT_ID = os.getenv("SPOTIFY_CLIENT_ID", "a2c4860d3fd5488588e05b1e90f76b78")
+SPOTIFY_CLIENT_SECRET = os.getenv("SPOTIFY_CLIENT_SECRET", "1d8ac11f5f594384a31779cfe17a2941")
+
+# Spotify 토큰 캐싱
+_spotify_token_cache = {"token": None, "expires_at": None}
+
+async def _get_spotify_token():
+    """Spotify Access Token 발급 (캐싱 포함)"""
+    import time
+    current_time = time.time()
+    
+    # 캐시된 토큰이 아직 유효하면 반환
+    if _spotify_token_cache["token"] and _spotify_token_cache["expires_at"]:
+        if current_time < _spotify_token_cache["expires_at"]:
+            return _spotify_token_cache["token"]
+    
+    try:
+        # Basic Auth 생성
+        credentials = f"{SPOTIFY_CLIENT_ID}:{SPOTIFY_CLIENT_SECRET}"
+        encoded_credentials = base64.b64encode(credentials.encode()).decode()
+        
+        async with httpx.AsyncClient() as client:
+            response = await client.post(
+                "https://accounts.spotify.com/api/token",
+                headers={
+                    "Authorization": f"Basic {encoded_credentials}",
+                    "Content-Type": "application/x-www-form-urlencoded",
+                },
+                data="grant_type=client_credentials",
+                timeout=10.0,
+            )
+            
+            if response.status_code != 200:
+                print(f"❌ [Spotify] 토큰 발급 실패: {response.status_code}")
+                raise HTTPException(status_code=500, detail="Spotify 토큰 발급 실패")
+            
+            data = response.json()
+            token = data["access_token"]
+            expires_in = data.get("expires_in", 3600)
+            
+            # 토큰 캐싱 (만료 5분 전에 갱신)
+            _spotify_token_cache["token"] = token
+            _spotify_token_cache["expires_at"] = current_time + expires_in - 300
+            
+            return token
+    except Exception as e:
+        print(f"❌ [Spotify] 토큰 발급 오류: {e}")
+        raise HTTPException(status_code=500, detail=f"Spotify 토큰 발급 오류: {str(e)}")
+
 # --- 3. API 엔드포인트 ---
 @app.get("/")
 def read_root():
     return {"message": "AI 음성 분석 및 노래 추천 API"}
+
+@app.get("/artist-image/{artist_name}")
+async def get_artist_image(artist_name: str):
+    """가수 이름으로 Spotify에서 이미지 URL 가져오기"""
+    if not artist_name or artist_name == "N/A":
+        raise HTTPException(status_code=400, detail="유효하지 않은 가수 이름")
+    
+    try:
+        access_token = await _get_spotify_token()
+        
+        # URL 인코딩
+        import urllib.parse
+        encoded_name = urllib.parse.quote(artist_name)
+        
+        async with httpx.AsyncClient() as client:
+            response = await client.get(
+                f"https://api.spotify.com/v1/search?q={encoded_name}&type=artist&limit=1",
+                headers={"Authorization": f"Bearer {access_token}"},
+                timeout=10.0,
+            )
+            
+            if response.status_code != 200:
+                print(f"❌ [Spotify] 검색 실패: {response.status_code}")
+                return {"image_url": None}
+            
+            data = response.json()
+            items = data.get("artists", {}).get("items", [])
+            
+            if not items:
+                print(f"⚠️ [Spotify] 가수를 찾을 수 없음: {artist_name}")
+                return {"image_url": None}
+            
+            images = items[0].get("images", [])
+            if not images:
+                print(f"⚠️ [Spotify] 이미지가 없음: {artist_name}")
+                return {"image_url": None}
+            
+            # 가장 큰 이미지 반환
+            image_url = images[0].get("url")
+            return {"image_url": image_url}
+            
+    except HTTPException:
+        raise
+    except Exception as e:
+        print(f"❌ [Spotify] 이미지 가져오기 오류: {e}")
+        return {"image_url": None}
 
 @app.post("/analyze")
 async def analyze(

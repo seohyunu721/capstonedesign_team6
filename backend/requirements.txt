@@ -18,3 +18,4 @@ torchaudio==2.2.2
 uvicorn
 python-multipart
 joblib
+httpx

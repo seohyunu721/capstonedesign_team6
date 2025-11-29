@@ -32,7 +32,8 @@ elif CURRENT_OS == "Darwin": # "Darwin"은 macOS를 의미합니다.
     venv_activate = os.path.join(backend_path, "venv", "bin", "activate")
     
     # 2. AppleScript에서 따옴표가 깨지지 않도록 경로를 백슬래시(\)로 이스케이프 처리합니다.
-    backend_command = f'cd \\"{backend_path}\\" && . \\"{venv_activate}\\" && OMP_NUM_THREADS=1 python3 main.py'
+    # OMP_NUM_THREADS=1 환경 변수 설정 및 uvicorn 직접 실행
+    backend_command = f'cd \\"{backend_path}\\" && . \\"{venv_activate}\\" && export OMP_NUM_THREADS=1 && python3 -m uvicorn app.app:app --host 0.0.0.0 --port 8000 --reload'
     subprocess.Popen(
         ['osascript', '-e', f'tell app "Terminal" to do script "{backend_command}"'],
     )
