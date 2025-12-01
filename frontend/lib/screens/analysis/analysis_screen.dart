@@ -3,6 +3,7 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:file_picker/file_picker.dart';
+import 'package:frontend/screens/navigator/main_navigator_screen.dart';
 import 'package:frontend/screens/searching/searching_screen.dart';
 import 'package:frontend/services/result_storage_service.dart';
 import 'package:lottie/lottie.dart';
@@ -12,10 +13,15 @@ import '/services/preferences_service.dart';
 import '/widgets/loading_indicator.dart';
 import '/core/theme/colors.dart';
 
+// 추가
+typedef AnalysisStatusGetter = bool Function();
+
 // --- 음성 분석 메인 화면 ---
 class AnalysisScreen extends StatefulWidget {
-  const AnalysisScreen({Key? key}) : super(key: key); // 추가
-
+  // 추가
+  final Function(AnalysisStatusGetter) onStatusRegistered;
+  const AnalysisScreen({Key? key, required this.onStatusRegistered})
+    : super(key: key);
   @override
   _AnalysisScreenState createState() => _AnalysisScreenState();
 }
@@ -33,6 +39,9 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
   String? _fileName;
   Uint8List? _fileBytes;
 
+  // 상태 반환하는 Getter 추가
+  bool get isProcessing => _isRecording || _isLoading;
+
   bool _isLoading = false;
   Map<String, dynamic>? _analysisResult;
   String _statusMessage = "분석할 음성 파일을 선택해주세요.";
@@ -42,6 +51,7 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
   @override
   void initState() {
     super.initState();
+    widget.onStatusRegistered(() => isProcessing);
     _initServices();
   }
 
@@ -199,7 +209,6 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
               if (!_isLoading) _buildUploadWidget(),
               const SizedBox(height: 40),
               if (_isLoading) _buildLoadingWidget(),
-              // if (!_isLoading && _analysisResult != null) _buildResultWidget(),
               const SizedBox(height: 20),
               Text(
                 _statusMessage,

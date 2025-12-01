@@ -552,6 +552,7 @@ async def analyze(
 
         # 반환값 생성
         return {
+            "fileName" : voice_file.filename,
             "best_match": best_match_singer,
             "user_vocal_range": user_range_str,
             "recommended_songs": recommended_songs,

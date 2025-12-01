@@ -16,5 +16,6 @@ frontend/build/
 frontend/.dart_tool/
 frontend/.flutter-plugins
 frontend/.flutter-plugins-dependencies
+backend/static/graphs
 
 venv/

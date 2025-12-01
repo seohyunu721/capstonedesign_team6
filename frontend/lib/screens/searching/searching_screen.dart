@@ -86,27 +86,53 @@ class _SearchingScreenState extends State<SearchingScreen> {
                       final index = entry.key;
                       final result = entry.value;
 
-                      // 결과 맵에서 요약 정보를 추출합니다. (키 이름은 실제 데이터에 맞춰 수정하세요!)
-                      final timestamp = result['timestamp'] ?? '일시 미상';
-                      final score =
-                          result['score']?.toString() ?? 'N/A'; // 점수 정보
+                      final fileName = result['fileName'] ?? '파일 이름 미상';
+                      final topKResults =
+                          result['top_k_results'] as List<dynamic>? ?? [];
+
+                      String topSingerInfo = '유사 가수: 정보 없음';
+
+                      if (topKResults.isNotEmpty &&
+                          topKResults.first is Map<String, dynamic>) {
+                        final topResult =
+                            topKResults.first as Map<String, dynamic>;
+                        final singerName = topResult['singer'] ?? '미상';
+
+                        // 유사도 임시 제거
+                        // final similarityValue = topResult['similarity'];
+                        // String similarityScore;
+
+                        // if (similarityValue is num) {
+                        //   similarityScore = similarityValue.toStringAsFixed(4);
+                        // } else if (similarityValue is String) {
+                        //   final parsedValue = double.tryParse(similarityValue);
+                        //   similarityScore = parsedValue != null
+                        //       ? parsedValue.toStringAsFixed(4)
+                        //       : 'N/A';
+                        // } else {
+                        //   similarityScore = 'N/A';
+                        // }
+
+                        topSingerInfo = '$singerName';
+                      }
+                      final subtitleText =
+                          '파일: $fileName | 유사 가수: $topSingerInfo';
+
                       return Padding(
                         padding: const EdgeInsets.only(bottom: 8.0),
                         child: Card(
-                          // 각 항목을 카드로 감싸 박스 느낌 강조
                           elevation: 2,
                           child: ExpansionTile(
-                            // 접혀 있을 때 보이는 제목 (몇 번째 분석 결과인지 표시)
                             title: Text(
                               '분석 결과 #${index + 1}',
                               style: const TextStyle(
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            // 접혀 있을 때 보이는 부제목 (요약 정보)
-                            subtitle: Text('분석 일시: $timestamp, 종합 점수: $score점'),
-
-                            // 박스를 눌렀을 때 펼쳐지는 내용 (상세 ResultCard 포함)
+                            subtitle: Text(
+                              subtitleText,
+                              style: const TextStyle(fontSize: 12),
+                            ),
                             children: [
                               Divider(
                                 height: 1,
