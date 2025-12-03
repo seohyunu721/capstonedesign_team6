@@ -19,3 +19,4 @@ uvicorn
 python-multipart
 joblib
 httpx
+Matplotlib
