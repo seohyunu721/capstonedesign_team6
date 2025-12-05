@@ -191,11 +191,24 @@ for singer_dir in singer_dirs:
     if singer_name_for_api not in songs_database:
         songs_database[singer_name_for_api] = []
     
+    # 이미 처리된 곡 목록 캐싱: 연도가 있으면 스킵, 연도 없으면 재시도
+    existing_map = {
+        entry.get("title"): entry
+        for entry in songs_database[singer_name_for_api]
+    }
+    
     for file_path in glob.glob(os.path.join(singer_dir, '**', '*.wav'), recursive=True):
         original_title = os.path.splitext(os.path.basename(file_path))[0]
         
         # --- [수정] clean_song_title 함수 호출 방식 수정 (인자 1개 전달) ---
         cleaned_title = clean_song_title(original_title) 
+        
+        # 이미 DB에 있고, 연도가 채워져 있으면 건너뜀
+        if cleaned_title in existing_map:
+            existing_entry = existing_map[cleaned_title]
+            if existing_entry.get("year") not in (None, "정보 없음"):
+                print(f"   ⏭️  스킵 (이미 있음, 연도 존재): {cleaned_title}")
+                continue
         
         lowest, highest = analyze_vocal_range(file_path)
         
