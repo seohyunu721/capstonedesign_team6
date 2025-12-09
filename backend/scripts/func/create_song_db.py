@@ -175,13 +175,13 @@ SINGER_NAME_MAP = {
 }
 
 # 의도하신 대로 *_song으로 유지
-singer_dirs = glob.glob(os.path.join(DATA_DIR, '*_songs'))
+singer_dirs = glob.glob(os.path.join(DATA_DIR, '*_song'))
 
 print("\n🎶 노래 음역대, 장르, 연도 데이터베이스 생성을 시작합니다...")
 print("-" * 50)
 
 for singer_dir in singer_dirs:
-    singer_name_from_folder = os.path.basename(singer_dir).replace("_songs", "")
+    singer_name_from_folder = os.path.basename(singer_dir).replace("_song", "")
     
     # API 검색용 이름 (e.g., "성시경")을 가져옴
     singer_name_for_api = SINGER_NAME_MAP.get(singer_name_from_folder, singer_name_from_folder)
