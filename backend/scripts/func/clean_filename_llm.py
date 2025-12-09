@@ -106,7 +106,7 @@ def clean_with_regex(filename: str) -> str:
         'official', 'mv', 'music video', 'audio', 'lyrics', '가사',
         'full ver', 'ver.', 'ver', 'version', '풀버전', 'ost',
         'official audio', 'official video', 'official mv',
-        '【', '】', '｜', '⧸', 'lyric', 'lyrics video'
+        '【', '】', '｜', '⧸', 'lyric', 'lyrics video', '_mr_removed', 
     ]
     for keyword in keywords:
         cleaned = re.sub(rf'\b{re.escape(keyword)}\b', '', cleaned, flags=re.IGNORECASE)

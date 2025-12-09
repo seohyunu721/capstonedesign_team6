@@ -20,3 +20,6 @@ python-multipart
 joblib
 httpx
 Matplotlib
+openai
+spotipy
+musicbrainzngs
