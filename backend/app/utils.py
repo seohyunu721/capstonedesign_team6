@@ -24,7 +24,7 @@ def clean_song_title(title: str) -> str:
     words_to_remove = [
         'mr제거', 'mr removed', '무반주', 'acapella', 'vocal only', 'lyrics', '가사',
         'vocals', 'official', 'mv', 'music video', 'audio', 'full ver', 'ver\.', 'ver',
-        '역대급 고퀄리티', '반주제거', '풀버전', 'ost part', 'ost'
+        '역대급 고퀄리티', '반주제거', '풀버전', 'ost part', 'ost', '_mr_removed', '[가사/Lyrics]'
     ]
     # 단어 경계(\b)를 사용하여 더 정확하게 제거
     pattern = re.compile(r'\b(?:' + '|'.join(re.escape(word) for word in words_to_remove) + r')\b', re.IGNORECASE)

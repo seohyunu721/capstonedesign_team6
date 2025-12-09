@@ -38,7 +38,7 @@ class ApiService {
         ),
       );
       // 시간 늘림 300
-      var response = await request.send().timeout(const Duration(seconds: 300));
+      var response = await request.send().timeout(const Duration(seconds: 500));
 
       if (response.statusCode == 200) {
         var responseBody = await response.stream.bytesToString();

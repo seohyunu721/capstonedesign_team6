@@ -37,13 +37,6 @@ class _MainNavigatorScreenState extends State<MainNavigatorScreen> {
     Icon(Icons.settings, size: 30, color: Colors.white),
   ];
 
-  // 내비게이션 탭 클릭 시 표시될 실제 스크린 목록
-  // final List<Widget> _screens = [
-  //   const SettingScreen(),
-  //   AnalysisScreen(), // lib/screens/analysis/analysis_screen.dart
-  //   const SearchingScreen(),
-  // ];
-
   late final List<Widget> _screens;
 
   ////////////////////////////////추가 ////////////////////////
