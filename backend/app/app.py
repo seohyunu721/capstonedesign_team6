@@ -27,6 +27,7 @@ matplotlib.use("Agg")   # non-GUI backend (파일로 저장 전용)
 import matplotlib.pyplot as plt
 from matplotlib.ticker import FuncFormatter
 from fastapi.staticfiles import StaticFiles # <-- 추가
+import yt_dlp
 
 # --- 1. FastAPI 앱 및 모델 로딩 ---
 app = FastAPI()
@@ -364,6 +365,38 @@ async def _get_spotify_token():
         print(f"❌ [Spotify] 토큰 발급 오류: {e}")
         raise HTTPException(status_code=500, detail=f"Spotify 토큰 발급 오류: {str(e)}")
 
+def search_youtube_video(singer, song_title):
+    """YouTube에서 노래를 검색하여 비디오 ID를 반환하는 함수"""
+    try:
+        search_query = f"{singer} {song_title} audio"
+        
+        ydl_opts = {
+            'quiet': True,
+            'no_warnings': True,
+            'extract_flat': 'in_playlist',  # 플레이리스트 내에서만 flat 모드
+        }
+        
+        with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+            # ytsearch1: 검색 결과 중 첫 번째 항목만 가져옴
+            search_url = f"ytsearch1:{search_query}"
+            info = ydl.extract_info(search_url, download=False)
+            
+            if info and 'entries' in info and len(info['entries']) > 0:
+                video = info['entries'][0]
+                video_id = video.get('id')
+                video_url = f"https://www.youtube.com/watch?v={video_id}" if video_id else None
+                video_title = video.get('title', '')
+                return {
+                    'video_id': video_id,
+                    'video_url': video_url,
+                    'title': video_title
+                }
+        
+        return None
+    except Exception as e:
+        print(f"YouTube 검색 오류 ({singer} - {song_title}): {e}")
+        return None
+    
 # --- 3. API 엔드포인트 ---
 @app.get("/")
 def read_root():
@@ -521,32 +554,104 @@ async def analyze(
         # artists_to_check가 비어있으면 filtered_artists도 비어있게 됨
         filtered_artists = [res['singer'] for res in artists_to_check]
 
-        # 2. 최종 노래 추천 (장르, 년도, 음역대)
-        recommended_songs = []
+        # [수정] best_match_singer를 먼저 정의
         best_match_singer = filtered_artists[0] if filtered_artists else "N/A"
+
+        # 2. 최종 노래 추천 (장르, 년도, 음역대 필터링)
+        recommended_songs = []
+        matched_singer_full_songs = []
+        top_singers_full_songs = []
+        
         target_gtzan_genres = USER_TO_GTZAN_MAP.get(genre, []) # 상단에 정의된 MAP 사용
 
         # 필터링된 가수 목록을 순회하며 조건에 맞는 노래 찾기
-        for artist_name in filtered_artists:
-            if recommended_songs: # 이미 추천곡을 찾았다면 루프 중단
-                break
+        if best_match_singer != "N/A":
+            for artist_name in filtered_artists:
+                singer_song_list = songs_db.get(artist_name, [])
                 
-            singer_song_list = songs_db.get(artist_name, [])
-            
-            for song in singer_song_list:
-                song_year = song.get('year')
-                # API 장르와 모델 예측 장르 모두 확인
-                song_genres = song.get('genres_api', []) + song.get('genres_model', [])
+                current_singer_recs = []
+                for song in singer_song_list:
+                    song_year = song.get('year')
+                    # API 장르와 모델 예측 장르 모두 확인
+                    song_genres = song.get('genres_api', []) + song.get('genres_model', [])
 
-                # A. 년도 필터
-                if song_year and not (start_year <= song_year <= end_year):
+                    # A. 년도 필터
+                    if song_year and not (start_year <= song_year <= end_year):
+                        continue
+                    # B. 장르 필터 (교집합 확인)
+                    if genre != 'none' and not any(g in target_gtzan_genres for g in song_genres):
+                        continue
+                    # C. 음역대 필터
+                    if is_in_range(song['lowest_note'], song['highest_note'], user_lowest_note, user_highest_note):
+                        current_singer_recs.append(song)
+                
+                if current_singer_recs:
+                    top_singers_full_songs.append({
+                        "singer": artist_name,
+                        "songs": current_singer_recs
+                    })
+                    if artist_name == best_match_singer:
+                        matched_singer_full_songs = current_singer_recs
+        
+        recommended_songs = [song['title'] for song in matched_singer_full_songs]
+
+        # --- Top3 노래 및 유튜브 검색 ---
+        top3_songs_with_youtube = []
+        songs_to_search = []
+        
+        # Case A: 음역대 기반 추천곡이 있는 경우 (최대 3개)
+        if recommended_songs:
+            songs_to_search = [(best_match_singer, song_title) for song_title in recommended_songs[:3]]
+        # Case B: 음역대 추천곡이 없으면, 매칭된 가수의 DB 상위 3곡
+        elif best_match_singer != "N/A" and best_match_singer in songs_db:
+            songs_to_search = [(best_match_singer, song['title']) for song in songs_db[best_match_singer][:3]]
+
+        # Case C: 위에서도 부족하면, 유사도 Top K 가수들의 대표곡으로 채움
+        if not songs_to_search and best_match_singer != "N/A":
+            seen_singers = {best_match_singer}
+            for result in raw_top_k:
+                singer_name = result['singer']
+                if singer_name in seen_singers:
                     continue
-                # B. 장르 필터 (교집합 확인)
-                if genre != 'none' and not any(g in target_gtzan_genres for g in song_genres):
-                    continue
-                # C. 음역대 필터
-                if is_in_range(song['lowest_note'], song['highest_note'], user_lowest_note, user_highest_note):
-                    recommended_songs.append(song['title'])
+                seen_singers.add(singer_name)
+                if singer_name in songs_db and songs_db[singer_name]:
+                    songs_to_search.append((singer_name, songs_db[singer_name][0]['title']))
+                if len(songs_to_search) >= 3:
+                    break
+
+        # Case D: DB에 노래 정보가 아예 없으면 가수 이름으로 검색어 생성
+        if not songs_to_search and best_match_singer != "N/A":
+            for result in raw_top_k[:3]:
+                singer_name = result['singer']
+                songs_to_search.append((singer_name, f"{singer_name} 노래"))
+        
+        # 2. 비동기로 유튜브 검색 실행 (병렬 처리로 속도 최적화)
+        if songs_to_search:
+            loop = asyncio.get_running_loop()
+            youtube_search_tasks = []
+            
+            for singer, song_title in songs_to_search:
+                task = loop.run_in_executor(None, search_youtube_video, singer, song_title)
+                youtube_search_tasks.append((singer, song_title, task))
+            
+            for singer, song_title, task in youtube_search_tasks:
+                youtube_info = await task
+                if youtube_info:
+                    top3_songs_with_youtube.append({
+                        'title': song_title,
+                        'singer': singer,
+                        'youtube_video_id': youtube_info.get('video_id'),
+                        'youtube_url': youtube_info.get('video_url'),
+                        'youtube_title': youtube_info.get('title', '')
+                    })
+                else:
+                    top3_songs_with_youtube.append({
+                        'title': song_title,
+                        'singer': singer,
+                        'youtube_video_id': None,
+                        'youtube_url': None,
+                        'youtube_title': None
+                    })
         
         # [중요] 위에서 구한 결과를 그대로 반환해야 함 (덮어쓰기 코드 삭제됨)
         graph_url = f"{str(request.base_url).rstrip('/')}/static/graphs/{graph_filename}"
@@ -569,6 +674,9 @@ async def analyze(
                 {"singer": res['singer'], "similarity": f"{res['similarity']:.2f}%"} 
                 for res in raw_top_k
             ],
+            "top3_songs_with_youtube": top3_songs_with_youtube, 
+            "matched_singer_full_songs": matched_singer_full_songs,
+            "top_singers_full_songs": top_singers_full_songs,
         }
     finally:
         if os.path.exists(temp_file_path):

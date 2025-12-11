@@ -1,9 +1,21 @@
+// lib/widgets/result_card.dart
+
 import 'package:flutter/material.dart';
 import '/core/theme/colors.dart'; // [필수] CustomColors가 정의된 경로를 확인하세요.
 import 'dart:io' show Platform;
 import '/services/spotify_service.dart'; // [필수] SpotifyService가 정의된 경로를 확인하세요.
-import '/utils/analysis_logic.dart';
-import 'youtube_recommendation_sheet.dart';
+
+// ------------------------------------------------------------------
+// [경로 수정됨] result_card.dart (lib/widgets)의 위치에 맞춰 경로를 수정했습니다.
+// ------------------------------------------------------------------
+
+// 1. analysis_logic.dart는 일반적으로 lib/utils에 위치하므로 절대 경로 사용
+import '/utils/analysis_logic.dart'; 
+
+// 2. youtube_recommendation_sheet.dart는 result_card.dart와 같은 lib/widgets에 위치한다고 가정하고 상대 경로 사용
+import 'youtube_recommendation_sheet.dart'; 
+
+// ------------------------------------------------------------------
 
 class ResultCard extends StatefulWidget {
   final Map<String, dynamic> analysisResult;
@@ -28,6 +40,7 @@ class _ResultCardState extends State<ResultCard> {
   Future<void> _loadArtistImage() async {
     final bestMatch = widget.analysisResult['best_match'] ?? 'N/A';
     if (bestMatch == 'N/A') return;
+
     setState(() {
       _isLoadingImage = true;
     });
@@ -48,56 +61,6 @@ class _ResultCardState extends State<ResultCard> {
         });
       }
     }
-  }
-
-  // 그래프 확대 기능을 위한 모달 표시 메서드
-  void _showZoomedGraph(BuildContext context, String imageUrl) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return Dialog(
-          backgroundColor: Colors.black,
-          insetPadding: const EdgeInsets.all(10),
-          child: GestureDetector(
-            onTap: () => Navigator.of(context).pop(), // Tap anywhere to dismiss
-            child: Container(
-              width: double.infinity,
-              height: double.infinity,
-              // InteractiveViewer를 사용하여 확대/축소 및 패닝 기능 제공
-              child: InteractiveViewer(
-                panEnabled: true,
-                minScale: 1.0,
-                maxScale: 20.0,
-                child: Image.network(
-                  imageUrl,
-                  fit: BoxFit.contain,
-                  loadingBuilder: (context, child, loadingProgress) {
-                    if (loadingProgress == null) return child;
-                    return Center(
-                      child: CircularProgressIndicator(
-                        value: loadingProgress.expectedTotalBytes != null
-                            ? loadingProgress.cumulativeBytesLoaded /
-                                  loadingProgress.expectedTotalBytes!
-                            : null,
-                        valueColor: const AlwaysStoppedAnimation<Color>(
-                          CustomColors.deepPurple,
-                        ),
-                      ),
-                    );
-                  },
-                  errorBuilder: (_, __, ___) => const Center(
-                    child: Text(
-                      "그래프를 불러올 수 없습니다. 다시 시도하세요.",
-                      style: TextStyle(color: Colors.white, fontSize: 18),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
-        );
-      },
-    );
   }
 
   // --- UI 컴포넌트 ---
@@ -176,7 +139,6 @@ class _ResultCardState extends State<ResultCard> {
                 ],
               ),
             ),
-
             const SizedBox(height: 12),
             _buildVideoPreview(
               videoId: videoId,
@@ -196,7 +158,6 @@ class _ResultCardState extends State<ResultCard> {
                     AnalysisLogic.openYouTubeSearch(context, singer, songTitle);
                   }
                 },
-
                 icon: const Icon(Icons.play_arrow),
                 label: Text(
                   videoId != null ? 'YouTube에서 전체 보기' : 'YouTube에서 검색',
@@ -222,6 +183,7 @@ class _ResultCardState extends State<ResultCard> {
     final imageUrl = videoId != null
         ? 'https://img.youtube.com/vi/$videoId/hqdefault.jpg'
         : null;
+
     return GestureDetector(
       onTap: () {
         if (youtubeUrl != null) {
@@ -255,7 +217,6 @@ class _ResultCardState extends State<ResultCard> {
                   ),
                 ),
               ),
-
               const Center(
                 child: CircleAvatar(
                   radius: 28,
@@ -271,7 +232,7 @@ class _ResultCardState extends State<ResultCard> {
   }
 
   // --- 데이터 처리 로직 (AnalysisLogic 호출) ---
-
+  
   List<Map<String, dynamic>> _buildSingerSongSections(
     List<dynamic> youtubeSongs,
     List<dynamic> singerFullSongs,
@@ -288,6 +249,7 @@ class _ResultCardState extends State<ResultCard> {
         }
       }
     }
+
     final List<Map<String, dynamic>> sections = [];
     int rankCounter = 1;
     for (final entry in singerFullSongs) {
@@ -295,12 +257,14 @@ class _ResultCardState extends State<ResultCard> {
       final singer = entry['singer'] ?? defaultSinger;
       final songs = (entry['songs'] as List<dynamic>?) ?? const [];
       final List<Map<String, dynamic>> formattedSongs = [];
+
       for (final song in songs) {
         if (song is! Map<String, dynamic>) continue;
         final title = (song['title'] ?? '').toString();
         if (title.isEmpty) continue;
         final key = title.toLowerCase();
         final ytInfo = youtubeLookup[key];
+
         formattedSongs.add({
           'title': title,
           'singer': singer,
@@ -311,18 +275,16 @@ class _ResultCardState extends State<ResultCard> {
           'youtube_title': ytInfo?['youtube_title'],
         });
       }
+
       if (formattedSongs.isNotEmpty) {
         if (userLowMidi != null && userHighMidi != null) {
           // AnalysisLogic의 정적 메서드 사용
           formattedSongs.sort(
-            (a, b) =>
-                AnalysisLogic.rangeMatchScore(
-                  a,
-                  userLowMidi,
-                  userHighMidi,
-                ).compareTo(
-                  AnalysisLogic.rangeMatchScore(b, userLowMidi, userHighMidi),
-                ),
+            (a, b) => AnalysisLogic.rangeMatchScore(
+              a,
+              userLowMidi,
+              userHighMidi,
+            ).compareTo(AnalysisLogic.rangeMatchScore(b, userLowMidi, userHighMidi)),
           );
         }
         sections.add({
@@ -333,6 +295,7 @@ class _ResultCardState extends State<ResultCard> {
         rankCounter++;
       }
     }
+
     // fallback: youtube 정보만이라도 표시
     if (sections.isEmpty && youtubeSongs.isNotEmpty) {
       final fallbackSongs = youtubeSongs
@@ -353,6 +316,7 @@ class _ResultCardState extends State<ResultCard> {
         'rank': rankCounter,
       });
     }
+
     return sections;
   }
 
@@ -372,11 +336,13 @@ class _ResultCardState extends State<ResultCard> {
         widget.analysisResult['matched_singer_full_songs'] ?? [];
     List<dynamic> topSingersFullSongs =
         widget.analysisResult['top_singers_full_songs'] ?? [];
+
     if (topSingersFullSongs.isEmpty && matchedSingerSongs.isNotEmpty) {
       topSingersFullSongs = [
         {'singer': bestMatch, 'songs': matchedSingerSongs},
       ];
     }
+
     // 사용자 음역대 파싱 (ex: "C3 ~ F4")
     int? userLowMidi, userHighMidi;
     final userVocalRangeStr = userVocalRange.replaceAll(' ', '');
@@ -386,7 +352,8 @@ class _ResultCardState extends State<ResultCard> {
       userLowMidi = AnalysisLogic.noteToMidi(parts[0]);
       userHighMidi = AnalysisLogic.noteToMidi(parts[1]);
     }
-    // graph URL 처리 (Android 에뮬레이터에서 로컬 호스트 접근을 위한 주소 변경)
+
+    // graph URL 처리
     final String? rawGraphUrl =
         widget.analysisResult['pitch_graph_url'] as String?;
     String? graphUrl = rawGraphUrl;
@@ -396,6 +363,7 @@ class _ResultCardState extends State<ResultCard> {
           .replaceFirst('localhost', '10.0.2.2');
     }
     debugPrint('ResultCard: graphUrl -> $graphUrl');
+
     final sections = _buildSingerSongSections(
       top3SongsWithYoutube,
       topSingersFullSongs,
@@ -403,6 +371,7 @@ class _ResultCardState extends State<ResultCard> {
       userLowMidi,
       userHighMidi,
     );
+
     final List<Map<String, dynamic>> mergedSongs = [];
     for (final section in sections) {
       final songs =
@@ -410,6 +379,7 @@ class _ResultCardState extends State<ResultCard> {
       mergedSongs.addAll(songs);
     }
     final bool hasPlaylist = mergedSongs.isNotEmpty;
+
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -432,8 +402,12 @@ class _ResultCardState extends State<ResultCard> {
               child: _isLoadingImage
                   ? const CircularProgressIndicator()
                   : _artistImageUrl == null
-                  ? Icon(Icons.person, size: 50, color: CustomColors.mediumGrey)
-                  : null,
+                      ? Icon(
+                          Icons.person,
+                          size: 50,
+                          color: CustomColors.mediumGrey,
+                        )
+                      : null,
               onBackgroundImageError: _artistImageUrl != null
                   ? (e, s) {
                       print('❌ [ResultCard] Spotify 이미지 로드 실패: $e');
@@ -467,37 +441,33 @@ class _ResultCardState extends State<ResultCard> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Text(
-                      "📊 음역대 정밀 분석 (탭하여 확대)", // 확대 안내 문구 추가
+                      "📊 음역대 정밀 분석",
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     const SizedBox(height: 8),
-                    // GestureDetector로 감싸서 탭 이벤트 처리
-                    GestureDetector(
-                      onTap: () => _showZoomedGraph(context, graphUrl!),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Colors.grey.shade300),
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(8),
-                          child: Image.network(
-                            graphUrl,
-                            fit: BoxFit.contain,
-                            errorBuilder: (_, error, stackTrace) {
-                              debugPrint('ResultCard image error: $error');
-                              return const Padding(
-                                padding: EdgeInsets.all(20.0),
-                                child: Text(
-                                  "그래프를 불러올 수 없습니다.",
-                                  textAlign: TextAlign.center,
-                                ),
-                              );
-                            },
-                          ),
+                    Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.grey.shade300),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(8),
+                        child: Image.network(
+                          graphUrl,
+                          fit: BoxFit.contain,
+                          errorBuilder: (_, error, stackTrace) {
+                            debugPrint('ResultCard image error: $error');
+                            return const Padding(
+                              padding: EdgeInsets.all(20.0),
+                              child: Text(
+                                "그래프를 불러올 수 없습니다.",
+                                textAlign: TextAlign.center,
+                              ),
+                            );
+                          },
                         ),
                       ),
                     ),
@@ -519,12 +489,11 @@ class _ResultCardState extends State<ResultCard> {
                 ),
                 TextButton.icon(
                   onPressed: hasPlaylist
-                      ? () => YouTubeRecommendationSheet.show(
-                          // 정적 메서드 호출
-                          context,
-                          sections,
-                          bestMatch,
-                        )
+                      ? () => YouTubeRecommendationSheet.show( // 정적 메서드 호출
+                            context,
+                            sections,
+                            bestMatch,
+                          )
                       : null,
                   icon: const Icon(Icons.queue_music),
                   label: const Text("Top3 리스트 보기"),
@@ -539,6 +508,13 @@ class _ResultCardState extends State<ResultCard> {
               Column(
                 children: recommended_songs.take(3).map((song) {
                   final songTitle = song.toString();
+                  // [수정] top3SongsWithYoutube에서 해당 노래의 정보를 찾습니다.
+                  final ytInfo = top3SongsWithYoutube.firstWhere(
+                    (ytSong) => ytSong is Map && ytSong['title'] == songTitle,
+                    orElse: () => null,
+                  );
+                  final youtubeUrl = ytInfo?['youtube_url'];
+
                   return Card(
                     margin: const EdgeInsets.symmetric(vertical: 8.0),
                     child: ListTile(
@@ -553,11 +529,12 @@ class _ResultCardState extends State<ResultCard> {
                         color: CustomColors.deepPurple,
                       ),
                       onTap: () {
-                        AnalysisLogic.openYouTubeSearch(
-                          context,
-                          bestMatch,
-                          songTitle,
-                        );
+                        // [수정] URL이 있으면 바로 열고, 없으면 검색합니다.
+                        if (youtubeUrl != null) {
+                          AnalysisLogic.openYouTubeUrl(context, youtubeUrl);
+                        } else {
+                          AnalysisLogic.openYouTubeSearch(context, bestMatch, songTitle);
+                        }
                       },
                     ),
                   );
