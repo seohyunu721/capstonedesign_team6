@@ -5,16 +5,16 @@ import 'package:http/http.dart' as http;
 
 class ApiService {
   
-  // static const String _serverUrl = "http://13.125.59.103:8000";
+  static const String _serverUrl = "http://13.125.59.103:8000";
 
-  // final String apiUrl = _serverUrl;
+  final String apiUrl = _serverUrl;
 
-  // 플랫폼별 API URL 설정
-  final String apiUrl = kIsWeb
-      ? "http://127.0.0.1:8000"
-      : (defaultTargetPlatform == TargetPlatform.android
-            ? "http://10.0.2.2:8000"
-            : "http://127.0.0.1:8000");
+  // // 플랫폼별 API URL 설정
+  // final String apiUrl = kIsWeb
+  //     ? "http://127.0.0.1:8000"
+  //     : (defaultTargetPlatform == TargetPlatform.android
+  //           ? "http://10.0.2.2:8000"
+  //           : "http://127.0.0.1:8000");
 
   Future<Map<String, dynamic>> analyzeVoice({
     required Uint8List fileBytes,
