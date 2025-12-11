@@ -5,12 +5,15 @@ import 'package:flutter/foundation.dart';
 import 'dart:io' show Platform;
 
 class SpotifyService {
-  // 백엔드 API URL 설정 (보안: Client Secret은 백엔드에서만 관리)
-  final String apiUrl = kIsWeb
-      ? "http://127.0.0.1:8000"
-      : (defaultTargetPlatform == TargetPlatform.android
-            ? "http://10.0.2.2:8000"
-            : "http://127.0.0.1:8000");
+
+  final String apiUrl = "http://13.125.59.103:8000";
+
+  // // 백엔드 API URL 설정 (보안: Client Secret은 백엔드에서만 관리)
+  // final String apiUrl = kIsWeb
+  //     ? "http://127.0.0.1:8000"
+  //     : (defaultTargetPlatform == TargetPlatform.android
+  //           ? "http://10.0.2.2:8000"
+  //           : "http://127.0.0.1:8000");
 
   // 가수 이미지 URL 가져오기 (백엔드 API 호출)
   Future<String?> fetchArtistImage(String artistName) async {

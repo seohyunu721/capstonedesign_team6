@@ -10,6 +10,7 @@ import librosa
 import json
 import time  
 import asyncio
+import unicodedata
 # 추가 본 ###################
 import soundfile as sf
 from pydub import AudioSegment
@@ -81,8 +82,18 @@ try:
     singer_id_map = joblib.load(os.path.join(MODELS_DIR, "singer_id_map.pkl"))
     
     with open(os.path.join(DATA_DIR, "songs_db.json"), 'r', encoding='utf-8') as f:
-        songs_db = json.load(f)
-        
+        songs_db_raw = json.load(f)
+    
+    # --- [수정] 로딩 시 모든 제목을 NFC로 정규화 (macOS-Windows-모바일 호환성) ---
+    songs_db = {}
+    for singer, song_list in songs_db_raw.items():
+        normalized_song_list = []
+        for song in song_list:
+            if 'title' in song and song['title']:
+                song['title'] = unicodedata.normalize('NFC', song['title'])
+            normalized_song_list.append(song)
+        songs_db[singer] = normalized_song_list
+    # --------------------------------------------------------------------
     with open(os.path.join(DATA_DIR, "singer_info.json"), 'r', encoding='utf-8') as f:
         singer_info = json.load(f)
     
