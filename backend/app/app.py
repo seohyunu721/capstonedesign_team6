@@ -293,7 +293,61 @@ def analyze_vocal_range(file_path, graph_save_path=None):
     except Exception as e:
         print(f"❌ 음역대 분석 중 오류 발생: {e}")
         return None, None
+# app.py 상단 import 확인: import os, httpx (없으면 추가)
 
+def search_youtube_video(singer, song_title):
+    """
+    1순위: YouTube API를 사용해 썸네일과 링크를 가져옴
+    2순위: 실패하면 검색 결과 링크만 생성 (비상용)
+    """
+    # 1. API 키 확인
+    api_key = os.getenv("YOUTUBE_API_KEY")
+    
+    # 2. 검색어 생성
+    search_query = f"{singer} {song_title} audio"
+    
+    # [시도 1] API로 썸네일 가져오기
+    if api_key:
+        try:
+            params = {
+                "part": "snippet",
+                "q": search_query,
+                "key": api_key,
+                "maxResults": 1,
+                "type": "video"
+            }
+            # 동기 방식으로 요청 (httpx.Client 사용)
+            with httpx.Client() as client:
+                response = client.get("https://www.googleapis.com/youtube/v3/search", params=params, timeout=5.0)
+                
+                # 성공(200)일 때만 처리
+                if response.status_code == 200:
+                    data = response.json()
+                    if 'items' in data and len(data['items']) > 0:
+                        video = data['items'][0]
+                        video_id = video['id']['videoId']
+                        title = video['snippet']['title']
+                        # 썸네일과 링크 모두 반환!
+                        return {
+                            'video_id': video_id,
+                            'video_url': f"https://www.youtube.com/watch?v={video_id}",
+                            'title': title
+                        }
+                else:
+                    print(f"⚠️ API 요청 실패: {response.status_code} (비상 모드로 전환)")
+        except Exception as e:
+            print(f"⚠️ API 에러: {e} (비상 모드로 전환)")
+
+    # [시도 2] API 실패 시 링크만 생성 (절대 실패 안 함)
+    import urllib.parse
+    encoded_query = urllib.parse.quote(f"{singer} {song_title}")
+    
+    return {
+        'video_id': None, # 썸네일 없음 (앱에서 회색 처리)
+        'video_url': f"https://www.youtube.com/results?search_query={encoded_query}",
+        'title': f"{singer} - {song_title}"
+    }
+    
 def is_in_range(song_low, song_high, user_low, user_high, tolerance=2):
     """
     음역대 비교 (tolerance: 반음 단위 허용 오차, 기본값 2)
@@ -376,38 +430,6 @@ async def _get_spotify_token():
         print(f"❌ [Spotify] 토큰 발급 오류: {e}")
         raise HTTPException(status_code=500, detail=f"Spotify 토큰 발급 오류: {str(e)}")
 
-def search_youtube_video(singer, song_title):
-    """YouTube에서 노래를 검색하여 비디오 ID를 반환하는 함수"""
-    try:
-        search_query = f"{singer} {song_title} audio"
-        
-        ydl_opts = {
-            'quiet': True,
-            'no_warnings': True,
-            'extract_flat': 'in_playlist',  # 플레이리스트 내에서만 flat 모드
-        }
-        
-        with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-            # ytsearch1: 검색 결과 중 첫 번째 항목만 가져옴
-            search_url = f"ytsearch1:{search_query}"
-            info = ydl.extract_info(search_url, download=False)
-            
-            if info and 'entries' in info and len(info['entries']) > 0:
-                video = info['entries'][0]
-                video_id = video.get('id')
-                video_url = f"https://www.youtube.com/watch?v={video_id}" if video_id else None
-                video_title = video.get('title', '')
-                return {
-                    'video_id': video_id,
-                    'video_url': video_url,
-                    'title': video_title
-                }
-        
-        return None
-    except Exception as e:
-        print(f"YouTube 검색 오류 ({singer} - {song_title}): {e}")
-        return None
-    
 # --- 3. API 엔드포인트 ---
 @app.get("/")
 def read_root():
@@ -610,25 +632,39 @@ async def analyze(
         top3_songs_with_youtube = []
         songs_to_search = []
         
-        # Case A: 음역대 기반 추천곡이 있는 경우 (최대 3개)
-        if recommended_songs:
-            songs_to_search = [(best_match_singer, song_title) for song_title in recommended_songs[:3]]
-        # Case B: 음역대 추천곡이 없으면, 매칭된 가수의 DB 상위 3곡
-        elif best_match_singer != "N/A" and best_match_singer in songs_db:
-            songs_to_search = [(best_match_singer, song['title']) for song in songs_db[best_match_singer][:3]]
-
-        # Case C: 위에서도 부족하면, 유사도 Top K 가수들의 대표곡으로 채움
-        if not songs_to_search and best_match_singer != "N/A":
-            seen_singers = {best_match_singer}
-            for result in raw_top_k:
-                singer_name = result['singer']
-                if singer_name in seen_singers:
-                    continue
-                seen_singers.add(singer_name)
-                if singer_name in songs_db and songs_db[singer_name]:
-                    songs_to_search.append((singer_name, songs_db[singer_name][0]['title']))
-                if len(songs_to_search) >= 3:
+        # [수정] top_singers_full_songs(필터링된 추천곡 리스트)를 기반으로 유튜브 검색 목록 생성
+        # 사용자가 "추천곡 리스트"와 "유튜브 검색 결과"가 일치하기를 원함
+        if top_singers_full_songs:
+            search_limit = 6  # API 쿼터 및 응답 속도를 고려하여 최대 6곡 검색
+            count = 0
+            for entry in top_singers_full_songs:
+                singer_name = entry['singer']
+                for song in entry['songs']:
+                    songs_to_search.append((singer_name, song['title']))
+                    count += 1
+                    if count >= search_limit:
+                        break
+                if count >= search_limit:
                     break
+        
+        # 만약 필터링된 추천곡이 없다면 기존 로직으로 Fallback
+        if not songs_to_search:
+            # Case B: 매칭된 가수의 DB 상위 3곡
+            if best_match_singer != "N/A" and best_match_singer in songs_db:
+                songs_to_search = [(best_match_singer, song['title']) for song in songs_db[best_match_singer][:3]]
+
+            # Case C: 위에서도 부족하면, 유사도 Top K 가수들의 대표곡으로 채움
+            if not songs_to_search and best_match_singer != "N/A":
+                seen_singers = {best_match_singer}
+                for result in raw_top_k:
+                    singer_name = result['singer']
+                    if singer_name in seen_singers:
+                        continue
+                    seen_singers.add(singer_name)
+                    if singer_name in songs_db and songs_db[singer_name]:
+                        songs_to_search.append((singer_name, songs_db[singer_name][0]['title']))
+                    if len(songs_to_search) >= 3:
+                        break
 
         # Case D: DB에 노래 정보가 아예 없으면 가수 이름으로 검색어 생성
         if not songs_to_search and best_match_singer != "N/A":
@@ -666,7 +702,9 @@ async def analyze(
         
         # [중요] 위에서 구한 결과를 그대로 반환해야 함 (덮어쓰기 코드 삭제됨)
         graph_url = f"{str(request.base_url).rstrip('/')}/static/graphs/{graph_filename}"
+        
         print(f"DEBUG: pitch_graph_url -> {graph_url}")
+        print("DEBUG: top3_songs_with_youtube 데이터 ->", json.dumps(top_singers_full_songs, indent=2, ensure_ascii=False))
 
         user_range_str = f"{user_lowest_note} ~ {user_highest_note}" if user_lowest_note else "분석 불가"
         
