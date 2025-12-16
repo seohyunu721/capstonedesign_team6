@@ -1611,12 +1611,13 @@
             "lowest_note": "D3",
             "highest_note": "G5",
             "genres_api": [
-                "정보 없음"
+                "k-ballad",
+                "k-rock"
             ],
             "genres_model": [
                 "classical"
             ],
-            "year": null
+            "year": 2010
         },
         {
             "title": "좋은 사람",
@@ -2141,6 +2142,1015 @@
                 "country"
             ],
             "year": 2019
+        },
+        {
+            "title": "내 맘을 볼수 있나요",
+            "lowest_note": "E2",
+            "highest_note": "A4",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "country"
+            ],
+            "year": null
+        }
+    ],
+    "김범수": [
+        {
+            "title": "Last Love",
+            "lowest_note": "A2",
+            "highest_note": "A4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": 2011
+        },
+        {
+            "title": "Miss you",
+            "lowest_note": "D3",
+            "highest_note": "A4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": 2002
+        },
+        {
+            "title": "Sadness Guide",
+            "lowest_note": "D♯3",
+            "highest_note": "G♯4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": 2008
+        },
+        {
+            "title": "김범수 가슴에지는태양",
+            "lowest_note": "A♯3",
+            "highest_note": "A4",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": null
+        },
+        {
+            "title": "나타나",
+            "lowest_note": "F♯3",
+            "highest_note": "G4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": 2010
+        },
+        {
+            "title": "바보같은 내게",
+            "lowest_note": "F3",
+            "highest_note": "A♯4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "country"
+            ],
+            "year": 2002
+        },
+        {
+            "title": "슬픔보다 더 슬픈 이야기",
+            "lowest_note": "F♯3",
+            "highest_note": "A♯4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2008
+        },
+        {
+            "title": "약속",
+            "lowest_note": "D♯3",
+            "highest_note": "G♯4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": 1999
+        },
+        {
+            "title": "위로",
+            "lowest_note": "D♯3",
+            "highest_note": "G♯4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": 2021
+        },
+        {
+            "title": "하루",
+            "lowest_note": "C3",
+            "highest_note": "A4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2000
+        }
+    ],
+    "도경수": [
+        {
+            "title": "Bite",
+            "lowest_note": "D3",
+            "highest_note": "A4",
+            "genres_api": [
+                "k-ballad",
+                "k-pop"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2022
+        },
+        {
+            "title": "Im Fine",
+            "lowest_note": "E3",
+            "highest_note": "G4",
+            "genres_api": [
+                "k-ballad",
+                "k-pop"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2021
+        },
+        {
+            "title": "My Love",
+            "lowest_note": "G3",
+            "highest_note": "A♯4",
+            "genres_api": [
+                "k-ballad",
+                "k-pop"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": 2021
+        },
+        {
+            "title": "Popcorn",
+            "lowest_note": "D3",
+            "highest_note": "F♯5",
+            "genres_api": [
+                "k-ballad",
+                "k-pop"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2024
+        },
+        {
+            "title": "Rose",
+            "lowest_note": "F♯3",
+            "highest_note": "G4",
+            "genres_api": [
+                "k-ballad",
+                "k-pop"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": 2021
+        },
+        {
+            "title": "SING ALONG!",
+            "lowest_note": "D♯3",
+            "highest_note": "F♯5",
+            "genres_api": [
+                "k-ballad",
+                "k-pop"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2025
+        },
+        {
+            "title": "Snowfall at Night",
+            "lowest_note": "G2",
+            "highest_note": "A♯4",
+            "genres_api": [
+                "k-ballad",
+                "k-pop"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2025
+        },
+        {
+            "title": "괜찮아도 괜찮아",
+            "lowest_note": "D3",
+            "highest_note": "D4",
+            "genres_api": [
+                "k-ballad",
+                "k-pop"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2019
+        },
+        {
+            "title": "별 떨어진다",
+            "lowest_note": "C♯3",
+            "highest_note": "E4",
+            "genres_api": [
+                "k-ballad",
+                "k-pop"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2023
+        },
+        {
+            "title": "영원해",
+            "lowest_note": "G♯3",
+            "highest_note": "B4",
+            "genres_api": [
+                "k-ballad",
+                "k-pop"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2025
+        }
+    ],
+    "문문": [
+        {
+            "title": "Acacia",
+            "lowest_note": "C3",
+            "highest_note": "G4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": 2018
+        },
+        {
+            "title": "Aewol",
+            "lowest_note": "G♯2",
+            "highest_note": "G♯4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": 2016
+        },
+        {
+            "title": "Paint",
+            "lowest_note": "A♯2",
+            "highest_note": "D♯4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2017
+        },
+        {
+            "title": "Right Than, Wrong Now",
+            "lowest_note": "D♯2",
+            "highest_note": "F4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2021
+        },
+        {
+            "title": "Tree",
+            "lowest_note": "D3",
+            "highest_note": "F♯4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2017
+        },
+        {
+            "title": "결혼",
+            "lowest_note": "A♯2",
+            "highest_note": "F4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": 2017
+        },
+        {
+            "title": "비행운",
+            "lowest_note": "C♯3",
+            "highest_note": "F♯4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "country"
+            ],
+            "year": 2016
+        },
+        {
+            "title": "사람없인 사람으로 못살아요",
+            "lowest_note": "A2",
+            "highest_note": "F♯4",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": null
+        },
+        {
+            "title": "앙고라",
+            "lowest_note": "G♯2",
+            "highest_note": "G♯6",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": 2017
+        },
+        {
+            "title": "음지인",
+            "lowest_note": "E3",
+            "highest_note": "G4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2021
+        }
+    ],
+    "백지영": [
+        {
+            "title": "After a Long Time",
+            "lowest_note": "A3",
+            "highest_note": "C♯5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "country"
+            ],
+            "year": 2012
+        },
+        {
+            "title": "Garosugil At Dawn )",
+            "lowest_note": "A2",
+            "highest_note": "C5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": 2023
+        },
+        {
+            "title": "See You Again",
+            "lowest_note": "D4",
+            "highest_note": "C5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2018
+        },
+        {
+            "title": "거짓말이라도 해서 널 보고싶어 - 가사",
+            "lowest_note": "F♯3",
+            "highest_note": "D5",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": null
+        },
+        {
+            "title": "그 여자",
+            "lowest_note": "F♯3",
+            "highest_note": "C♯5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "country"
+            ],
+            "year": 2022
+        },
+        {
+            "title": "돌아와줘",
+            "lowest_note": "D3",
+            "highest_note": "C5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2008
+        },
+        {
+            "title": "백지영 – 다시는 사랑하지 않고, 이별에 아파하기 싫어",
+            "lowest_note": "B3",
+            "highest_note": "D♯5",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": null
+        },
+        {
+            "title": "백지영- IF I",
+            "lowest_note": "B3",
+            "highest_note": "E5",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": null
+        },
+        {
+            "title": "사랑 안해",
+            "lowest_note": "G3",
+            "highest_note": "C5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "country"
+            ],
+            "year": 2006
+        },
+        {
+            "title": "총맞은 것처럼",
+            "lowest_note": "A2",
+            "highest_note": "C♯5",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": null
+        }
+    ],
+    "이문세": [
+        {
+            "title": "가로수 그늘아래 서면",
+            "lowest_note": "A♯2",
+            "highest_note": "B4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "country"
+            ],
+            "year": 1988
+        },
+        {
+            "title": "가을이 오면",
+            "lowest_note": "E2",
+            "highest_note": "B4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "country"
+            ],
+            "year": 1987
+        },
+        {
+            "title": "광화문 연가",
+            "lowest_note": "A2",
+            "highest_note": "D5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "country"
+            ],
+            "year": 1988
+        },
+        {
+            "title": "그녀의 웃음소리뿐",
+            "lowest_note": "A2",
+            "highest_note": "C5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": 1987
+        },
+        {
+            "title": "붉은 노을",
+            "lowest_note": "G♯2",
+            "highest_note": "E5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 1987
+        },
+        {
+            "title": "사랑이 지나가면",
+            "lowest_note": "C♯3",
+            "highest_note": "F5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": 1987
+        },
+        {
+            "title": "소녀",
+            "lowest_note": "F♯2",
+            "highest_note": "G4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": 1985
+        },
+        {
+            "title": "옛사랑",
+            "lowest_note": "D♯2",
+            "highest_note": "B4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "country"
+            ],
+            "year": 2017
+        },
+        {
+            "title": "휘파람",
+            "lowest_note": "C2",
+            "highest_note": "E5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": 1985
+        }
+    ],
+    "임영웅": [
+        {
+            "title": "Home - Lyrics",
+            "lowest_note": "E3",
+            "highest_note": "F♯5",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": null
+        },
+        {
+            "title": "Hope",
+            "lowest_note": "G♯2",
+            "highest_note": "C♯5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": 2020
+        },
+        {
+            "title": "My Starry Love",
+            "lowest_note": "D♯2",
+            "highest_note": "F♯4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": 2021
+        },
+        {
+            "title": "Story of old couple in their 60s",
+            "lowest_note": "A♯2",
+            "highest_note": "G♯6",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": 2020
+        },
+        {
+            "title": "다시 만날 수 있을까 - 가사",
+            "lowest_note": "G♯2",
+            "highest_note": "G4",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": null
+        },
+        {
+            "title": "무지개",
+            "lowest_note": "G♯2",
+            "highest_note": "C5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2022
+        },
+        {
+            "title": "사랑은 늘 도망가",
+            "lowest_note": "D3",
+            "highest_note": "F4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": 2021
+        },
+        {
+            "title": "순간을 영원처럼",
+            "lowest_note": "C3",
+            "highest_note": "A4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": 2025
+        },
+        {
+            "title": "우리들의 블루스 - 가사",
+            "lowest_note": "D♯3",
+            "highest_note": "F4",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": null
+        },
+        {
+            "title": "이제 나만 믿어요",
+            "lowest_note": "B2",
+            "highest_note": "B4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": 2020
+        }
+    ],
+    "지드래곤": [
+        {
+            "title": "개소리",
+            "lowest_note": "B2",
+            "highest_note": "E5",
+            "genres_api": [
+                "k-pop",
+                "k-rap"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2017
+        },
+        {
+            "title": "그 XX",
+            "lowest_note": "B2",
+            "highest_note": "G4",
+            "genres_api": [
+                "k-pop",
+                "k-rap"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2012
+        },
+        {
+            "title": "늴리리야",
+            "lowest_note": "D♯3",
+            "highest_note": "B4",
+            "genres_api": [
+                "k-pop",
+                "k-rap"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2013
+        },
+        {
+            "title": "니가 뭔데",
+            "lowest_note": "D♯3",
+            "highest_note": "E5",
+            "genres_api": [
+                "k-pop",
+                "k-rap"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2013
+        },
+        {
+            "title": "무제",
+            "lowest_note": "A2",
+            "highest_note": "B4",
+            "genres_api": [
+                "k-pop",
+                "k-rap"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2017
+        },
+        {
+            "title": "미치GO",
+            "lowest_note": "G♯2",
+            "highest_note": "A5",
+            "genres_api": [
+                "k-pop",
+                "k-rap"
+            ],
+            "genres_model": [
+                "country"
+            ],
+            "year": 2013
+        },
+        {
+            "title": "삐딱하게",
+            "lowest_note": "D3",
+            "highest_note": "F♯4",
+            "genres_api": [
+                "k-pop",
+                "k-rap"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2013
+        },
+        {
+            "title": "세상을 흔들어",
+            "lowest_note": "F2",
+            "highest_note": "F♯4",
+            "genres_api": [
+                "k-pop",
+                "k-rap"
+            ],
+            "genres_model": [
+                "country"
+            ],
+            "year": 2013
+        },
+        {
+            "title": "소년이여",
+            "lowest_note": "C3",
+            "highest_note": "B4",
+            "genres_api": [
+                "k-pop",
+                "k-rap"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": 2009
+        },
+        {
+            "title": "쿠데타",
+            "lowest_note": "D3",
+            "highest_note": "F4",
+            "genres_api": [
+                "k-pop",
+                "k-rap"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2013
+        },
+        {
+            "title": "크레용",
+            "lowest_note": "F3",
+            "highest_note": "D♯5",
+            "genres_api": [
+                "k-pop",
+                "k-rap"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2012
+        }
+    ],
+    "한동근": [
+        {
+            "title": "Can t Have You",
+            "lowest_note": "D♯3",
+            "highest_note": "A4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "country"
+            ],
+            "year": 2025
+        },
+        {
+            "title": "If I Love Again",
+            "lowest_note": "D♯3",
+            "highest_note": "A♯4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": 2023
+        },
+        {
+            "title": "It s love",
+            "lowest_note": "C♯3",
+            "highest_note": "F4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": 2022
+        },
+        {
+            "title": "Wherever It Is",
+            "lowest_note": "G♯2",
+            "highest_note": "A4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": 2016
+        },
+        {
+            "title": "관계",
+            "lowest_note": "A♯2",
+            "highest_note": "A4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": 2023
+        },
+        {
+            "title": "그대라는 사치",
+            "lowest_note": "C♯3",
+            "highest_note": "A♯4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": 2016
+        },
+        {
+            "title": "비가 내려요 - 가사",
+            "lowest_note": "G♯2",
+            "highest_note": "A♯4",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": null
+        },
+        {
+            "title": "새벽에 걸려온 너의 전화는 - Kpop - - 가사",
+            "lowest_note": "E3",
+            "highest_note": "A4",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": null
+        },
+        {
+            "title": "이 소설의 끝을 다시 써보려 해",
+            "lowest_note": "E3",
+            "highest_note": "A♯4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2014
+        },
+        {
+            "title": "한숨",
+            "lowest_note": "C3",
+            "highest_note": "F♯5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": 2018
         }
     ]
 }
