@@ -119,8 +119,8 @@ if __name__ == "__main__":
         run_remove_mr()
         run_train_xvector()
         run_train_faiss()
-        # run_clean_filenames()  # 파일명 정제 추가
-        # run_create_song_db()
+        run_clean_filenames()  # 파일명 정제 추가
+        run_create_song_db()
         finalize_pipeline()
     except Exception as e:
         print(f"파이프라인 실행 중 오류 발생: {e}")
