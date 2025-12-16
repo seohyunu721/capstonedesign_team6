@@ -3152,5 +3152,1055 @@
             ],
             "year": 2018
         }
+    ],
+    "김동률": [
+        {
+            "title": "오래된 노래",
+            "lowest_note": "B2",
+            "highest_note": "E4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": 2008
+        },
+        {
+            "title": "답장",
+            "lowest_note": "B2",
+            "highest_note": "E4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": 2021
+        },
+        {
+            "title": "감사",
+            "lowest_note": "F2",
+            "highest_note": "G♯4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": 2012
+        },
+        {
+            "title": "취중진담",
+            "lowest_note": "D2",
+            "highest_note": "G♯4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": 2013
+        },
+        {
+            "title": "잔향",
+            "lowest_note": "G♯2",
+            "highest_note": "B4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": 2004
+        },
+        {
+            "title": "사랑한다는 말",
+            "lowest_note": "C♯2",
+            "highest_note": "F♯4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": 2001
+        },
+        {
+            "title": "김동률 -첫사랑",
+            "lowest_note": "A♯2",
+            "highest_note": "E4",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": null
+        },
+        {
+            "title": "기억의 습작",
+            "lowest_note": "G2",
+            "highest_note": "D5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": 2012
+        },
+        {
+            "title": "다시 사랑한다 말할까",
+            "lowest_note": "G♯2",
+            "highest_note": "A4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": 2012
+        }
+    ],
+    "거미": [
+        {
+            "title": "기억해줘요 내 모든 날과 그때를",
+            "lowest_note": "A3",
+            "highest_note": "D♯5",
+            "genres_api": [
+                "k-ballad",
+                "soundtrack",
+                "k-pop"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": 2019
+        },
+        {
+            "title": "거미- 빗방울",
+            "lowest_note": "F♯3",
+            "highest_note": "D5",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": null
+        },
+        {
+            "title": "혼자만 하는 사랑",
+            "lowest_note": "D3",
+            "highest_note": "C♯5",
+            "genres_api": [
+                "k-ballad",
+                "soundtrack",
+                "k-pop"
+            ],
+            "genres_model": [
+                "country"
+            ],
+            "year": 2005
+        },
+        {
+            "title": "You Are My Everything",
+            "lowest_note": "A3",
+            "highest_note": "C♯5",
+            "genres_api": [
+                "k-ballad",
+                "soundtrack",
+                "k-pop"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2016
+        },
+        {
+            "title": "그대 돌아오면",
+            "lowest_note": "A3",
+            "highest_note": "D5",
+            "genres_api": [
+                "k-ballad",
+                "soundtrack",
+                "k-pop"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": 2003
+        },
+        {
+            "title": "구르미 그린 달빛",
+            "lowest_note": "A3",
+            "highest_note": "E5",
+            "genres_api": [
+                "k-ballad",
+                "soundtrack",
+                "k-pop"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": 2016
+        },
+        {
+            "title": "My Love",
+            "lowest_note": "G♯3",
+            "highest_note": "E5",
+            "genres_api": [
+                "k-ballad",
+                "soundtrack",
+                "k-pop"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2020
+        }
+    ],
+    "정승환": [
+        {
+            "title": "이 바보야 vocals",
+            "lowest_note": "F3",
+            "highest_note": "D♯5",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "country"
+            ],
+            "year": null
+        },
+        {
+            "title": "십이월 이십오일의 고백 vocals",
+            "lowest_note": "C♯3",
+            "highest_note": "A♯4",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": null
+        },
+        {
+            "title": "보통의 하루 vocals",
+            "lowest_note": "D♯3",
+            "highest_note": "G♯4",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": null
+        },
+        {
+            "title": "너였다면 vocals",
+            "lowest_note": "E3",
+            "highest_note": "E5",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": null
+        },
+        {
+            "title": "그런 날이 올까요 vocals",
+            "lowest_note": "E3",
+            "highest_note": "A4",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": null
+        },
+        {
+            "title": "눈사람 vocals",
+            "lowest_note": "E3",
+            "highest_note": "A4",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": null
+        },
+        {
+            "title": "제자리 vocals",
+            "lowest_note": "E3",
+            "highest_note": "A4",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": null
+        },
+        {
+            "title": "그대가 있다면 vocals",
+            "lowest_note": "G♯3",
+            "highest_note": "E5",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": null
+        },
+        {
+            "title": "러브레터 - 가사 vocals",
+            "lowest_note": "C3",
+            "highest_note": "G6",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": null
+        },
+        {
+            "title": "그 겨울 vocals",
+            "lowest_note": "C♯3",
+            "highest_note": "A4",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": null
+        }
+    ],
+    "김건모": [
+        {
+            "title": "잠 못 드는 밤 비는 내리고",
+            "lowest_note": "D♯3",
+            "highest_note": "E5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": 1992
+        },
+        {
+            "title": "아름다운 이별",
+            "lowest_note": "D3",
+            "highest_note": "A♯4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": 1995
+        },
+        {
+            "title": "사랑해",
+            "lowest_note": "C3",
+            "highest_note": "G4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "country"
+            ],
+            "year": 2008
+        },
+        {
+            "title": "미안해요",
+            "lowest_note": "D♯2",
+            "highest_note": "G♯4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": 2001
+        },
+        {
+            "title": "빗속의 여인",
+            "lowest_note": "E2",
+            "highest_note": "A♯5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": 2001
+        },
+        {
+            "title": "사랑이 떠나가네",
+            "lowest_note": "C♯3",
+            "highest_note": "D5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 1997
+        },
+        {
+            "title": "첫인상",
+            "lowest_note": "D♯3",
+            "highest_note": "G♯4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "country"
+            ],
+            "year": 1992
+        },
+        {
+            "title": "서울의 달",
+            "lowest_note": "D2",
+            "highest_note": "A♯4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2005
+        },
+        {
+            "title": "잘못된 만남",
+            "lowest_note": "B1",
+            "highest_note": "F5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": 1995
+        },
+        {
+            "title": "어제보다 슬픈 오늘",
+            "lowest_note": "A♯2",
+            "highest_note": "G4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "country"
+            ],
+            "year": 2011
+        }
+    ],
+    "이승철": [
+        {
+            "title": "잊었니 vocals",
+            "lowest_note": "G♯3",
+            "highest_note": "A4",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": null
+        },
+        {
+            "title": "Dont say goodbye vocals",
+            "lowest_note": "F♯3",
+            "highest_note": "F♯4",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "country"
+            ],
+            "year": null
+        },
+        {
+            "title": "인연 vocals",
+            "lowest_note": "F3",
+            "highest_note": "C5",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": null
+        },
+        {
+            "title": "그런 사람 또 없습니다 vocals",
+            "lowest_note": "F3",
+            "highest_note": "G♯4",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": null
+        },
+        {
+            "title": "하얀새 vocals",
+            "lowest_note": "F3",
+            "highest_note": "A♯4",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": null
+        },
+        {
+            "title": "사랑 참 어렵다 vocals",
+            "lowest_note": "E3",
+            "highest_note": "G♯4",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": null
+        },
+        {
+            "title": "그 사람 vocals",
+            "lowest_note": "D3",
+            "highest_note": "A4",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": null
+        },
+        {
+            "title": "My Love vocals",
+            "lowest_note": "F3",
+            "highest_note": "A4",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": null
+        },
+        {
+            "title": "말리꽃 vocals",
+            "lowest_note": "F3",
+            "highest_note": "G5",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": null
+        },
+        {
+            "title": "서쪽하늘 vocals",
+            "lowest_note": "F♯3",
+            "highest_note": "D5",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": null
+        }
+    ],
+    "백예린": [
+        {
+            "title": "가끔 vocals",
+            "lowest_note": "B3",
+            "highest_note": "C5",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": null
+        },
+        {
+            "title": "Close To You vocals",
+            "lowest_note": "A1",
+            "highest_note": "A♯4",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": null
+        },
+        {
+            "title": "Square vocals",
+            "lowest_note": "A♯3",
+            "highest_note": "C5",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": null
+        },
+        {
+            "title": "Bye bye my blue vocals",
+            "lowest_note": "F♯3",
+            "highest_note": "A♯4",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": null
+        },
+        {
+            "title": "다시 난, 여기 vocals",
+            "lowest_note": "A3",
+            "highest_note": "D5",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": null
+        },
+        {
+            "title": "lovelovelove vocals",
+            "lowest_note": "C♯3",
+            "highest_note": "A4",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": null
+        },
+        {
+            "title": "그건 아마 우리의 잘못은 아닐 거야 vocals",
+            "lowest_note": "E3",
+            "highest_note": "A♯4",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": null
+        },
+        {
+            "title": "Antifreeze vocals",
+            "lowest_note": "C3",
+            "highest_note": "A♯4",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": null
+        },
+        {
+            "title": "산책 vocals",
+            "lowest_note": "A♯3",
+            "highest_note": "B4",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": null
+        }
+    ],
+    "규현": [
+        {
+            "title": "추억에 살아",
+            "lowest_note": "D3",
+            "highest_note": "F♯4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2025
+        },
+        {
+            "title": "내 마음이 움찔했던 순간",
+            "lowest_note": "B2",
+            "highest_note": "G♯4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": 2020
+        },
+        {
+            "title": "나침반",
+            "lowest_note": "A2",
+            "highest_note": "G4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "country"
+            ],
+            "year": 2025
+        },
+        {
+            "title": "Goodbye, My Friend",
+            "lowest_note": "D3",
+            "highest_note": "F♯4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": 2025
+        },
+        {
+            "title": "깊은 밤을 날아서",
+            "lowest_note": "D♯3",
+            "highest_note": "A4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": 2014
+        },
+        {
+            "title": "낮잠",
+            "lowest_note": "E3",
+            "highest_note": "F♯4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": 2025
+        },
+        {
+            "title": "광화문에서",
+            "lowest_note": "D3",
+            "highest_note": "G♯4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": 2014
+        },
+        {
+            "title": "밀리언조각",
+            "lowest_note": "D♯3",
+            "highest_note": "G♯4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": 2015
+        },
+        {
+            "title": "화려하지 않은 고백",
+            "lowest_note": "A2",
+            "highest_note": "G4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "country"
+            ],
+            "year": 2020
+        },
+        {
+            "title": "첫눈처럼",
+            "lowest_note": "E3",
+            "highest_note": "A4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": 2025
+        }
+    ],
+    "임재현": [
+        {
+            "title": "Lim Jae Hyun If there was practice in love vocals",
+            "lowest_note": "F3",
+            "highest_note": "D♯5",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": null
+        },
+        {
+            "title": "임재현 — 고백하는 취한밤에 vocals",
+            "lowest_note": "C♯3",
+            "highest_note": "A4",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": null
+        },
+        {
+            "title": "Special Clip vocals",
+            "lowest_note": "C3",
+            "highest_note": "D5",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": null
+        },
+        {
+            "title": "Heaven vocals",
+            "lowest_note": "F♯3",
+            "highest_note": "B4",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": null
+        },
+        {
+            "title": "Rhapsody of Sadness vocals",
+            "lowest_note": "F3",
+            "highest_note": "C5",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": null
+        },
+        {
+            "title": "임재현 -다음생이 있다면 당신을 만나서 다시 사랑할래요 Cover #shorts vocals",
+            "lowest_note": "A3",
+            "highest_note": "A♯4",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": null
+        },
+        {
+            "title": "세상에 없는 계절 vocals",
+            "lowest_note": "F3",
+            "highest_note": "C5",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "country"
+            ],
+            "year": null
+        },
+        {
+            "title": "내 삶의 반 Lyric Video vocals vocals",
+            "lowest_note": "G3",
+            "highest_note": "C5",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": null
+        },
+        {
+            "title": "웃으며 vocals",
+            "lowest_note": "D♯3",
+            "highest_note": "C5",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "blues"
+            ],
+            "year": null
+        },
+        {
+            "title": "Love Sick vocals",
+            "lowest_note": "E3",
+            "highest_note": "A♯4",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": null
+        }
+    ],
+    "김광석": [
+        {
+            "title": "잊어야 한다는 마음으로",
+            "lowest_note": "D2",
+            "highest_note": "D4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "country"
+            ],
+            "year": 1992
+        },
+        {
+            "title": "그날들",
+            "lowest_note": "F2",
+            "highest_note": "C♯5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": 1993
+        },
+        {
+            "title": "너무 아픈 사랑은 사랑이 아니었음을",
+            "lowest_note": "A♯1",
+            "highest_note": "B4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": 2014
+        },
+        {
+            "title": "너에게",
+            "lowest_note": "C3",
+            "highest_note": "F♯4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": 1993
+        },
+        {
+            "title": "어느 60대 노부부 이야기",
+            "lowest_note": "C♯2",
+            "highest_note": "D4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "jazz"
+            ],
+            "year": 1995
+        },
+        {
+            "title": "서른 즈음에",
+            "lowest_note": "F2",
+            "highest_note": "F♯4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "country"
+            ],
+            "year": 2014
+        },
+        {
+            "title": "사랑했지만",
+            "lowest_note": "G♯2",
+            "highest_note": "G5",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 1993
+        },
+        {
+            "title": "깊은 밤을 날아서",
+            "lowest_note": "D♯3",
+            "highest_note": "E5",
+            "genres_api": [
+                "정보 없음"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": null
+        },
+        {
+            "title": "일어나",
+            "lowest_note": "F♯2",
+            "highest_note": "B4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "classical"
+            ],
+            "year": 2014
+        },
+        {
+            "title": "바람이 불어오는 곳",
+            "lowest_note": "C♯3",
+            "highest_note": "D♯4",
+            "genres_api": [
+                "k-ballad"
+            ],
+            "genres_model": [
+                "country"
+            ],
+            "year": 1994
+        }
     ]
 }
