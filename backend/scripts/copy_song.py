@@ -2,7 +2,7 @@ import yt_dlp
 import os
 
 # 1. 다운로드할 유튜브 영상 주소
-url = 'https://www.youtube.com/watch?v=MFtZbSzTtL0'
+url = 'https://www.youtube.com/watch?v=dK2Pa6yVT2o'
 
 # 2. yt-dlp 옵션 설정
 ydl_opts = {
@@ -11,7 +11,7 @@ ydl_opts = {
     
     # 저장할 폴더와 파일명 형식 지정
     # 예: 'data/iu_songs/영상제목.wav'
-    'outtmpl': '/Users/yubin/Documents/캡스톤/com/Capstonedesign-6/backend/data/original/%(title)s.%(ext)s',
+    'outtmpl': '/Users/yubin/Documents/캡스톤/com/Capstonedesign-6/backend/data/original/%(title)s.%(ext)s',
     
     # 후처리(postprocessors) 설정: 다운로드 후 오디오만 wav로 추출
     'postprocessors': [{
